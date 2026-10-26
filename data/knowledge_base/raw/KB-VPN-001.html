@@ -1,0 +1,1648 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-holy-grail   show-table-of-contents conceptual show-breadcrumb default-focus"
+			lang="en-us"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>Troubleshoot Always On VPN - Windows Server | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Provides instructions for verifying and troubleshooting Always On VPN deployment in Windows Server 2016." />
+			<link rel="canonical" href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="Troubleshoot Always On VPN - Windows Server" />
+			<meta property="og:url" content="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn" />
+			<meta property="og:description" content="Provides instructions for verifying and troubleshooting Always On VPN deployment in Windows Server 2016." />
+			<meta name="platform_id" content="eeaf4970-158b-c510-c5fb-2172464be616" /> <meta name="scope" content="Troubleshoot,Windows Server" />
+			<meta name="locale" content="en-us" />
+			 
+			<meta name="uhfHeaderId" content="MSDocsHeader-WindowsServer" />
+
+			<meta name="page_type" content="conceptual" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="breadcrumb_path" content="/support/breadcrumb/toc.json" />
+	
+		<meta name="feedback_system" content="Standard" />
+	
+		<meta name="recommendations" content="true" />
+	
+		<meta name="feedback_product_url" content="https://techcommunity.microsoft.com/t5/windows-server-for-it-pro/bd-p/WindowsServer" />
+	
+		<meta name="manager" content="dcscontentpm" />
+	
+		<meta name="audience" content="itpro" />
+	
+		<meta name="author" content="kaushika-msft" />
+	
+		<meta name="ms.author" content="kaushika" />
+	
+		<meta name="ms.topic" content="troubleshooting" />
+	
+		<meta name="ms.service" content="windows-server" />
+	
+		<meta name="ms.date" content="2026-02-12T00:00:00Z" />
+	
+		<meta name="ms.reviewer" content="kaushika, inhenkel, v-tappelgate, v-lianna" />
+	
+		<meta name="ms.custom" content="sap:network connectivity and file sharing\remote access (vpn,rras,cmak and aovpn)" />
+	
+		<meta name="ms.custom" content="pcy:WinComm Networking" />
+	
+		<meta name="ms.assetid" content="4d08164e-3cc8-44e5-a319-9671e1ac294a" />
+	
+		<meta name="document_id" content="f86193ee-dbe1-4ade-494a-15454581beb8" />
+	
+		<meta name="document_version_independent_id" content="f86193ee-dbe1-4ade-494a-15454581beb8" />
+	
+		<meta name="updated_at" content="2026-02-19T02:04:00Z" />
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/SupportArticles-docs-pr/blob/live/support/windows-server/networking/troubleshoot-always-on-vpn.md" />
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/SupportArticles-docs-pr/blob/13b2d50440e0b880deadd46afe076b6b3625235f/support/windows-server/networking/troubleshoot-always-on-vpn.md" />
+	
+		<meta name="git_commit_id" content="13b2d50440e0b880deadd46afe076b6b3625235f" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="depot_name" content="MSDN.support1-docset" />
+	
+		<meta name="schema" content="Conceptual" />
+	
+		<meta name="toc_rel" content="../toc.json" />
+	
+		<meta name="pdf_url_template" content="https://learn.microsoft.com/pdfstore/en-us/MSDN.support1-docset/{branchName}{pdfName}" />
+	
+		<meta name="feedback_help_link_type" content="" />
+	
+		<meta name="feedback_help_link_url" content="" />
+	
+		<meta name="word_count" content="2621" />
+	
+		<meta name="asset_id" content="windows-server/networking/troubleshoot-always-on-vpn" />
+	
+		<meta name="moniker_range_name" content="" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="source_path" content="support/windows-server/networking/troubleshoot-always-on-vpn.md" />
+	
+		<meta name="previous_tlsh_hash" content="745D9462321E8700FB839E0D441FBA0094F185496DE0BFDC426F6DB351A91D6623AE589AD21B8385273BAE4203A6954F55C4FB3C106E2273346609EEC1AD3756FB8D3BF2E7" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-server/networking/troubleshoot-always-on-vpn.md" />
+	
+		<meta name="markdown_url" content="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn?accept=text/markdown" />
+	 
+		<meta name="cmProducts" content="https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/fc3f72c2-fb6f-4cea-95ee-b444e52254ee" data-source="generated" />
+	
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/60932d05-feee-4685-a73b-595e25dd9318" data-source="generated" />
+	
+		<meta name="spProducts" content="https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f12cf087-582d-48ac-a085-0c19adf1e391" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/c43bb58b-1190-419b-8d18-e6052371b599" data-source="generated" />
+	
+
+			<!-- Apply persisted/system theme before first paint to prevent wrong-theme flash when scripts are deferred. -->
+			<script id="theme-preference">
+				(function () {
+			try {
+				var stored = localStorage.getItem('theme');
+				var theme = /^(light|dark|high-contrast)$/.test(stored)
+					? stored
+					: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				document.documentElement.classList.add('theme-' + theme);
+			} catch (e) {}
+		})();;
+			</script>
+
+			<script id="atlas-layout-preferences">
+				(function () {
+			try {
+				var state = JSON.parse(localStorage.getItem('atlas-layout-preferences') || '{}');
+				var view = state["docs-layout-persistence"] || {};
+				var excludesKey = "";
+				var blocked = {};
+				if (excludesKey) {
+					var exclusions = JSON.parse(localStorage.getItem('atlas-layout-exclusions') || '{}');
+					if (Object.prototype.hasOwnProperty.call(exclusions, excludesKey)) {
+						var scoped = exclusions[excludesKey];
+						if (scoped) {
+							if (typeof scoped === 'object') blocked = scoped;
+						}
+					}
+				}
+				var html = document.documentElement;
+				for (var c in view) {
+					if (Object.prototype.hasOwnProperty.call(blocked, c)) continue;
+					if (view[c]) html.classList.add(c);
+					else html.classList.remove(c);
+				}
+			} catch (e) {}
+		})();;
+			</script>
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03574.8308-9505b1c8/styles/site.css" />
+			
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<!-- Keep this URL in sync with oneDSScriptSelector in instrumentation/one-ds.ts. -->
+			<script async src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "en-us",
+    "contentDir": "ltr",
+    "userLocale": "en-us",
+    "userDir": "ltr",
+    "pageTemplate": "Conceptual",
+    "layoutStateStorageKey": "docs-layout-persistence",
+    "brand": "",
+    "context": {},
+    "standardFeedback": true,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "",
+    "feedbackHelpLinkUrl": "",
+    "feedbackSystem": "Standard",
+    "feedbackGitHubRepo": "MicrosoftDocs/SupportArticles-docs",
+    "feedbackProductUrl": "https://techcommunity.microsoft.com/t5/windows-server-for-it-pro/bd-p/WindowsServer",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": true,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": true
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script
+				src="/static/assets/0.4.03574.8308-9505b1c8/scripts/en-us/index-docs.js"
+				async
+			></script>
+			
+
+			<!-- json-ld -->
+			
+		<script >bazadebezolkohpepadr="399580197"</script><script type="text/javascript" src="https://learn.microsoft.com/akam/13/17d11f5a"  defer></script></head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="en-us"
+				dir="ltr"
+			>
+				<header class="layout-body-header background-color-body-medium">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to main content
+		</a>
+	
+		<a
+			href="#"
+			data-skip-to-ask-learn
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			hidden
+		>
+			Skip to Ask Learn chat experience
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">This browser is no longer supported.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Download Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							More info about Internet Explorer and Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<div
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+					
+				></div>
+			</div>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section
+					id="layout-body-menu"
+					class="layout-body-menu border-right display-flex background-color-body-medium"
+					data-bi-name="menu"
+			  >
+					
+		<div
+			id="left-container"
+			class="left-container display-none padding-none display-block-tablet width-full display-none-until-layout-restored"
+			data-toc-container="true"
+		>
+			<div
+				id="ms--toc-content"
+				class="padding-left-sm padding-right-none padding-bottom-sm height-full"
+			>
+				<nav
+					id="affixed-left-container"
+					class="margin-top-xxs-tablet position-sticky display-flex flex-direction-column width-full"
+					aria-label="Primary"
+					data-bi-name="left-toc"
+					role="navigation"
+				>
+					<div
+						id="ms--collapsible-toc-header"
+						class="display-flex flex-direction-row-reverse justify-content-center align-items-center margin-bottom-xxs margin-right-xxs"
+					>
+						<button
+							type="button"
+							class="button button-clear button-sm inner-focus"
+							data-collapsible-toc-toggle
+							aria-expanded="true"
+							hidden
+							aria-controls="ms--toc-content"
+							aria-label="Table of contents"
+						>
+							<span class="icon icon-mirrored-rtl" aria-hidden="true">
+								<span
+									class="docon docon-panel-left-contract display-none-layout-menu-collapsed"
+								></span>
+								<span
+									class="docon docon-panel-left-expand display-none display-inline-layout-menu-collapsed"
+								></span>
+							</span>
+						</button>
+						<div
+							id="ms--collapsible-toc-moniker-slot"
+							class="flex-grow-1 display-none-layout-menu-collapsed"
+						></div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	
+			  </section>
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="en-us"
+					dir="ltr"
+				>
+					
+			<div
+		id="ms--content-header"
+		class="content-header default-focus border-bottom-none"
+		data-bi-name="content-header"
+	>
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button
+				type="button"
+				class="contents-button button button-sm margin-right-xxs"
+				data-bi-name="contents-expand"
+				aria-haspopup="true"
+				data-contents-button
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> Table of contents </span>
+			</button>
+			<button
+				type="button"
+				class="ap-collapse-behavior ap-expanded button button-sm"
+				data-bi-name="ap-collapse"
+				aria-controls="action-panel"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit editor mode</span>
+			</button>
+		</div>
+	</div> 
+		<div
+			id="action-panel"
+			role="region"
+			aria-label="Action Panel"
+			class="action-panel"
+			tabindex="-1"
+		></div>
+	
+			<div
+				data-main-column
+				class="reading-width margin-inline-auto layout-padding padding-top-none padding-top-sm-tablet padding-bottom-sm"
+			>
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover popover-left"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="All breadcrumbs"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			role="group"
+			aria-label="Breadcrumbs"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			
+		<button
+			class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-mobile"
+			data-ask-learn-modal-entry
+			
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-modal-entry-tablet"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-flyout-entry"
+			data-ask-learn-flyout-entry
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="More actions"
+					aria-expanded="false"
+					title="More actions"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button
+			type="button"
+			id="ms--focus-mode-button"
+			data-focus-mode
+			data-bi-name="focus-mode-entry"
+			data-page-action-item="overflow-all"
+			data-popover-close
+			class="button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus display-none display-inline-flex-tablet"
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-glasses"></span>
+			</span>
+			<span>Reading mode</span>
+		</button>
+	 
+		<button
+			data-page-action-item="overflow-mobile"
+			type="button"
+			class="display-block-layout-menu-collapsed button-block button-sm inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left"
+			data-bi-name="contents-expand"
+			data-contents-button
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true"
+				><span class="docon docon-editor-list-bullet"></span
+			></span>
+			<span class="contents-expand-title">Table of contents</span>
+		</button>
+	 
+		<a
+			id="lang-link-overflow"
+			class="button-sm inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>Read in English</span>
+		</a>
+	
+					
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Add</span>
+		</button>
+	 
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Add to Plans</span>
+		</button>
+	 
+					
+		<a
+			data-contenteditbtn
+			class="button button-clear button-block button-sm inner-focus justify-content-flex-start text-align-left text-decoration-none"
+			data-bi-name="edit"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			
+			href="https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-server/networking/troubleshoot-always-on-vpn.md"
+			data-original_content_git_url="https://github.com/MicrosoftDocs/SupportArticles-docs-pr/blob/live/support/windows-server/networking/troubleshoot-always-on-vpn.md"
+			data-original_content_git_url_template="{repo}/blob/{branch}/support/windows-server/networking/troubleshoot-always-on-vpn.md"
+			data-pr_repo=""
+			data-pr_branch=""
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-edit-outline"></span>
+			</span>
+			<span>Edit</span>
+		</a>
+	  
+		<hr class="margin-block-xxs" />
+		
+				<button
+					class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+					type="button"
+					data-bi-name="copy-markdown"
+					data-page-action-item="overflow-all"
+					data-copy-markdown
+					data-copy-state="idle"
+					data-check-hidden="true"
+				>
+					<span class="icon color-primary" aria-hidden="true">
+						<span data-show-when="idle" class="docon docon-code-lang"></span>
+						<span data-show-when="loading" class="loader" hidden></span>
+						<span data-show-when="success" class="docon docon-check-mark" hidden></span>
+					</span>
+					<span>Copy Markdown</span>
+				</button>
+		   
+				<button
+					class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+					type="button"
+					data-bi-name="print"
+					data-page-action-item="overflow-all"
+					data-popover-close
+					data-print-page
+					data-check-hidden="true"
+				>
+					<span class="icon color-primary" aria-hidden="true">
+						<span class="docon docon-print"></span>
+					</span>
+					<span>Print</span>
+				</button>
+		  
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	  
+		<!-- privateUnauthorizedTemplate is hidden by default -->
+		<div unauthorized-private-section data-bi-name="permission-content-unauthorized-private" hidden>
+			<hr class="hr margin-top-xs margin-bottom-sm" />
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon" aria-hidden="true"
+							><span class="docon docon-exclamation-circle-solid"></span
+						></span>
+						<span>Note</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						Access to this page requires authorization. You can try <a class="docs-sign-in" href="#" data-bi-name="permission-content-sign-in">signing in</a> or <a  class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						Access to this page requires authorization. You can try <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"><h1 id="troubleshoot-always-on-vpn">Troubleshoot Always On VPN</h1></div>
+					
+		<div
+			id="article-metadata"
+			data-bi-name="article-metadata"
+			data-test-id="article-metadata"
+			class="page-metadata-container display-flex gap-xxs justify-content-space-between align-items-center flex-wrap-wrap"
+		>
+			
+		<div class="margin-block-xxs">
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+				 <li class="display-inline">Applies to: <a href=https://learn.microsoft.com/windows/release-health/windows-server-release-info target=_blank>Supported versions of Windows Server</a></li>
+			</ul>
+		</div>
+	 
+				<div
+					id="user-feedback"
+					class="margin-block-xxs display-none display-none-print"
+					hidden
+					data-hide-on-archived
+				>
+					
+		<button
+			id="user-feedback-button"
+			data-test-id="conceptual-feedback-button"
+			class="button button-sm button-clear button-primary display-none"
+			type="button"
+			data-bi-name="user-feedback-button"
+			data-user-feedback-button
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>Feedback</span>
+		</button>
+	
+				</div>
+		  
+		</div>
+	 
+		<div data-id="ai-summary" class="display-none-print">
+			<div id="ms--ai-summary-cta" class="margin-top-xs display-flex align-items-center">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-sparkle-fill gradient-text-vivid"></span>
+				</span>
+				<button
+					id="ms--ai-summary"
+					type="button"
+					class="tag tag-sm tag-suggestion margin-left-xxs"
+					data-test-id="ai-summary-cta"
+					data-bi-name="ai-summary-cta"
+					data-an="ai-summary"
+				>
+					<span class="ai-summary-cta-text">
+						Summarize this article for me
+					</span>
+				</button>
+			</div>
+			<!-- Slot where the client will render the summary card after the user clicks the CTA -->
+			<div id="ms--ai-summary-header" class="margin-top-xs"></div>
+		</div>
+	 
+		<nav
+			id="center-doc-outline"
+			class="doc-outline display-none-desktop display-none-print margin-bottom-sm"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">
+				In this article
+			</h2>
+		</nav>
+	 <div class="content"><p>This article provides instructions for verifying and troubleshooting Always On VPN deployment.</p>
+<p>If your Always On Virtual Private Network (VPN) setup isn't connecting clients to your internal network, you may have encountered one of the following issues:</p>
+<ul>
+<li>The VPN certificate is invalid.</li>
+<li>The Network Policy Server (NPS) policies are incorrect.</li>
+<li>Issues with client deployment scripts or Routing and Remote Access.</li>
+</ul>
+<p>The first step in troubleshooting and testing your VPN connection is understanding the core components of the Always On VPN infrastructure.</p>
+<p>You can troubleshoot connection issues in several ways. For client-side issues and general troubleshooting, the application logs on client computers are invaluable. For authentication-specific issues, the NPS log located on the NPS server can help you determine the source of the problem.</p>
+<h2 id="general-troubleshooting-for-always-on-vpn-connection-issues">General troubleshooting for Always On VPN connection issues</h2>
+<p>Always On VPN clients go through several steps before establishing a connection. As a result, there are several places where connections can be blocked, and sometimes it's difficult to figure out where the issue is.</p>
+<p>If you're encountering issues, here are some general steps you can take to figure out what's going on:</p>
+<ul>
+<li>Run a <strong>whatismyip</strong> scan to make sure your template machine isn't externally connected. If the machine has a public IP address that doesn't belong to you, then you should change the IP to a private one.</li>
+<li>Go to <strong>Control Panel</strong> &gt; <strong>Network</strong> and <strong>Internet</strong> &gt; <strong>Network Connections</strong>, open the properties for your VPN Profile, and check to make sure the value in the <strong>General</strong> tab can publicly resolve through DNS. If not, the Remote Access server or VPN server being unable to resolve to an IP address is likely the cause of the issue.</li>
+<li>Open the Internet Control Message Protocol (ICMP) to the external interface and ping the VPN server from the remote client. If the ping succeeds, you can remove the ICMP allow rule. If not, then your VPN server being inaccessible is probably causing the issue.</li>
+<li>Check the configuration for the internal and external NICs on your VPN server. In particular, make sure they're on the same subnet and that the external NIC connects to the correct interface on your firewall.</li>
+<li>Check the client firewall, server firewall, and any hardware firewalls to make sure they allow UDP 500 and 4500 port activity through. Also, if you're using UDP port 500, make sure IPSEC isn't disabled or blocked anywhere. If not, the ports not being open from the client to the VPN server external interface is causing the issue.</li>
+<li>Make sure the NPS server has a Server Authentication certificate that can service IKE requests. Also, make sure your NPS client has the correct VPN server IP in its settings. You should only authenticate with PEAP and the PEAP properties should only allow certificate authentication. You can check for authentication issues in the NPS event log. For more information, see <a href="/en-us/windows-server/networking/technologies/nps/nps-manage-install" data-linktype="absolute-path">Install and Configure the NPS Server</a>.</li>
+<li>If you can connect but don't have internet or local network access, check your DHCP or VPN server IP pools for configuration issues. Also, make sure your clients can reach those resources. You can use the VPN server to route requests.</li>
+</ul>
+<h2 id="general-troubleshooting-for-vpn_profileps1-script-issues">General troubleshooting for VPN_Profile.ps1 script issues</h2>
+<p>The most common issues when manually running the <em>VPN_Profile.ps1</em> script include:</p>
+<ul>
+<li>If you use a remote connection tool, make sure you don't use Remote Desktop Protocol (RDP) or other remote connection methods. Remote connections can interfere with the service's ability to detect you when you sign in.</li>
+<li>If the affected user is an administrator on their local machine, make sure they have administrator privileges while running the script.</li>
+<li>If you've enabled other PowerShell security features, make sure your PowerShell execution policy isn't blocking the script. Disable Constrained Language mode before running the script, then reactivate it after the script is finished running.</li>
+</ul>
+<h2 id="logs">Logs</h2>
+<p>You can also check the application logs and NPS logs for events that can indicate when and where an issue is happening.</p>
+<h3 id="application-logs">Application logs</h3>
+<p>The application logs on client machines record higher-level details of VPN connection events.</p>
+<p>When you're troubleshooting Always On VPN, look for events labeled <em>RasClient</em>. All error messages return the error code at the end of the message. <a href="#error-codes" data-linktype="self-bookmark">Error codes</a> lists some of the more common error codes related to Always On VPN. For a full list of error codes, see <a href="/en-us/windows/win32/rras/routing-and-remote-access-error-codes" data-linktype="absolute-path">Routing and Remote Access Error Codes</a>.</p>
+<h3 id="nps-logs">NPS logs</h3>
+<p>NPS creates and stores the NPS accounting logs. By default, logs are stored in <em>%SYSTEMROOT%\System32\Logfiles\</em> in a file named <em>IN&lt;date of log creation&gt;.txt</em>.</p>
+<p>By default, these logs are in comma-separated values format, but they don't include a heading row. The following code block contains the heading row:</p>
+<pre><code class="lang-output">ComputerName,ServiceName,Record-Date,Record-Time,Packet-Type,User-Name,Fully-Qualified-Distinguished-Name,Called-Station-ID,Calling-Station-ID,Callback-Number,Framed-IP-Address,NAS-Identifier,NAS-IP-Address,NAS-Port,Client-Vendor,Client-IP-Address,Client-Friendly-Name,Event-Timestamp,Port-Limit,NAS-Port-Type,Connect-Info,Framed-Protocol,Service-Type,Authentication-Type,Policy-Name,Reason-Code,Class,Session-Timeout,Idle-Timeout,Termination-Action,EAP-Friendly-Name,Acct-Status-Type,Acct-Delay-Time,Acct-Input-Octets,Acct-Output-Octets,Acct-Session-Id,Acct-Authentic,Acct-Session-Time,Acct-Input-Packets,Acct-Output-Packets,Acct-Terminate-Cause,Acct-Multi-Ssn-ID,Acct-Link-Count,Acct-Interim-Interval,Tunnel-Type,Tunnel-Medium-Type,Tunnel-Client-Endpt,Tunnel-Server-Endpt,Acct-Tunnel-Conn,Tunnel-Pvt-Group-ID,Tunnel-Assignment-ID,Tunnel-Preference,MS-Acct-Auth-Type,MS-Acct-EAP-Type,MS-RAS-Version,MS-RAS-Vendor,MS-CHAP-Error,MS-CHAP-Domain,MS-MPPE-Encryption-Types,MS-MPPE-Encryption-Policy,Proxy-Policy-Name,Provider-Type,Provider-Name,Remote-Server-Address,MS-RAS-Client-Name,MS-RAS-Client-Version
+</code></pre>
+<p>If you paste this heading row as the first line of the log file, then import the file into Microsoft Excel, then Excel properly labels the columns.</p>
+<p>The NPS logs can help you diagnose policy-related issues. For more information about NPS logs, see <a href="/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10)" data-linktype="absolute-path">Interpret NPS Database Format Log Files</a>.</p>
+<h2 id="error-codes">Error codes</h2>
+<p>The following sections describe how to resolve the most commonly encountered errors.</p>
+<h3 id="error-800-the-remote-connection-couldnt-connect">Error 800: the remote connection couldn't connect</h3>
+<p>This issue happens when the service can't make a remote connection because the attempted VPN tunnels failed, often because the VPN server isn't reachable. If your connection is trying to use a Layer 2 Tunneling Protocol (L2TP) or IPsec tunnel, this error means the required security parameters for IPsec negotiation aren't configured properly.</p>
+<h4 id="cause-vpn-tunnel-type">Cause: VPN tunnel type</h4>
+<p>You can encounter this issue when the VPN tunnel type is set to <strong>Automatic</strong> and your connection attempt is unsuccessful in all VPN tunnels.</p>
+<h4 id="solution-check-your-vpn-configuration">Solution: check your VPN configuration</h4>
+<p>Because VPN settings cause this issue, you should troubleshoot your VPN settings and connection by trying the following:</p>
+<ul>
+<li>If you know which tunnel to use for your deployment, set the type of VPN to that particular tunnel type on the VPN client side.</li>
+<li>Make sure the Internet Key Exchange (IKE) ports on User Datagram Protocol (UDP) ports 500 and 4500 aren't blocked.</li>
+<li>Make sure both the client and server have correct certificates for IKE.</li>
+</ul>
+<h3 id="error-809-cant-establish-a-connection-between-local-machine-and-vpn-server">Error 809: can't establish a connection between local machine and VPN server</h3>
+<p>In this issue, the remote server doesn't respond, which prevents your local machine and the VPN server from connecting. This could be because one or more network devices, such as routers, firewalls, or the Network Address Translation (NAT) between your computer and the remote server isn't configured to allow VPN connections. Contact your administrator or your service provider to determine which device may be causing the problem.</p>
+<h4 id="error-809-cause">Error 809 cause</h4>
+<p>You can encounter this issue when the UDP 500 or 4500 ports on the VPN server or firewall are blocked. Blocking can happen when one of the network devices between your computer and the remote server, such as the firewall, NAT, or routers, aren't configured correctly.</p>
+<h4 id="solution-check-the-ports-on-devices-between-your-local-machine-and-remote-server">Solution: check the ports on devices between your local machine and remote server</h4>
+<p>To address this issue, you should first contact your administrator or service provider to find out which device is blocked. After that, make sure the firewalls for that device allow the UDP 500 and 4500 ports through. If that doesn't address the issue, check the firewalls on every device between your local machine and the remote server.</p>
+<h3 id="error-812-cant-connect-to-always-on-vpn">Error 812: can't connect to Always On VPN</h3>
+<p>This issue occurs when your remote access server (RAS) or VPN server can't connect to Always On VPN. The authentication method the server used to verify your user name and password didn't match the authentication method configured in your connection profile.</p>
+<p>Whenever you encounter error 812, we recommend that you contact your RAS server administrator immediately to let them know what happened.</p>
+<p>If you're using the Event Viewer to troubleshoot, you can find this issue marked as event log 20276. This event usually appears when a routing and remote access (RRAS)-based VPN server authentication protocol setting doesn't match the settings on the VPN client computer.</p>
+<h4 id="error-812-cause">Error 812 cause</h4>
+<p>You typically encounter this error when the NPS specified an authentication condition the client can't meet. For example, if the NPS specifies it needs a certificate to secure the Protected Extensible Authentication Protocol (PEAP) connection, then it can't authenticate if the client is trying to use EAP-MSCHAPv2 instead.</p>
+<h4 id="solution-check-your-client-and-nps-server-authentication-settings">Solution: check your client and NPS server authentication settings</h4>
+<p>To resolve this issue, make sure the authentication requirements for your client and the NPS server match. If not, change them accordingly.</p>
+<h3 id="error-13806-ike-cant-find-a-valid-machine-certificate">Error 13806: IKE can't find a valid machine certificate</h3>
+<p>This issue occurs when IKE can't find a valid machine certificate.</p>
+<h4 id="error-13806-cause">Error 13806 cause</h4>
+<p>You usually encounter this error when the VPN server doesn't have the required machine or root machine certificate.</p>
+<h4 id="solution-install-a-valid-certificate-in-the-relevant-certificate-store">Solution: install a valid certificate in the relevant certificate store</h4>
+<p>To resolve this issue, make sure the required certificates are installed on both the client machine and the VPN server. If not, contact your network security administrator and ask them to install valid certificates in the relevant certificate store.</p>
+<h3 id="error-13801-the-ike-authentication-credentials-are-invalid">Error 13801: the IKE authentication credentials are invalid</h3>
+<p>You encounter this issue when either the server or client can't accept the IKE authentication credentials.</p>
+<h4 id="error-13801-cause">Error 13801 cause</h4>
+<p>This error can occur due to the following:</p>
+<ul>
+<li>The machine certificate used for IKEv2 validation on the RAS server doesn't have <strong>Server Authentication</strong> enabled under <strong>Enhanced Key Usage</strong>.</li>
+<li>The machine certificate on the RAS server expired.</li>
+<li>The client machine doesn't have the root certificate for validating the RAS server certificate.</li>
+<li>The client machine's VPN server name doesn't match the <em>subjectName</em> value on the server certificate.</li>
+</ul>
+<h4 id="solution-1-verify-the-server-certificate-settings">Solution 1: verify the server certificate settings</h4>
+<p>If the issue is the RAS server machine certificate, make sure the certificate includes <strong>Server Authentication</strong> under <strong>Enhanced Key Usage</strong>.</p>
+<h4 id="solution-2-make-sure-the-machine-certificate-is-still-valid">Solution 2: make sure the machine certificate is still valid</h4>
+<p>If the issue is that the RAS machine certificate expired, make sure it's still valid. If it isn't, install a valid certificate.</p>
+<h4 id="solution-3-make-sure-the-client-machine-has-a-root-certificate">Solution 3: make sure the client machine has a root certificate</h4>
+<p>If the issue is related to the client machine not having a root certificate, first check the <strong>Trusted Root Certification Authorities</strong> on the RRAS server to make sure the certification authority you're using is there. If it isn't there, install a valid root certificate.</p>
+<h4 id="solution-4-make-the-client-machines-vpn-server-name-matches-the-server-certificate">Solution 4: make the client machine's VPN server name matches the server certificate</h4>
+<p>First, make sure the VPN client connects by using the same fully qualified domain name (FQDN) that the VPN server certificate uses. If not, change the client name to match the server certificate name.</p>
+<h3 id="error-0x80070040-server-certificate-doesnt-have-server-authentication-in-its-usage-entries">Error 0x80070040: server certificate doesn't have Server Authentication in its usage entries</h3>
+<p>This issue occurs when the server certificate doesn't have <strong>Server Authentication</strong> as one of its certificate usage entries.</p>
+<h4 id="error-0x80070040-cause">Error 0x80070040 cause</h4>
+<p>This error occurs when the RAS server doesn't have a server authentication certificate installed.</p>
+<h4 id="solution-make-sure-the-machine-certificate-has-the-required-certificate-usage-entry">Solution: make sure the machine certificate has the required certificate usage entry</h4>
+<p>To address this issue, make sure the machine certificate the RAS server uses for IKEv2 validation includes <strong>Server Authentication</strong> in its list of certificate usage entries.</p>
+<h3 id="error-0x800b0109-a-certificate-chain-processed-but-terminated-in-a-root-certificate">Error 0x800B0109: a certificate chain processed but terminated in a root certificate</h3>
+<p>The full error description is, "A certificate chain processed but terminated in a root certificate that the trust provider doesn't trust."</p>
+<p>Generally, the VPN client machine is joined to an Active Directory (AD)-based domain. If you use domain credentials to sign in to the VPN server, the service automatically installs the certificate in the Trusted Root Certification Authorities store. You may encounter this issue if the computer isn't joined to an AD domain or you use an alternative certificate chain.</p>
+<h4 id="error-0x800b0109-cause">Error 0x800B0109 cause</h4>
+<p>You may encounter this error if the client computer doesn't have an appropriate trusted root CA certificate installed in its Trusted Root Certification Authorities store.</p>
+<h4 id="solution-install-the-trusted-root-certificate">Solution: install the trusted root certificate</h4>
+<p>To resolve this issue, make sure the client machine has a trusted root certificate installed in its Trusted Root Certification Authorities store. If not, install an appropriate root certificate.</p>
+<h3 id="error-oops-you-cant-get-to-this-yet">Error: Oops, you can't get to this yet</h3>
+<p>This error message is associated with Microsoft Entra Conditional Access connection issues. When this issue appears, the Conditional Access policy isn't satisfied, blocking the VPN connection but then connecting after the user closes the dialog window. If the user selects <strong>OK</strong>, it starts another authentication attempt that also doesn't succeed and prompts an identical error message. The client's Microsoft Entra Operational Event log records these events.</p>
+<h4 id="microsoft-entra-conditional-access-error-cause">Microsoft Entra Conditional Access error cause</h4>
+<p>There are a few reasons why this issue can happen:</p>
+<ul>
+<li><p>The user has a client authentication certificate in their Personal Certificate store that's valid but didn't come from Microsoft Entra ID.</p>
+</li>
+<li><p>The VPN profile <code>&lt;TLSExtensions&gt;</code> section is either missing or doesn't contain the <code>&lt;EKUName&gt;AAD Conditional Access&lt;/EKUName&gt;&lt;EKUOID&gt;1.3.6.1.4.1.311.87&lt;/EKUOID&gt;&lt;EKUName&gt;AAD Conditional Access&lt;/EKUName&gt;&lt;EKUOID&gt;1.3.6.1.4.1.311.87&lt;/EKUOID&gt;</code> entries. The <code>&lt;EKUName&gt;</code> and <code>&lt;EKUOID&gt;</code> entries tell the VPN client which certificate to retrieve from the user's certificate store when passing the certificate to the VPN server. Without the <code>&lt;EKUName&gt;</code> and <code>&lt;EKUOID&gt;</code> entries, the VPN client uses whatever valid Client Authentication certificate is in the user's certificate store and authentication succeeds.</p>
+</li>
+<li><p>The RADIUS server (NPS) hasn't been configured to only accept client certificates that contain the <strong>AAD Conditional Access</strong> object identifier (OID).</p>
+</li>
+</ul>
+<h4 id="solution-use-powershell-to-determine-certificate-status">Solution: use PowerShell to determine certificate status</h4>
+<p>To escape this loop:</p>
+<ol>
+<li><p>In Windows PowerShell, run the <code>Get-WmiObject</code> cmdlet to dump the VPN profile configuration.</p>
+</li>
+<li><p>Verify that the <code>&lt;TLSExtensions&gt;</code>, <code>&lt;EKUName&gt;</code>, and <code>&lt;EKUOID&gt;</code> variables exist and their output shows the correct name and OID.</p>
+<p>The following code is an example output of the <code>Get-WmiObject</code> cmdlet.</p>
+<pre><code class="lang-powershell">PS C:\&gt; Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
+
+__GENUS                 : 2
+__CLASS                 : MDM_VPNv2_01
+__SUPERCLASS            :
+__DYNASTY               : MDM_VPNv2_01
+__RELPATH               : MDM_VPNv2_01.InstanceID="AlwaysOnVPN",ParentID="./Vendor/MSFT/VPNv2"
+__PROPERTY_COUNT        : 10
+__DERIVATION            : {}
+__SERVER                : DERS2
+__NAMESPACE             : root\cimv2\mdm\dmmap
+__PATH                  : \\DERS2\root\cimv2\mdm\dmmap:MDM_VPNv2_01.InstanceID="AlwaysOnVPN",ParentID="./Vendor/MSFT/VP
+                            Nv2"
+AlwaysOn                :
+ByPassForLocal          :
+DnsSuffix               :
+EdpModeId               :
+InstanceID              : AlwaysOnVPN
+LockDown                :
+ParentID                : ./Vendor/MSFT/VPNv2
+ProfileXML              : &lt;VPNProfile&gt;&lt;RememberCredentials&gt;false&lt;/RememberCredentials&gt;&lt;DeviceCompliance&gt;&lt;Enabled&gt;true&lt;/
+                            Enabled&gt;&lt;Sso&gt;&lt;Enabled&gt;true&lt;/Enabled&gt;&lt;/Sso&gt;&lt;/DeviceCompliance&gt;&lt;NativeProfile&gt;&lt;Servers&gt;derras2.corp.deverett.info;derras2.corp.deverett.info&lt;/Servers&gt;&lt;RoutingPolicyType&gt;ForceTunnel&lt;/RoutingPolicyType&gt;&lt;NativeProtocolType&gt;Ikev2&lt;/NativeProtocolType&gt;&lt;Authentication&gt;&lt;UserMethod&gt;Eap&lt;/UserMethod&gt;&lt;MachineMethod&gt;Eap&lt;/MachineMethod&gt;&lt;Eap&gt;&lt;Configuration&gt;&lt;EapHostConfigxmlns="https://www.microsoft.com/provisioning/EapHostConfig"&gt;&lt;EapMethod&gt;&lt;Typexmlns="https://www.microsoft.com/provisioning/EapCommon"&gt;25&lt;/Type&gt;&lt;VendorIdxmlns="https://www.microsoft.com/provisioning/EapCommon"&gt;0&lt;/VendorId&gt;&lt;VendorTypexmlns="https://www.microsoft.com/provisioning/EapCommon"&gt;0&lt;/VendorType&gt;&lt;AuthorIdxmlns="https://www.microsoft.com/provisioning/EapCommon"&gt;0&lt;/AuthorId&gt;&lt;/EapMethod&gt;&lt;Configxmlns="https://www.microsoft.com/provisioning/EapHostConfig"&gt;&lt;Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"&gt;&lt;Type&gt;25&lt;/Type&gt;&lt;EapType xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV1"&gt;&lt;ServerValidation&gt;&lt;DisableUserPromptForServerValidation&gt;true&lt;/DisableUserPromptForServerValidation&gt;&lt;ServerNames&gt;&lt;/ServerNames&gt;&lt;/ServerValidation&gt;&lt;FastReconnect&gt;true&lt;/FastReconnect&gt;&lt;InnerEapOptional&gt;false&lt;/InnerEapOptional&gt;&lt;Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"&gt;&lt;Type&gt;13&lt;/Type&gt;
+                            &lt;EapType xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV1"&gt;&lt;CredentialsSource&gt;&lt;CertificateStore&gt;&lt;SimpleCertSelection&gt;true&lt;/SimpleCertSelection&gt;&lt;/CertificateStore&gt;&lt;/CredentialsSource&gt;&lt;ServerValidation&gt;&lt;DisableUserPromptForServerValidation&gt;true&lt;/DisableUserPromptForServerValidation&gt;&lt;ServerNames&gt;&lt;/ServerNames&gt;&lt;TrustedRootCA&gt;5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b &lt;/TrustedRootCA&gt;&lt;/ServerValidation&gt;&lt;DifferentUsername&gt;false&lt;/DifferentUsername&gt;&lt;PerformServerValidation xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"&gt;true&lt;/PerformServerValidation&gt;&lt;AcceptServerName xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"&gt;false&lt;/AcceptServerName&gt;&lt;TLSExtensionsxmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"&gt;&lt;FilteringInfo xml ns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"&gt;&lt;EKUMapping&gt;&lt;EKUMap&gt;&lt;EKUName&gt;AAD Conditional Access&lt;/EKUName&gt;&lt;EKUOID&gt;1.3.6.1.4.1.311.87&lt;/EKUOID&gt;&lt;/EKUMap&gt;&lt;/EKUMapping&gt;&lt;ClientAuthEKUListEnabled="true"&gt;&lt;EKUMapInList&gt;&lt;EKUName&gt;AAD Conditional Access&lt;/EKUName&gt;&lt;/EKUMapInList&gt;&lt;/ClientAuthEKUList&gt;&lt;/FilteringInfo&gt;&lt;/TLSExtensions&gt;&lt;/EapType&gt;&lt;/Eap&gt;&lt;EnableQuarantineChecks&gt;false&lt;/EnableQuarantineChecks&gt;&lt;RequireCryptoBinding&gt;false&lt;/RequireCryptoBinding&gt;&lt;PeapExtensions&gt;&lt;PerformServerValidation xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2"&gt;false&lt;/PerformServerValidation&gt;&lt;AcceptServerName xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2"&gt;false&lt;/AcceptServerName&gt;&lt;/PeapExtensions&gt;&lt;/EapType&gt;&lt;/Eap&gt;&lt;/Config&gt;&lt;/EapHostConfig&gt;&lt;/Configuration&gt;&lt;/Eap&gt;&lt;/Authentication&gt;&lt;/NativeProfile&gt;&lt;/VPNProfile&gt;
+RememberCredentials     : False
+TrustedNetworkDetection :
+PSComputerName          : DERS2
+</code></pre>
+</li>
+<li><p>Next, run the <code>Certutil</code> command to determine if there are valid certificates in the user's certificate store:</p>
+<pre><code class="lang-console">C:\&gt;certutil -store -user My
+
+My "Personal"
+================ Certificate 0 ================
+Serial Number: 32000000265259d0069fa6f205000000000026
+Issuer: CN=corp-DEDC0-CA, DC=corp, DC=deverett, DC=info
+  NotBefore: 12/8/2017 8:07 PM
+  NotAfter: 12/8/2018 8:07 PM
+Subject: E=winfed@deverett.info, CN=WinFed, OU=Users, OU=Corp, DC=corp, DC=deverett, DC=info
+Certificate Template Name (Certificate Type): User
+Non-root Certificate
+Template: User
+Cert Hash(sha1): a50337ab015d5612b7dc4c1e759d201e74cc2a93
+  Key Container = a890fd7fbbfc072f8fe045e680c501cf_5834bfa9-1c4a-44a8-a128-c2267f712336
+  Simple container name: te-User-c7bcc4bd-0498-4411-af44-da2257f54387
+  Provider = Microsoft Enhanced Cryptographic Provider v1.0
+Encryption test passed
+
+================ Certificate 1 ================
+Serial Number: 367fbdd7e6e4103dec9b91f93959ac56
+Issuer: CN=Microsoft VPN root CA gen 1
+  NotBefore: 12/8/2017 6:24 PM
+  NotAfter: 12/8/2017 7:29 PM
+Subject: CN=WinFed@deverett.info
+Non-root Certificate
+Cert Hash(sha1): 37378a1b06dcef1b4d4753f7d21e4f20b18fbfec
+  Key Container = 31685cae-af6f-48fb-ac37-845c69b4c097
+  Unique container name: bf4097e20d4480b8d6ebc139c9360f02_5834bfa9-1c4a-44a8-a128-c2267f712336
+  Provider = Microsoft Software Key Storage Provider
+Private key is NOT exportable
+Encryption test passed
+</code></pre>
+<div class="NOTE">
+<p>Note</p>
+<p>If a certificate from Issuer <strong>CN=Microsoft VPN root CA gen 1</strong> is present in the user's Personal store, but the user gained access by selecting <strong>X</strong> to close the Oops message, collect CAPI2 event logs to verify the certificate used to authenticate was a valid Client Authentication certificate that wasn't issued from the Microsoft VPN root CA.</p>
+</div>
+</li>
+<li><p>If a valid Client Authentication certificate exists in the user's personal store and the <code>TLSExtensions</code>, <code>EKUName</code>, and <code>EKUOID</code> values are configured correctly, the connection shouldn't succeed after the user closes the dialog box.</p>
+</li>
+</ol>
+<p>An error message should appear that says, "A certificate couldn't be found that can be used with the Extensible Authenticate Protocol."</p>
+<h3 id="unable-to-delete-the-certificate-from-the-vpn-connectivity-tab">Unable to delete the certificate from the VPN connectivity tab</h3>
+<p>This issue is when you can't delete certificates on the VPN connectivity tab.</p>
+<h4 id="cause">Cause</h4>
+<p>This issue occurs when the certificate is set to <strong>Primary</strong>.</p>
+<h4 id="solution-change-certificate-settings">Solution: change certificate settings</h4>
+<p>To delete certificates:</p>
+<ol>
+<li>In the <strong>VPN connectivity</strong> tab, select the certificate.</li>
+<li>Under <strong>Primary</strong>, select <strong>No</strong>, then select <strong>Save</strong>.</li>
+<li>In the <strong>VPN connectivity</strong> tab, select the certificate again.</li>
+<li>Select <strong>Delete</strong>.</li>
+</ol>
+</div>
+					
+		<div
+			id="ms--inline-notifications"
+			class="margin-block-xs"
+			data-bi-name="inline-notification"
+		></div>
+	 
+		<div
+			id="assertive-live-region"
+			role="alert"
+			aria-live="assertive"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+		<div
+			id="polite-live-region"
+			role="status"
+			aria-live="polite"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+	
+					
+		<!-- feedback section -->
+		<section
+			id="site-user-feedback-footer"
+			class="font-size-sm margin-top-md display-none-print display-none-desktop"
+			data-test-id="site-user-feedback-footer"
+			data-bi-name="site-feedback-section"
+		>
+			<hr class="hr" />
+			<h2 id="ms--feedback" class="title is-3">Feedback</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="buttons">
+					<button
+						class="thumb-rating-button like button button-primary button-sm"
+						data-test-id="footer-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>Yes</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike button button-primary button-sm"
+						id="standard-rating-no-button"
+						hidden
+						data-test-id="footer-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</button>
+					<details
+						class="popover popover-top"
+						id="mobile-help-popover"
+						data-test-id="footer-feedback-popover"
+					>
+						<summary
+							class="thumb-rating-button dislike button button-primary button-sm"
+							data-test-id="details-footer-rating-no"
+							data-binary-rating-response="rating-no"
+							title="This article is not helpful"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+							<span>No</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading"
+							aria-describedby="popover-description"
+						>
+							<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+								Need help with this topic?
+							</p>
+							<p id="popover-description" class="font-size-sm margin-bottom-xs">
+								Want to try using Ask Learn to clarify or guide you through this topic?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+				</div>
+				
+		<div id="ms--additional-resources-mobile" class="display-none-print">
+			<hr class="hr" hidden />
+			<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>
+				Additional resources
+			</h2>
+			
+		<section
+			id="right-rail-recommendations-mobile"
+			class=""
+			data-bi-name="recommendations"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-training-mobile"
+			class=""
+			data-bi-name="learning-resource-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-events-mobile"
+			class=""
+			data-bi-name="events-card"
+			hidden
+		></section>
+	
+		</div>
+	 
+		<div
+			id="article-metadata-footer"
+			data-bi-name="article-metadata-footer"
+			data-test-id="article-metadata-footer"
+			class="page-metadata-container"
+		>
+			<hr class="hr" />
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+				<li class="visibility-hidden-visual-diff">
+			<span class="badge badge-sm text-wrap-pretty">
+				<span>Last updated on <local-time format="twoDigitNumeric"
+		datetime="2026-02-12T08:00:00.000Z"
+		data-article-date-source="calculated"
+		class="is-invisible"
+	>
+		2026-02-12
+	</local-time></span>
+			</span>
+		</li>
+			</ul>
+		</div>
+	
+			</div>
+		
+				</main>
+				<aside
+					id="layout-body-aside"
+					class="layout-body-aside  "
+					data-bi-name="aside"
+					aria-label="Additional resources"
+			  >
+					
+		<div
+			id="ms--additional-resources"
+			class="right-container padding-sm display-none display-block-desktop height-full"
+			data-bi-name="pageactions"
+		>
+			<div id="affixed-right-container" data-bi-name="right-column">
+				
+		<nav
+			id="side-doc-outline"
+			class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs scrollbar-width-thin"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h3>In this article</h3>
+		</nav>
+	
+				<!-- Feedback -->
+				
+		<section
+			id="ms--site-user-feedback-right-rail"
+			class="font-size-sm display-none-print"
+			data-test-id="site-user-feedback-right-rail"
+			data-bi-name="site-feedback-right-rail"
+		>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="display-flex flex-wrap-nowrap">
+					<button
+						class="thumb-rating-button like inner-focus"
+						data-test-id="right-rail-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						aria-label="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike inner-focus"
+						id="right-rail-no-button"
+						hidden
+						data-test-id="right-rail-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						aria-label="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+					</button>
+					<details class="popover popover-right" id="help-popover" data-test-id="feedback-popover">
+						<summary
+							tabindex="0"
+							class="thumb-rating-button dislike inner-focus"
+							data-test-id="details-right-rail-rating-no"
+							data-binary-rating-response="rating-no"
+							title="This article is not helpful"
+							aria-label="This article is not helpful"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading-right-rail"
+							aria-describedby="popover-description-right-rail"
+						>
+							<p
+								id="popover-heading-right-rail"
+								class="font-size-lg margin-bottom-xxs font-weight-semibold"
+							>
+								Need help with this topic?
+							</p>
+							<p id="popover-description-right-rail" class="font-size-sm margin-bottom-xs">
+								Want to try using Ask Learn to clarify or guide you through this topic?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section
+					id="layout-body-flyout"
+					class="layout-body-flyout "
+					data-bi-name="flyout"
+			  >
+					 <div
+	class="height-full border-left background-color-body-medium"
+	id="ask-learn-flyout"
+></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout padding-xs padding-sm-desktop has-default-focus border-top"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">en-us</span></a
+		>
+	 <div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>Your Privacy Choices</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-haspopup="true"
+				aria-expanded="false"
+				data-bi-name="theme"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-sun"></span></span>
+				<span>Theme</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu" role="none">
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="light"
+							tabindex="-1"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> Light </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="dark"
+							tabindex="-1"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> Dark </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="high-contrast"
+							tabindex="-1"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> High contrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI Disclaimer</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Previous Versions</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Blog</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Contribute</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?linkid=2259814"
+			data-bi-name="consumer-health-privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Consumer Health Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Terms of Use</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Trademarks</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2026</li>
+			</ul>
+		</footer>
+	</footer>
+			<noscript><img src="https://learn.microsoft.com/akam/13/pixel_17d11f5a?a=dD01ZjVhZTYzZWNlZjVjOTFhZDA5YzdlOWI3MTU2MGQ4ZTAxMjllYjNmJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript></body>
+		</html>

@@ -1,0 +1,167 @@
+Fix Wi-Fi connection issues in Windows
+If you're unable to access email, browse the web, or stream music, it's likely you're not connected to your network and can't access the Internet. Fortunately, most connectivity issues can be resolved with simple troubleshooting steps. In this guide, we'll explore a range of solutions to help you fix Wi-Fi problems in Windows, providing clear and detailed instructions for effective troubleshooting.
+
+Fix Wi-Fi connection issues in Windows > Run the Network troubleshooter
+If you are using a Windows 11 device, start by running the automated Network and Internet troubleshooter in the Get Help app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to General troubleshooting steps.
+
+Fix Wi-Fi connection issues in Windows > Understand Wi-Fi icons
+Wi-Fi Connected You’re connected to Wi-Fi and the Internet. You should be in good shape. If you see this icon but you’re still having connectivity issues, the problem might be with a specific app or website or a firewall blocking your Internet connection. Note: If you see the signal bar moving up and down, it means your device is in the process of connecting to the Wi-Fi network. Once it stops moving and displays a connection level, you're connected. VPN Connected You're connected to a recognized virtual private network (VPN). To learn more, see Connect to a VPN in Windows. No Internet Your device doesn't have an Internet connection. For Wi-Fi, this can appear for one or more reasons.
+
+Fix Wi-Fi connection issues in Windows > Run the Network troubleshooter
+Start by running the automated Network troubleshooter in the Settings app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to General troubleshooting steps.
+- Select Start > Settings > Network and Internet.
+- Select Status from the left-hand menu.
+- Scroll down and select Network troubleshooter.
+- A new window titled Troubleshoot Problems will open. Follow the on-screen instructions to complete the process.
+
+Fix Wi-Fi connection issues in Windows > Understand Wi-Fi icons
+Wi-Fi Connected You’re connected to Wi-Fi and the Internet. You should be in good shape. If you see this icon but you’re still having connectivity issues, the problem might be with a specific app or website or a firewall blocking your Internet connection. Note: If you see the signal bar moving up and down, it means your device is in the process of connecting to the Wi-Fi network. Once it stops moving and displays a connection level, you're connected. No Internet Your device doesn't have an Internet connection. For Wi-Fi, this can appear for one or more reasons.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting
+Please try the following general troubleshooting steps to help solve the Wi-Fi problem.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 1. Check your network connection status
+- Select the Network, Sound, or Battery icons () on the right side of the taskbar.
+- Make sure that Wi-Fi is turned on.
+- Check if your network name shows Connected below it. If it displays a status other than Connected, select a Wi-Fi network you recognize from the list of available networks. Then, click on the network and attempt to connect.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 2. Check Airplane Mode
+- Go to Settings > Network & Internet > Airplane mode.
+- Ensure Airplane mode is turned off.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 3. Forget and reconnect to the Wi-Fi Network
+- In the Settings app on your Windows device
+select Network & internet > Wi-Fi, then select Manage known networks.
+- Select your Wi-Fi network and click Forget.
+- Reconnect to the network by selecting it and entering the password.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 4. Restart your modem and wireless router
+This helps create a new connection to your Internet service provider (ISP). When you do this, everyone that is connected to your Wi-Fi network will be temporarily disconnected. The steps you take to restart your modem and router can vary, but here are the general steps.
+If you have a cable modem/Wi-Fi router combo device, you only need to follow the steps for the single device.
+- Unplug the power cable for the router from the power source.
+- Unplug the power cable for the modem from the power source. Some modems have a backup battery. If you unplug the modem and lights stay on, remove the battery from the modem.
+- Wait at least 30 seconds or so.
+- If you had to remove the battery from the modem, put it back in. Plug the modem back into the power source. The lights on the modem will blink. Wait for them to stop blinking.
+- Plug your router back into the power source.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 4. Restart your modem and wireless router
+- Wait a few minutes for the modem and router to fully power on. You can usually tell when they’re ready by looking at the status lights on the two devices.
+- On your PC, try to connect again.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 5. Adjust Wi-Fi channel and frequency
+Try connecting to a network on a different frequency band. Many consumer Wi-Fi routers broadcast at two different network frequency bands: 2.4 GHz and 5 GHz. These will appear as separate networks in the list of available Wi-Fi networks. If your list of available Wi-Fi networks includes both a 2.4 GHz network and a 5 GHz network, try connecting to the other network. To learn more, check out Wi-Fi and your home layout.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 6. Try to connect to the same network on a different device
+On another laptop or phone, try to connect to the same network. If you can connect, the source of the problem is likely due to your device.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 7. Run network commands
+Try running these network commands to manually reset the TCP/IP stack, release and renew the IP address, and flush and reset the DNS client resolver cache:
+- Select Search on the taskbar, and type command prompt. The Command Prompt button will appear. To the right of it, select Run as administrator > Yes.
+- At the command prompt, run the following commands in the listed order, and then check to see if that fixes your connection problem: Type netsh winsock reset and select Enter⁠.⁠ Type netsh int ip reset and select Enter. Type ipconfig /release and select Enter. Type ipconfig /renew and select Enter. Type ipconfig /flushdns and select Enter.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 8. Uninstall the network adapter driver and restart
+If the previous steps didn’t work, try to uninstall the network adapter driver, and then restart your computer. Windows will automatically install the latest driver. Consider this approach if your network connection stopped working properly after a recent update.
+Before uninstalling, make sure you have drivers available as a backup. Visit the PC manufacturer’s website and download the latest network adapter driver from there. If your PC can't connect to the Internet, you'll need to download a driver on a different PC and save it to a USB flash drive so you can install the driver on your PC. You’ll need to know the PC manufacturer and model name or number.
+- Select Search on the taskbar, type device manager, and then select Device Manager from the list of results.
+- Expand Network adapters, and locate the network adapter for your device.
+- Select the network adapter, press and hold (or right-click), and then select Uninstall device > check the Attempt to remove the driver for this device check box > Uninstall.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 8. Uninstall the network adapter driver and restart
+- After uninstalling the driver, select Start > Power > Restart.
+After your PC restarts, Windows will automatically look for and install the network adapter driver. Check to see if that fixes your connection problem. If Windows doesn't automatically install a driver, try to install the backup driver you saved before uninstalling.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 9. Use the ping test to check if there's a problem with Wi-Fi router connection
+Check to see if there is a problem with the connection to your Wi-Fi router. Do this by using a ping test.
+- In the search box on the taskbar, type command prompt. The Command Prompt button will appear. To the right of it, select Run as administrator > Yes.
+- At the command prompt, type ipconfig, and then select Enter. Look for the name of your Wi-Fi network within the results, and then find the IP address listed next to Default gateway for that Wi-Fi network. Write down that address if you need to. For example: 192.168.1.1
+- At the prompt, type ping <DefaultGateway> and then select Enter. For example, type ping 192.168.1.1 and select Enter. The results should be something like this:
+- Reply from 192.168.1.1: bytes=32 time=5ms TTL=64
+- Reply from 192.168.1.1: bytes=32 time=5ms TTL=64
+- Reply from 192.168.1.1: bytes=32 time=5ms TTL=64
+- Reply from 192.168.1.1: bytes=32 time=5ms TTL=64
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 9. Use the ping test to check if there's a problem with Wi-Fi router connection
+- Ping statistics for 192.168.1.1: Packets: Sent = 4, Received = 4, Lost = 0 (0% loss), Approximate round trip times in milli-seconds: Minimum = 4ms, Maximum = 5ms, Average = 4ms
+If you see results like this and are getting a reply, then you have a connection to your Wi-Fi router, so there might be a problem with your modem or ISP. Contact your ISP or check online on another device (if you can) to see if there's a service outage.
+If the results of the ping test indicate that you are not getting a reply from the router, try connecting your PC directly to your modem by using an Ethernet cable (if you can). If you can connect to the Internet using an Ethernet cable, it confirms the connection problem is due to the Wi-Fi router. Make sure you've installed the latest firmware and see the documentation for your router.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 10. Disable power saving for Wi-Fi adapter
+- Open Device Manager and expand Network adapters.
+- Right-click your Wi-Fi adapter and choose Properties.
+- Navigate to the Power Management tab.
+- Uncheck Allow the computer to turn off this device to save power.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 11. Check for Windows updates
+Select Start > Settings > Windows Update > Check for updates. Download and install any new updates.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 12. Restart your PC
+Many updates require you to restart your device. Save your work and close all open applications. Then, select Start > Power, and select Restart.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 13. Use network reset
+Using network reset should be the last step you try. Consider using it if the steps above don’t help to get you connected.
+This can help solve connection problems you might have after upgrading from Windows 10 to Windows 11. It can also help to fix the problem where you can connect to the Internet but can't connect to shared network drives. Network reset removes any network adapters you have installed and the settings for them. After your PC restarts, any network adapters are reinstalled, and the settings for them are set to the defaults.
+- Select the Start button, then enter settings. Select Settings > Network & internet On Windows 11, select Advanced network settings > Network reset. On Windows 10, select Status > Network reset.
+- On the Network reset screen, select Reset now > Yes to confirm.
+- Wait for your PC to restart and see if that fixes the problem.
+
+Fix Wi-Fi connection issues in Windows > General troubleshooting > Step 13. Use network reset
+- After using network reset, you might need to reinstall and set up other networking software you might be using, such as VPN client software or virtual switches from Hyper‑V (if you're using that or other network virtualization software).
+- Network reset might set each one of your known network connections to a public network profile. In a public network profile, your PC is not discoverable to other PCs and devices on the network, which can help make your PC more secure. To use a private network profile, see Essential network settings and tasks.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems
+Below, you will find the most common Wi-Fi problems users have experienced and the steps to troubleshoot them.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > Connected to Internet but very slow speed
+- Check Signal Strength: Ensure the device is close to the router and free of obstructions.
+- Disable Background Apps: Open Task Manager ( Ctrl + Shift + Esc). End processes consuming high network bandwidth.
+- Test Router Performance: Connect another device to the Wi-Fi. If the issue persists, the router may require maintenance or replacement.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > Wi-Fi option is missing
+If the Wi-Fi toggle option is missing or not visible in settings, follow the below troubleshooting steps.
+- Check Hardware Switch: Some laptops have a physical Wi-Fi switch; ensure it is turned on.
+- Enable Wi-Fi Adapter: Open Device Manager and expand Network adapters. Right-click your Wi-Fi adapter and select Enable device.
+- Restart WLAN Service: Press Win + R, type services.msc, and press Enter. Find WLAN AutoConfig, right-click, and select Restart.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > Wi-Fi connection is dropping frequently
+If the Wi-Fi connection drops frequently, disrupting work or streaming, follow the below steps.
+- Check Power Settings Go to Control Panel > Hardware and Sound > Power Options. Select your plan and click Change plan settings. Click Change advanced power settings and expand Wireless Adapter Settings. Set Power Saving Mode to Maximum Performance.
+- Adjust Router Channel: Access your router’s admin page (refer to its manual) and change the wireless channel to reduce interference.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > You're connected to Wi-Fi, but no Internet connection is detected (also known as limited connectivity)
+Your Windows PC is connected to your local network but isn’t connected to the Internet. If you select the No Internet connection icon, the words No Internet will be displayed under the Wi-Fi network you're connected to. You can probably see other PCs and devices on your local network, but you can’t do things that require Internet access, like surf the web, use email, or stream music and video.
+To determine if your PC has limited connectivity with no Internet connection, Windows sends a small HTTP request to a server on the Internet. If it doesn’t get any information back from the server, then this icon will appear.
+If the device connects to Wi-Fi, but Internet access is unavailable, follow the below troubleshooting steps.
+- Turn off Wi-Fi and turn it on again and reconnect to your wireless network.
+- Renew IP Configuration Open Command Prompt as Administrator. Type ipconfig /release and press Enter. Type ipconfig /renew and press Enter.
+- Flush DNS Cache Open Command Prompt as Administrator. Type ipconfig /flushdns and press Enter.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > You're connected to Wi-Fi, but no Internet connection is detected (also known as limited connectivity)
+- Check for Proxy Settings Go to Settings > Network & Internet > Proxy. Turn off any manual proxy settings.
+- Check your IP address Find your IP address and make sure it's not something like this —169.254.x.x. If your IP address looks like this, it means that Windows couldn’t get an IP address from your router. If you’re not using static IP addresses on your network, then check to make sure DHCP is enabled on your router. Check the documentation for your router to find out how to do this. If this fixes your Wi-Fi problem, the No connection icon will change to Wi-Fi connected in a few seconds.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > You're connected to Wi-Fi, but no Internet connection is detected (also known as limited connectivity)
+- Check your DNS server. Verify that you have a DNS server listed and that you can ping it. To ping the DNS server: Open Command Prompt as Administrator. Type ipconfig /all | findstr /c:"DNS Servers" and press Enter. Note the DNS Server IP address. At the command prompt, type ping [DNS server address]. If you have a valid IP address but can’t ping your DNS server, you can change your DNS server to a different address and then try to ping the new address. There are many free public DNS servers. To find them, go to the web and search for public DNS servers. To learn how to change your DNS server in Windows, see Change TCP/IP settings.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > Wi-Fi authentication problem
+If you're unable to connect to Wi-Fi due to incorrect password errors despite entering the correct credentials, follow the below troubleshooting steps.
+- Verify Password: Ensure the password is correct and matches the router's configuration.
+- Reset Router: Reboot the router or restore its factory settings.
+- Update Router Firmware: Refer to the router’s manual for steps to update its firmware.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > Your wireless network adapter is recognized, but no Wi-Fi networks are found and you’re not connected to Wi-Fi
+If you see the No Internet connection icon when you’re in range of Wi-Fi networks, it could mean one of the following:
+- The physical Wi-Fi switch on your laptop or tablet is turned off. Make sure it’s turned on.
+- Wi-Fi is turned off in Wi-Fi settings. Open Settings, then select Network & internet. Make sure Wi-Fi is turned on.
+- Your adapter doesn’t support the frequency that your network is broadcasting on. For example, your adapter might only support the 2.4 GHz frequency band, but your network is using the 5 GHz band. Check the documentation for your router to find out what frequency it’s using. To learn more about the differences between 2.4 GHz networks and 5 GHz networks, check out the section Wi-Fi and your home layout.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > Your wireless network adapter is recognized, but no Wi-Fi networks are found and you’re not connected to Wi-Fi
+- Your adapter supports your network frequency, but the wireless network adapter driver is filtering it out. While it’s not common, this has been known to happen. Make sure your wireless network adapter allows the same network frequency as your wireless network by doing the following: Select Search on the taskbar, enter Device Manager, and then select Device Manager from the list of results. In Device Manager, select Network adapters > the wireless network adapter name. Press and hold (or right-click) your wireless network adapter, then select Properties. Select the Advanced tab, look for a Wireless Mode or Band setting, and make sure it allows your network frequency.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > No network adapters are detected or enabled
+If this is the case, here are some things you can try:
+- In the wireless network report, find your wireless adapter in the Network Adapters section, and then check to see if a Problem number is listed there. If listed, the number will correspond to the Device Manager error code that tells you why the driver didn’t load.
+- Verify that you have the latest driver by running Windows Update, and check the Driver Version and Driver Date to see if they match the latest driver versions listed on your device manufacturer’s website. To find the driver date and version, in Device Manager, expand Network adapters, press and hold (or right-click) your wireless network adapter, select Properties, and then select the Driver tab.
+- Make sure that the wireless network adapter isn’t disabled in Device Manager. To do this, in Device Manager, expand Network adapters, press and hold (or right-click) your wireless network adapter, and then select Enable device.
+
+Fix Wi-Fi connection issues in Windows > Most common Wi-Fi problems > No network adapters are detected or enabled
+- If your wireless network adapter isn’t listed in Device Manager, then Windows doesn’t detect it. In this case, you might have to manually install the driver. Check your device manufacturer’s website for a driver that works in Windows.

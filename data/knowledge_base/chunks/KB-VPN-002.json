@@ -1,0 +1,194 @@
+[
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-001",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Summary",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary"
+    ],
+    "content": "This article explains how to create and connect to a VPN in Windows 11 to help secure your internet connection at work or on public networks.\nWhether it's for work or personal use, you can connect to a virtual private network (VPN) on your Windows device. A VPN connection can help provide a more secure connection and access to your company's network and the internet, for example, when you’re working from a coffee shop or similar public place.\nOpen VPN settings\nThis feature is not available in Windows 11 SE. Learn more.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-002",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "Before you can connect to a VPN, you must have a VPN profile on your device. You can either create a VPN profile on your own or set up a work account to get a VPN profile from your company.\nBefore you start:\n- If it’s for work, look for VPN settings or a VPN app on your company’s intranet site while you’re at work, or contact your company's support person.\n- If it’s for a VPN service you subscribe to for personal use, visit the Microsoft Store to see if there’s an app for that service, or go to the VPN service’s website to see if the VPN connection settings to use are listed there.\nOnce you have your work or personal VPN settings ready:\n- In the Settings app on your Windows device select Network & internet > VPN > Add VPN.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-003",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "- Under Add a VPN connection, do the following: For VPN provider, choose Windows (built-in). In the Connection name box, enter a name you'll recognize (for example, My Personal VPN). This is the VPN connection name you'll look for when connecting. In the Server name or address box, enter the address for the VPN server. For VPN type, choose the type of VPN connection you want to create. You’ll need to know which kind of VPN connection your company or VPN service uses. For Type of sign-in info, choose the type of sign-in info (or credentials) to use. This might be a username and password, one-time password, certificate, or a smart card if you’re connecting to a VPN for work. Enter your username and password in the respective boxes (if required).\n- Select Save.\nIf you need to edit the VPN connection info or specify additional settings, such as proxy settings:",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-004",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "- From the VPN settings page, select the VPN connection you want to edit, select Advanced options, then select Edit next to the details you want to update. Once you've made the updates needed select either Save or Apply.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-005",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Connect to a VPN",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Connect to a VPN"
+    ],
+    "content": "When you have a VPN profile, you’re ready to connect.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-006",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Connect to a VPN quickly from your taskbar:",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Connect to a VPN",
+      "Connect to a VPN quickly from your taskbar:"
+    ],
+    "content": "- On your taskbar, select the Network, Volume, Battery icon > VPN.\n- If you have one VPN configured, you can turn it on and off by toggling the left side of the VPN quick setting, marked with a (1), below.\n- If there are multiple VPNs configured, you will need to select one to connect to. Select Manage VPN connections (marked with a (2) in the image), select the one you want from the list of connections, and then select Connect.\n- If prompted, enter your username and password or other sign in info.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-007",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Connect to a VPN from the Windows Settings page:",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Connect to a VPN",
+      "Connect to a VPN from the Windows Settings page:"
+    ],
+    "content": "- In the Settings app on your Windows device select Network & internet > VPN.\n- Next to the VPN connection you want to use, select Connect.\n- If prompted, enter your username and password or other sign in info.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-008",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Verify VPN connection",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Verify VPN connection"
+    ],
+    "content": "- On the VPN settings page, the VPN connection name will display Connected underneath it.\n- On the taskbar, a blue shield will display when you're connected to a recognized VPN.\nSupport for Windows 10 has ended on October 14, 2025\n- After October 14, 2025, Microsoft will no longer provide free software updates from Windows Update, technical assistance, or security fixes for Windows 10. Your PC will still work, but we recommend moving to Windows 11.\n- Learn more",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-009",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Summary",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary"
+    ],
+    "content": "This article explains how to create and connect to a VPN in Windows 10 for secure access to work or personal networks.\nWhether it's for work or personal use, you can connect to a virtual private network (VPN) on your Windows device. A VPN connection can help provide a more secure connection and access to your company's network and the internet, for example, when you’re working from a coffee shop or similar public place.\nOpen VPN settings",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-010",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "Before you can connect to a VPN, you must have a VPN profile on your device. You can either create a VPN profile on your own or set up a work account to get a VPN profile from your company.\nBefore you start:\n- If it’s for work, look for VPN settings or a VPN app on your company’s intranet site while you’re at work, or contact your company's support person.\n- If it’s for a VPN service you subscribe to for personal use, visit the Microsoft Store to see if there’s an app for that service, then go to the VPN service’s website to see if the VPN connection settings to use are listed there.\n- Select the Start button, then select Settings > Network & Internet > VPN > Add a VPN connection.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-011",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "- In Add a VPN connection, do the following: For VPN provider, choose Windows (built-in). In the Connection name box, enter a name you'll recognize (for example, My Personal VPN). This is the VPN connection name you'll look for when connecting. In the Server name or address box, enter the address for the VPN server. For VPN type, choose the type of VPN connection you want to create. You’ll need to know which kind of VPN connection your company or VPN service uses. For Type of sign-in info, choose the type of sign-in info (or credentials) to use. This might be a username and password, one-time password, certificate, or a smart card if you’re connecting to a VPN for work. Enter your username and password in the respective boxes (if required).\n- Select Save.\nIf you need to edit the VPN connection info or specify additional settings, such as proxy settings, choose the VPN connection and then select Advanced options.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-012",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Connect to a VPN",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Connect to a VPN"
+    ],
+    "content": "When you have a VPN profile, you’re ready to connect.\n- On the far right of the taskbar, select the Network icon (either or).\n- Select the VPN connection you want to use, then do either of the following depending on what happens when you select the VPN connection: If the Connect button displays under the VPN connection, select Connect. If the VPN section in Settings opens, select the VPN connection there, then select Connect.\n- If you're prompted, enter your username and password or other sign-in info.\nWhen connected, the VPN connection name will display Connected underneath it. To see if you’re connected to the VPN while you’re doing things on your PC, select the Network icon (either or) on the far right of the taskbar, then see if the VPN connection says Connected.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  }
+]

@@ -1,0 +1,21 @@
+subset,method,n,Hit@1,Hit@3,MRR@10
+all,BM25 only,36,0.389,0.611,0.51
+all,Dense only,36,0.417,0.639,0.537
+all,Hybrid (RRF),36,0.5,0.639,0.592
+all,Hybrid + category,36,0.5,0.694,0.604
+english,BM25 only,18,0.5,0.667,0.604
+english,Dense only,18,0.444,0.667,0.556
+english,Hybrid (RRF),18,0.556,0.667,0.652
+english,Hybrid + category,18,0.556,0.722,0.669
+italian,BM25 only,18,0.278,0.556,0.417
+italian,Dense only,18,0.389,0.611,0.518
+italian,Hybrid (RRF),18,0.444,0.611,0.531
+italian,Hybrid + category,18,0.444,0.667,0.54
+specific,BM25 only,30,0.467,0.7,0.588
+specific,Dense only,30,0.5,0.767,0.631
+specific,Hybrid (RRF),30,0.6,0.733,0.68
+specific,Hybrid + category,30,0.6,0.833,0.703
+vague,BM25 only,6,0.0,0.167,0.122
+vague,Dense only,6,0.0,0.0,0.069
+vague,Hybrid (RRF),6,0.0,0.167,0.149
+vague,Hybrid + category,6,0.0,0.0,0.11

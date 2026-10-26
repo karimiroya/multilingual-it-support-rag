@@ -1,0 +1,241 @@
+[
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-001",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "I can't send or receive messages in Outlook",
+    "heading_path": [
+      "I can't send or receive messages in Outlook"
+    ],
+    "content": "Are you using Outlook for Mac? Visit I can't send or receive messages in Outlook for Mac for help.\nIf you have messages piling up in your Outlook outbox or people you're sending messages to aren't receiving them, try the following methods to fix the issue.\n- New Outlook\n- Classic Outlook\nIf your Microsoft cloud storage is full, you cannot send or receive email. Go to your mailbox storage to check what's taking up space. Learn more about recent changes.\nWe've presented the methods in order of quickest to most in-depth. For details around general troubleshooting, visit Troubleshooting Outlook issues for more information.\nWe recommend trying the following solutions in the order listed.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-002",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Make sure you are connected to the Internet",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Make sure you are connected to the Internet"
+    ],
+    "content": "- Open a browser, such as Microsoft Edge or Google Chrome.\n- Try entering one of the following websites in the address bar: http:⁠//www.microsoft.com http:⁠//www.bing.com\n- If you can't reach either of those two websites, go to Fix network connection issues in Windows.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-003",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Check if you are experiencing sync issues",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Check if you are experiencing sync issues"
+    ],
+    "content": "If you are having sync issues, you can force a manual sync by selecting the Sync button via the View tab on the Ribbon. A status message appears at the bottom of the message list while Outlook is syncing. For more information, go to Sync to manually check for new mail and to send messages in Outlook.\nThird party email accounts such as Gmail, Yahoo, iCloud, or Generic POP and IMAP, do not have the same capability to manually Sync using the button.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-004",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Do your messages contain large attachments?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Do your messages contain large attachments?"
+    ],
+    "content": "Some email providers (such as your ISP or even Gmail) won't let you send messages larger than a certain size. Adding pictures and large attachments to your message can prevent you from sending that message (and any messages sent after the large message).\nGo to your Outbox and then open the stuck email messages. Start with the oldest message first. If that message has an attachment that's larger than 20MB, delete the attachment and either attach a smaller file or attach a link to the attachment. For more information, go to Reduce attachment size to send large files with Outlook or Exchange Online limits.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-005",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Have you changed your password recently?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Have you changed your password recently?"
+    ],
+    "content": "If you've changed your password on the website for your email account, you'll need to change it in new Outlook as well.\n- Select the email account name.\n- A pop up will appear prompting you to sign in. Select Continue.\n- Follow the prompts and enter the new password to sign in.\nGo to Reset a forgotten Microsoft account password for more information.\nIf you know you’re using the correct password for your email account, and you get a message such as: Please create an app password for Outlook on your email provider's site.\n- Go to your email provider to get the app password. Your email provider will provide instructions for how to generate an app password to use in email applications such as Outlook in place of your regular password.\n- After you get the app password from your provider, copy it, and then paste it when prompted for your account password in Outlook.\nFor more information, visit Add an email account to Outlook for Windows.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-006",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Have you changed your password recently?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Have you changed your password recently?"
+    ],
+    "content": "We've presented the methods in order of quickest to most in-depth. For details around general troubleshooting, visit Troubleshooting Outlook issues for more information.\nWe recommend trying the following solutions in the order listed.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-007",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Is classic Outlook disconnected? Check the bottom of your Outlook window",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Is classic Outlook disconnected? Check the bottom of your Outlook window"
+    ],
+    "content": "On the Outlook status bar, if you get Disconnected, Working Offline, or Trying to connect…, then Outlook can't reach the email server to send your mail.\nTo fix this problem, on the ribbon, select the Send/Receive tab, then, in the Preferences group, select Work Offline to toggle between offline mode and online mode. You might need to open the message and send it again or choose Send/Receive.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-008",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Make sure you're connected to the Internet",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Make sure you're connected to the Internet"
+    ],
+    "content": "If you lose your connection to the internet, classic Outlook won't be able to send your messages.\n- Open a browser, such as Microsoft Edge or Google Chrome.\n- Try entering one of the following websites in the address bar: http:⁠//www.microsoft.com http:⁠//www.bing.com\n- If you can't reach either of those two websites, go to Fix network connection issues in Windows.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-009",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Do your messages contain large attachments?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Do your messages contain large attachments?"
+    ],
+    "content": "Some email providers (such as your ISP or even Gmail) won't let you send messages larger than a certain size. Adding pictures and large attachments to your message can prevent you from sending that message (and any messages sent after the large message).\nGo to your Outbox and then open the stuck email messages. Start with the oldest message first. If that message has an attachment that's larger than 20MB, delete the attachment and either attach a smaller file or attach a link to the attachment. For more information, go to Reduce attachment size to send large files with Outlook.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-010",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Have you changed your password recently?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Have you changed your password recently?"
+    ],
+    "content": "If you've changed your password on the website for your email account, you'll need to change it in classic Outlook, too. Go to Reset a forgotten Microsoft account password for more information.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-011",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Contact your antivirus software's help desk",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Contact your antivirus software's help desk"
+    ],
+    "content": "Some antivirus programs perform email scanning. If a virus is found, your antivirus software might prevent you from sending or receiving further email until you get rid of the virus.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-012",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Repair your classic Outlook program",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Repair your classic Outlook program"
+    ],
+    "content": "Occasionally, the Outlook program might need to be repaired. Repairing is a simple process but might take as long as half an hour to complete. For more information, go to Repair an Office application.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-013",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Repair your classic Outlook profile",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Repair your classic Outlook profile"
+    ],
+    "content": "A profile is a group of settings that controls how Outlook works. It includes a listing of your accounts, autocomplete information, and your name and initials. To repair your Outlook profile or create a new one, go to Fix your Outlook email connection by repairing your profile.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-014",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Start classic Outlook in safe mode",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Start classic Outlook in safe mode"
+    ],
+    "content": "Sometimes, an Outlook add-in will crash and prevent your email messages from sending. To disable all add-ins, you can start Outlook in safe mode. If you can send email while Outlook is in safe mode, creating a new Outlook email profile should allow you to send email again.\nTo start Outlook in safe mode, press the Windows key on your keyboard. In the search box, type outlook.exe /safe, then press Enter.\nFor more information on creating a new email profile, go to Create an Outlook profile.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-015",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Run the Inbox Repair Tool",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Run the Inbox Repair Tool"
+    ],
+    "content": "For many types of email accounts, classic Outlook stores your messages in a Personal Folders File (.pst file). You can repair this file by running the Inbox Repair Tool. This repair should take approximately fifteen minutes. For more information, go to Repair your Outlook personal folders file (.pst).",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-016",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Error list",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Error list"
+    ],
+    "content": "The methods provided in this article can be used to troubleshoot the error messages listed in the following table.\nError messages or error codes No connection could be made because the target machine actively refused it. The server could not be found. (Account:account name, POPserver:'mail', Error Number: 0x800ccc0d). Task 'server name - Sending and Receiving' reported error (0x800ccc0f): 'The connection to the server was interrupted. If this problem continues, contact the server administrator or Internet service provider (ISP). The server responded:? K'. Task 'SMTP server name - Sending and Receiving' reported error (0x80042109): 'Outlook is unable to connect to your outgoing (SMTP) e-mail server. If you continue to receive this message, contact the server administrator or Internet service provider (ISP).' The operation timed out waiting for a response from the receiving (POP) server 0x8004210a. Error codes: 0x80042108; 0x800ccc0e; 0x800ccc67; 0x80040900; 0x80040119; 0x80040600. Error code: 0x8004210b",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  }
+]

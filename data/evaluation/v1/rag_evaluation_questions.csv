@@ -1,0 +1,11 @@
+question_id,topic,language,question,expected_document
+DNS_english,DNS,english,"I can access websites using their IP addresses, but not by typing their names.",KB-DNS-001
+DNS_italian,DNS,italian,"Riesco ad accedere ai siti usando l'indirizzo IP, ma non digitando il loro nome.",KB-DNS-001
+DHCP_english,DHCP,english,"My laptop connects to the office network, but it doesn't receive a valid network address.",KB-DHCP-001
+DHCP_italian,DHCP,italian,"Il mio portatile si collega alla rete aziendale, ma non riceve un indirizzo di rete valido.",KB-DHCP-001
+VPN_english,VPN,english,I work from home and cannot establish a secure connection to the company network.,KB-VPN-001
+VPN_italian,VPN,italian,Lavoro da casa e non riesco a stabilire una connessione sicura alla rete aziendale.,KB-VPN-001
+Wi-Fi_english,Wi-Fi,english,My company laptop keeps rejecting my credentials when I try to join the office wireless network.,KB-WIFI-001
+Wi-Fi_italian,Wi-Fi,italian,Il portatile aziendale continua a rifiutare le mie credenziali quando provo a collegarmi alla rete wireless dell'ufficio.,KB-WIFI-001
+Email_english,Email,english,My colleagues say they never receive the messages I send from my work account.,KB-EMAIL-001
+Email_italian,Email,italian,I miei colleghi dicono che non ricevono mai i messaggi che invio dal mio account di lavoro.,KB-EMAIL-001

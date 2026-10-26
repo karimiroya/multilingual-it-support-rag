@@ -1,0 +1,43 @@
+question_id,pair_id,language,type,expected_category,question,relevant_chunks
+wifi_password_en,wifi_password,english,specific,Wireless,My laptop says the Wi-Fi password is wrong even though I'm typing the correct one.,KB-WIFI-002-031
+wifi_password_it,wifi_password,italian,specific,Wireless,Il portatile dice che la password del Wi-Fi è sbagliata anche se la scrivo correttamente.,KB-WIFI-002-031
+wifi_missing_en,wifi_missing,english,specific,Wireless,The Wi-Fi option has disappeared from my laptop settings.,KB-WIFI-002-026
+wifi_missing_it,wifi_missing,italian,specific,Wireless,L'opzione Wi-Fi è sparita dalle impostazioni del mio portatile.,KB-WIFI-002-026
+wifi_no_internet_en,wifi_no_internet,english,specific,Wireless,I'm connected to the office Wi-Fi but I have no internet access.,KB-WIFI-002-028;KB-WIFI-002-029;KB-WIFI-002-030
+wifi_no_internet_it,wifi_no_internet,italian,specific,Wireless,Sono connesso al Wi-Fi dell'ufficio ma non ho accesso a internet.,KB-WIFI-002-028;KB-WIFI-002-029;KB-WIFI-002-030
+wifi_dropping_en,wifi_dropping,english,specific,Wireless,My Wi-Fi connection keeps dropping every few minutes.,KB-WIFI-002-027
+wifi_dropping_it,wifi_dropping,italian,specific,Wireless,La connessione Wi-Fi continua a cadere ogni pochi minuti.,KB-WIFI-002-027
+wifi_vague_en,wifi_vague,english,vague,Wireless,The company Wi-Fi is not working.,KB-WIFI-002-002;KB-WIFI-002-004;KB-WIFI-002-007;KB-WIFI-002-008;KB-WIFI-002-009;KB-WIFI-002-021;KB-WIFI-002-022;KB-WIFI-002-023
+wifi_vague_it,wifi_vague,italian,vague,Wireless,La connessione Wi-Fi aziendale non funziona.,KB-WIFI-002-002;KB-WIFI-002-004;KB-WIFI-002-007;KB-WIFI-002-008;KB-WIFI-002-009;KB-WIFI-002-021;KB-WIFI-002-022;KB-WIFI-002-023
+wifi_8021x_en,wifi_8021x,english,specific,Wireless,802.1X authentication fails on the corporate wireless network. Which logs should IT check?,KB-WIFI-001-006;KB-WIFI-001-007;KB-WIFI-001-010
+wifi_8021x_it,wifi_8021x,italian,specific,Wireless,L'autenticazione 802.1X fallisce sulla rete wireless aziendale. Quali log deve controllare l'IT?,KB-WIFI-001-006;KB-WIFI-001-007;KB-WIFI-001-010
+vpn_error_800_en,vpn_error_800,english,specific,VPN,My VPN connection fails with error 800.,KB-VPN-001-010;KB-VPN-001-011;KB-VPN-001-012
+vpn_error_800_it,vpn_error_800,italian,specific,VPN,La connessione VPN non funziona e mostra l'errore 800.,KB-VPN-001-010;KB-VPN-001-011;KB-VPN-001-012
+vpn_error_809_en,vpn_error_809,english,specific,VPN,I get VPN error 809: the connection to the VPN server cannot be established.,KB-VPN-001-013;KB-VPN-001-014;KB-VPN-001-015
+vpn_error_809_it,vpn_error_809,italian,specific,VPN,Ricevo l'errore VPN 809: non è possibile stabilire la connessione con il server VPN.,KB-VPN-001-013;KB-VPN-001-014;KB-VPN-001-015
+vpn_how_to_connect_en,vpn_how_to_connect,english,specific,VPN,How do I connect to the company VPN from my Windows laptop?,KB-VPN-002-002;KB-VPN-002-006;KB-VPN-002-007;KB-VPN-002-010;KB-VPN-002-012
+vpn_how_to_connect_it,vpn_how_to_connect,italian,specific,VPN,Come mi collego alla VPN aziendale dal mio portatile Windows?,KB-VPN-002-002;KB-VPN-002-006;KB-VPN-002-007;KB-VPN-002-010;KB-VPN-002-012
+vpn_vague_en,vpn_vague,english,vague,VPN,The VPN doesn't work when I work from home.,KB-VPN-001-002;KB-VPN-001-003;KB-VPN-002-008
+vpn_vague_it,vpn_vague,italian,vague,VPN,La VPN non funziona quando lavoro da casa.,KB-VPN-001-002;KB-VPN-001-003;KB-VPN-002-008
+dns_names_en,dns_names,english,specific,DNS,"I can open websites using their IP address, but not by typing their name.",KB-DNS-001-002;KB-DNS-001-003;KB-DNS-001-004;KB-DNS-001-008;KB-NETWORK-001-009
+dns_names_it,dns_names,italian,specific,DNS,"Riesco ad aprire i siti usando l'indirizzo IP, ma non digitando il loro nome.",KB-DNS-001-002;KB-DNS-001-003;KB-DNS-001-004;KB-DNS-001-008;KB-NETWORK-001-009
+dns_nslookup_en,dns_nslookup,english,specific,DNS,How can I test whether the DNS server is answering queries?,KB-DNS-001-004;KB-DNS-001-006
+dns_nslookup_it,dns_nslookup,italian,specific,DNS,Come posso verificare se il server DNS risponde alle richieste?,KB-DNS-001-004;KB-DNS-001-006
+dhcp_no_ip_en,dhcp_no_ip,english,specific,DHCP,My laptop does not get a valid IP address on the office network.,KB-DHCP-001-002;KB-DHCP-001-005;KB-NETWORK-001-009
+dhcp_no_ip_it,dhcp_no_ip,italian,specific,DHCP,Il mio portatile non riceve un indirizzo IP valido sulla rete dell'ufficio.,KB-DHCP-001-002;KB-DHCP-001-005;KB-NETWORK-001-009
+ethernet_cable_en,ethernet_cable,english,specific,,"The network cable is plugged in, but my PC shows no network connection.",KB-NETWORK-001-004;KB-NETWORK-001-007;KB-NETWORK-001-016
+ethernet_cable_it,ethernet_cable,italian,specific,,"Il cavo di rete è collegato, ma il PC non mostra nessuna connessione di rete.",KB-NETWORK-001-004;KB-NETWORK-001-007;KB-NETWORK-001-016
+email_outbox_en,email_outbox,english,specific,Email,My emails stay in the Outbox and Outlook doesn't send them.,KB-EMAIL-002-002;KB-EMAIL-002-004;KB-EMAIL-002-007;KB-EMAIL-002-008;KB-EMAIL-002-009
+email_outbox_it,email_outbox,italian,specific,Email,Le mie email restano nella Posta in uscita e Outlook non le invia.,KB-EMAIL-002-002;KB-EMAIL-002-004;KB-EMAIL-002-007;KB-EMAIL-002-008;KB-EMAIL-002-009
+email_password_en,email_password,english,specific,Email,I changed my password and now Outlook doesn't receive new emails.,KB-EMAIL-002-005;KB-EMAIL-002-010
+email_password_it,email_password,italian,specific,Email,Ho cambiato la password e ora Outlook non riceve più nuove email.,KB-EMAIL-002-005;KB-EMAIL-002-010
+email_not_received_en,email_not_received,english,specific,Email,My colleagues say they never receive the messages I send from my work account.,KB-EMAIL-001-002;KB-EMAIL-001-003;KB-EMAIL-001-008
+email_not_received_it,email_not_received,italian,specific,Email,I miei colleghi dicono che non ricevono mai i messaggi che invio dal mio account di lavoro.,KB-EMAIL-001-002;KB-EMAIL-001-003;KB-EMAIL-001-008
+email_vague_en,email_vague,english,vague,Email,My email is not working.,KB-EMAIL-002-002;KB-EMAIL-002-007;KB-EMAIL-002-008;KB-EMAIL-003-003
+email_vague_it,email_vague,italian,vague,Email,La mia email non funziona.,KB-EMAIL-002-002;KB-EMAIL-002-007;KB-EMAIL-002-008;KB-EMAIL-003-003
+oos_keyboard_en,oos_keyboard,english,out_of_scope,,Some keys on my keyboard don't type anything.,
+oos_keyboard_it,oos_keyboard,italian,out_of_scope,,Alcuni tasti della mia tastiera non scrivono niente.,
+oos_printer_en,oos_printer,english,out_of_scope,,The printer on the second floor doesn't print my documents.,
+oos_printer_it,oos_printer,italian,out_of_scope,,La stampante al secondo piano non stampa i miei documenti.,
+oos_monitor_en,oos_monitor,english,out_of_scope,,My monitor stays black after I turn on the computer.,
+oos_monitor_it,oos_monitor,italian,out_of_scope,,Il monitor resta nero dopo che accendo il computer.,

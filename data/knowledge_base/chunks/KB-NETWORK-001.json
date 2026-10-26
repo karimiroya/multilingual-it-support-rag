@@ -1,0 +1,302 @@
+[
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-001",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Summary",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "Summary"
+    ],
+    "content": "A wired Ethernet connection lets you get a fast internet connection—plug one end of the Ethernet cable into your router at home, then plug the other end into the Ethernet port on your Windows PC. If your PC doesn’t have an Ethernet port but you want to try this option, you might consider getting a USB to Ethernet adapter.\nIf you’re using an Ethernet connection and can’t connect to the internet, there are a few things you can try to try to fix the problem and get connected.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-002",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Run the Network troubleshooter",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "Run the Network troubleshooter"
+    ],
+    "content": "If you are using a Windows 11 device, start by running the automated Network and Internet troubleshooter in the Get Help app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to troubleshooting steps.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-003",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "On your home router",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your home router"
+    ],
+    "content": "Try these things first to help you fix or narrow down the connection problem.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-004",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Check the Ethernet cable and connection",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your home router",
+      "Check the Ethernet cable and connection"
+    ],
+    "content": "Make sure the Ethernet cable is securely plugged into the Ethernet port on both your router and Windows PC. On your router, make sure the Ethernet cable is plugged into the correct Ethernet port— not the Internet port that’s used to connect your modem and router.\nIf one Ethernet cable doesn’t work and you have another one nearby, try the other Ethernet cable to see if that works. If it does, it might be a problem with the first cable.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-005",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Restart your modem and wireless router",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your home router",
+      "Restart your modem and wireless router"
+    ],
+    "content": "This helps create a new connection to your internet service provider (ISP). When you do this, everyone that is connected to your Wi-Fi network will be temporarily disconnected. The steps you take to restart your modem and router can vary, but here are the general steps.\nIf you have a cable modem/Wi-Fi router combo device, you only need to follow the steps for the single device.\n- Unplug the power cable for the router from the power source.\n- Unplug the power cable for the modem from the power source. Some modems have a backup battery. If you unplug the modem and lights stay on, remove the battery from the modem.\n- Wait at least 30 seconds or so. If you had to remove the battery from the modem, put it back in.\n- Plug the modem back into the power source. The lights on the modem will blink. Wait for them to stop blinking.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-006",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Restart your modem and wireless router",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your home router",
+      "Restart your modem and wireless router"
+    ],
+    "content": "- Plug your router back into the power source. Wait a few minutes for the modem and router to fully power on. You can usually tell when they’re ready by looking at the status lights on the two devices.\n- On your PC, try to connect again using the Ethernet connection.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-007",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Check the network status",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Check the network status"
+    ],
+    "content": "Open Settings > Network & internet. Check your Ethernet connection status at the top of the screen.\n- It should display Connected underneath the network connection name.\nIf there’s an error, such as one that says Action needed, select Ethernet to view your Ethernet connection settings.\nIf one Ethernet cable doesn’t work and you have another one nearby, try the other Ethernet cable to see if that works. If it does, it might be a problem with the first cable.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-008",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Connect to Wi-Fi instead",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Connect to Wi-Fi instead"
+    ],
+    "content": "If your router is a Wi-Fi router, try to connect to Wi-Fi and see if you can get connected. This can do two things—help you get an internet connection and help you narrow down the source of the problem. For more info, see Connect to a Wi-Fi network in Windows.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-009",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Run network commands",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Run network commands"
+    ],
+    "content": "Try running these network commands to manually reset the TCP/IP stack, release and renew the IP address, and flush and reset the DNS client resolver cache:\n- Select Search on the taskbar, type Command prompt. The Command Prompt button will appear. To the right of it, select Run as administrator > Yes.\n- At the command prompt, run the following commands in the listed order, and then check to see if that fixes your connection problem: Type netsh winsock reset and select Enter. Type netsh int ip reset and select Enter. Type ipconfig /release and select Enter. Type ipconfig /renew and select Enter. Type ipconfig /flushdns and select Enter.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-010",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Uninstall the Ethernet network adapter driver",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Uninstall the Ethernet network adapter driver"
+    ],
+    "content": "If the previous steps didn’t work, try to uninstall the network adapter driver, and then restart your computer. Windows will automatically install the latest driver. Consider this approach if your network connection stopped working properly after a recent update.\nBefore uninstalling, make sure you have drivers available as a backup. Visit the PC manufacturer’s website and download the latest network adapter driver from there. If your PC can't connect to the internet, you'll need to download a driver on a different PC and save it to a USB flash drive so you can install the driver on your PC. You’ll need to know the PC manufacturer and model name or number.\n- Select Search on the taskbar, type Device Manager, and then select Device Manager from the list of results.\n- Expand Network adapters and locate the Ethernet network adapter for your device.\n- Select the network adapter, press and hold (or right-click), and then select Uninstall device > the Attempt to remove the driver for this device check box > Uninstall.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-011",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Uninstall the Ethernet network adapter driver",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Uninstall the Ethernet network adapter driver"
+    ],
+    "content": "- After uninstalling the driver, select the Start button > Power > Restart.\nAfter your PC restarts, Windows will automatically look for and install the network adapter driver. Check to see if that fixes your connection problem. If Windows doesn't automatically install a driver, try to install the backup driver you saved before uninstalling.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-012",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Use network reset",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Use network reset"
+    ],
+    "content": "Using network reset should be the last step you try. Consider using it if the steps above don’t help to get you connected.\nThis can help solve connection problems you might have after upgrading from Windows 10 to Windows 11. It can also help to fix the problem where you can connect to the internet but can't connect to shared network drives. Network reset removes any network adapters you have installed and the settings for them. After your PC restarts, any network adapters are reinstalled, and the settings for them are set to the defaults.\n- Select the Start button, then enter settings. Select Settings > Network & internet. Select Advanced network settings > Network reset.\n- On the Network reset screen, select Reset now > Yes to confirm.\n- Wait for your PC to restart and see if that fixes the problem.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-013",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Use network reset",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Use network reset"
+    ],
+    "content": "- After using network reset, you might need to reinstall and set up other networking software you might be using, such as VPN client software or virtual switches from Hyper‑V (if you're using that or other network virtualization software).\n- Network reset might set each one of your known network connections to a public network profile. In a public network profile, your PC is not discoverable to other PCs and devices on the network, which can help make your PC more secure. To use a private network profile, see Essential network settings and tasks.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-014",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Try to connect to the same network on a different device",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On another PC",
+      "Try to connect to the same network on a different device"
+    ],
+    "content": "If you have another Windows PC in your home and a USB to Ethernet adapter, try to connect using that PC. If you can connect, the source of the problem is likely due to your first PC. If you can't connect to the Ethernet network on either PC, it might be a problem with your router, internet service provider, or USB to Ethernet adapter.\nSupport for Windows 10 has ended on October 14, 2025\n- After October 14, 2025, Microsoft will no longer provide free software updates from Windows Update, technical assistance, or security fixes for Windows 10. Your PC will still work, but we recommend moving to Windows 11.\n- Learn more",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-015",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Run the Network troubleshooter",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "Run the Network troubleshooter"
+    ],
+    "content": "Start by running the automated Network troubleshooter in the Settings app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to troubleshooting steps.\n- Select Start > Settings > Network and Internet.\n- Select Status from the left-hand menu.\n- Scroll down and select Network troubleshooter.\n- A new window titled Troubleshoot Problems will open. Follow the on-screen instructions to complete the process.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-016",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Check the network status",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Check the network status"
+    ],
+    "content": "Open Settings > Network & internet. Check your Ethernet connection status at the top of the screen.\n- It should display You're connected to the Internet underneath the network connection.\nIf there’s an error, such as one that says Action needed, select Ethernet to view your Ethernet connection settings.\nIf one Ethernet cable doesn’t work and you have another one nearby, try the other Ethernet cable to see if that works. If it does, it might be a problem with the first cable.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-017",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Use network reset",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Use network reset"
+    ],
+    "content": "Using network reset should be the last step you try. Consider using it if the steps above don’t help to get you connected.\nThis can help solve connection problems you might have after upgrading from Windows 10 to Windows 11. It can also help to fix the problem where you can connect to the internet but can't connect to shared network drives. Network reset removes any network adapters you have installed and the settings for them. After your PC restarts, any network adapters are reinstalled, and the settings for them are set to the defaults.\n- Select the Start button, then enter settings. Select Settings > Network & internet Select Status > Network reset.\n- On the Network reset screen, select Reset now > Yes to confirm.\n- Wait for your PC to restart and see if that fixes the problem.\n- After using network reset, you might need to reinstall and set up other networking software you might be using, such as VPN client software or virtual switches from Hyper‑V (if you're using that or other network virtualization software).",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-018",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Use network reset",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Use network reset"
+    ],
+    "content": "- Network reset might set each one of your known network connections to a public network profile. In a public network profile, your PC is not discoverable to other PCs and devices on the network, which can help make your PC more secure. To use a private network profile, see Essential network settings and tasks.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-019",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Try to connect to the same network on a different device",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On another PC",
+      "Try to connect to the same network on a different device"
+    ],
+    "content": "If you have another Windows PC in your home and a USB to Ethernet adapter, try to connect using that PC. If you can connect, the source of the problem is likely due to your first PC. If you can't connect to the Ethernet network on either PC, it might be a problem with your router, internet service provider, or USB to Ethernet adapter.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  }
+]

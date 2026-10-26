@@ -1,0 +1,819 @@
+question_id,language,type,question,predicted_category,confidence,retrieved_chunks,relevant_in_top3,refused,answer,has_all_sections,n_steps,steps_with_citation,invalid_citations,language_ok,asks_question,response_time_s,correct_manual,grounded_manual,notes
+wifi_password_en,english,specific,My laptop says the Wi-Fi password is wrong even though I'm typing the correct one.,Wireless,0.7685,KB-WIFI-002-031;KB-WIFI-002-032;KB-WIFI-002-026,True,False,"**PROBLEM:**
+
+My laptop says the Wi-Fi password is wrong even though I'm typing the correct one.
+
+**POSSIBLE CAUSE:**
+
+The entered password might be incorrect or there could be an issue with the router's configuration [Source 1].
+
+**RECOMMENDED STEPS:**
+
+1. Double-check that you are entering the exact password, including capitalization and special characters if any [Source 1].  
+2. Verify the correct Wi-Fi network is selected in your list of available networks before typing the password [Source 1].
+3. Reset the router to its factory settings or update its firmware as per the manual instructions provided by the manufacturer [Source 1].
+4. Ensure that no other devices are experiencing similar issues, which might indicate a broader problem with the network configuration [Source 1].
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support for further assistance.
+
+**SOURCES:**
+
+[Source 1]",True,4,4/4,,True,False,6.59,,,
+wifi_password_it,italian,specific,Il portatile dice che la password del Wi-Fi è sbagliata anche se la scrivo correttamente.,Wireless,0.7752,KB-WIFI-002-031;KB-WIFI-002-026;KB-WIFI-002-032,True,False,"**PROBLEMA:**
+
+Il portatile dice che la password del Wi-Fi è sbagliata anche se la scrivo correttamente.
+
+**POSSIBILE CAUSA:**
+
+Può essere un problema di autenticazione [Source 1].
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Verifica la password inserita e assicurati che sia esattamente quella del router [Source 1].  
+2. Riavvia il路由器无法正常工作，可能是由于驱动程序问题或硬件故障。请尝试以下步骤解决问题。
+3. 如果上述步骤不能解决您的问题，请联系IT支持以获取进一步帮助。
+
+**SE IL PROBLEMA PERSISTE:**
+
+Potrebbe essere necessario controllare la compatibilità del hardware o rivolgersi a un professionista per una diagnosi più approfondita [Source 1].
+
+**FONTI:**
+
+- [Source 1] Documento KB-WIFI-002 - Soluzioni ai problemi di connessione Wi-Fi in Windows",True,3,1/3,,True,False,8.21,,,
+wifi_missing_en,english,specific,The Wi-Fi option has disappeared from my laptop settings.,Wireless,0.795,KB-WIFI-002-026;KB-WIFI-002-032;KB-WIFI-002-033,True,False,"**PROBLEM:**
+
+The Wi-Fi option has disappeared from my laptop settings.
+
+**POSSIBLE CAUSE:**
+
+Either the physical Wi-Fi switch on your laptop is turned off or the Wi-Fi adapter needs to be enabled in Device Manager. [Source 1]
+
+**RECOMMENDED STEPS:**
+
+1. Check if there's a physical Wi-Fi switch on your laptop and ensure it is turned on. [Source 1]
+2. Open Device Manager, expand Network adapters, right-click your Wi-Fi adapter, and select Enable device to make sure the Wi-Fi adapter is active. [Source 1]
+3. Restart the WLAN AutoConfig service by pressing Win + R, typing services.msc, finding WLAN AutoConfig in the list, right-clicking it, and selecting Restart. [Source 1]
+4. Verify that your network settings are configured to show available networks; go to Settings > Network & internet and ensure Wi-Fi is turned on. [Source 2]
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support for further assistance.
+
+**SOURCES:**
+
+[Source 1], [Source 2]",True,4,4/4,,True,False,9.0,,,
+wifi_missing_it,italian,specific,L'opzione Wi-Fi è sparita dalle impostazioni del mio portatile.,Wireless,0.7785,KB-WIFI-002-026;KB-WIFI-002-032;KB-WIFI-002-009,True,False,"**PROBLEMA:**
+
+L'opzione Wi-Fi è sparita dalle impostazioni del mio portatile.
+
+**POSSIBILE CAUSA:**
+
+Il physical switch di Wi-Fi sul laptop potrebbe essere spento [Source 1].
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Controlla il physical switch di Wi-Fi, se presente; assicurati che sia acceso [Source 1].  
+2. Apri Device Manager e espandi Network adapters. Clicca destro sul tuo adapter Wi-Fi e seleziona Enable device per attivarlo [Source 1].
+3. Riavvia il servizio WLAN AutoConfig: premi Win + R, digita services.msc e invia. Trova WLAN AutoConfig, clicca destro e seleziona Restart [Source 1].
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contatta IT support.
+
+**FONTI:**
+
+[Source 1]",True,3,3/3,,True,False,7.79,,,
+wifi_no_internet_en,english,specific,I'm connected to the office Wi-Fi but I have no internet access.,Wireless,0.7861,KB-WIFI-002-028;KB-WIFI-002-029;KB-WIFI-002-032,True,False,"**PROBLEM:**
+
+I'm connected to the office Wi-Fi but I have no internet access.
+
+**POSSIBLE CAUSE:**
+
+The device might not be properly configured for Internet access or there could be issues with proxy settings [Source 2].
+
+**RECOMMENDED STEPS:**
+
+1. Turn off and then turn on your Wi-Fi connection, and reconnect to the network [Source 1].  
+2. Open Command Prompt as Administrator, type `ipconfig /release`, press Enter, wait a few seconds, then type `ipconfig /renew` and press Enter [Source 1].
+3. Flush DNS cache by opening Command Prompt as Administrator again, typing `ipconfig /flushdns` and pressing Enter [Source 1].  
+4. Check for any manual proxy settings in Settings > Network & Internet > Proxy; turn them off if present [Source 2].
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support to check further network configurations or router settings.
+
+**SOURCES:**
+
+[Source 1], [Source 2]",True,4,4/4,,True,False,9.12,,,
+wifi_no_internet_it,italian,specific,Sono connesso al Wi-Fi dell'ufficio ma non ho accesso a internet.,Wireless,0.7863,KB-WIFI-002-028;KB-WIFI-002-029;KB-WIFI-002-032,True,False,"**PROBLEMA:**
+
+Sono connesso al Wi-Fi dell'ufficio ma non ho accesso a Internet.
+
+**POSSIBILE CAUSA:**
+
+Il dispositivo è connetto alla rete Wi-Fi, ma non ha accesso all'Internet. [Source 1]
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Spegni e riaccendi il Wi-Fi del tuo computer e riconnetti al network wireless. [Source 1]
+2. Rinnova la configurazione IP eseguendo i seguenti comandi nel Prompt dei comandi come amministratore: ipconfig /release, poi ipconfig /renew. [Source 1]
+3. Pulisci il cache DNS digitando lo stesso prompt dei comandi come amministratore e inserendo: ipconfig /flushdns. [Source 1]
+4. Verifica le impostazioni proxy nel menu Impostazioni > Rete & Internet, spegni qualsiasi configurazione manuale di proxy. [Source 2]
+
+**SE IL PROBLEMA PERSISTE:**
+
+Controlla se il tuo适配器支持的频段与网络广播的频率一致。[Source 3]",False,4,4/4,,True,False,10.88,,,
+wifi_dropping_en,english,specific,My Wi-Fi connection keeps dropping every few minutes.,Wireless,0.7993,KB-WIFI-002-027;KB-WIFI-002-011;KB-WIFI-002-032,True,False,"**PROBLEM:**
+
+My Wi-Fi connection keeps dropping every few minutes.
+
+**POSSIBLE CAUSE:**
+
+The power saving mode on your wireless adapter is set to a low performance setting, or there might be interference from other devices using the same channel [Source 1].
+
+**RECOMMENDED STEPS:**
+
+1. Go to Control Panel > Hardware and Sound > Power Options. Select your plan and click Change plan settings. Click Change advanced power settings and expand Wireless Adapter Settings. Set Power Saving Mode to Maximum Performance [Source 1].  
+2. Access your router’s admin page (refer to its manual) and change the wireless channel to reduce interference from other devices on the same network [Source 1].
+
+**IF THE PROBLEM CONTINUES:**
+
+Check if any recent software updates or changes might have affected your Wi-Fi settings, as this could also be a cause for frequent disconnections.
+
+**SOURCES:**
+
+[Source 1]",True,2,2/2,,True,False,7.82,,,
+wifi_dropping_it,italian,specific,La connessione Wi-Fi continua a cadere ogni pochi minuti.,Wireless,0.792,KB-WIFI-002-012;KB-WIFI-002-032;KB-WIFI-002-027,True,False,"**PROBLEMA:**
+
+La connessione Wi-Fi continua a cadere ogni pochi minuti.
+
+**POSSIBILE CAUSA:**
+
+Il router potrebbe essere configurato su un canale che c'è molta interferenza, oppure l'adattatore wireless del dispositivo non supporta la frequenza utilizzata dal network. [Source 2]
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Verifica se il tuo adattatore Wi-Fi supporta sia la banda 2.4 GHz che quella 5 GHz e prova a connetterti alla rete su una diversa frequenza, se disponibile.
+2. Accedi al sito di amministrazione del router per modificare il canale wireless in uno meno congestionato. [Source 3]
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contatta l'assistenza IT per ulteriori supporto.
+
+**FONTI:**
+
+KB-WIFI-002 - Fix Wi-Fi connection issues in Windows, sezione ""Most common Wi-Fi problems"" e ""Fix Wi-Fi connection issues in Windows > General troubleshooting"".",True,2,1/2,,True,False,9.74,,,
+wifi_vague_en,english,vague,The company Wi-Fi is not working.,Wireless,0.7827,KB-WIFI-002-032;KB-WIFI-002-026;KB-WIFI-002-033,False,False,"**PROBLEM:**
+
+The company Wi-Fi is not working.
+
+**POSSIBLE CAUSE:**
+
+- The physical Wi-Fi switch on your laptop or tablet might be turned off. [Source 1]
+- Wi-Fi could be disabled in the settings. Open Settings, then select Network & internet to check if it's enabled. [Source 2]
+
+**RECOMMENDED STEPS:**
+
+1. Ensure that the physical Wi-Fi switch (if present) is turned on.
+2. Check and make sure Wi-Fi is turned on in your device’s settings under Network & internet. 
+3. Verify that your wireless network adapter supports the frequency used by the company's Wi-Fi network; if necessary, adjust the Wireless Mode or Band setting via Device Manager. [Source 1][Source 3]
+4. If no issues are found with steps above and you still cannot connect to Wi-Fi, contact IT support for further assistance.
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support as there may be a server-side issue preventing connection.
+
+**SOURCES:**
+
+[Source 1], [Source 2], [Source 3]",True,4,1/4,,True,False,9.76,,,
+wifi_vague_it,italian,vague,La connessione Wi-Fi aziendale non funziona.,Wireless,0.7815,KB-WIFI-002-032;KB-WIFI-002-026;KB-WIFI-002-031,False,False,"**PROBLEMA:**
+
+La connessione Wi-Fi aziendale non funziona.
+
+**POSSIBILE CAUSA:**
+
+Il physical Wi-Fi switch sul dispositivo è spento o la Wi-Fi è disattivata nelle impostazioni. [Source 1]
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Assicurati che il physical Wi-Fi switch, se presente su tuo laptop o tablet, sia acceso.
+2. Apri le Impostazioni e seleziona Network & internet; assicurati che la Wi-Fi sia attivata.
+3. Controlla l'adapter di rete wireless per verificare che supporti il canale utilizzato dalla tua rete aziendale (ad esempio, 2.4 GHz o 5 GHz). [Source 1]
+
+**SE IL PROBLEMA PERSISTE:**
+
+Verifica la password Wi-Fi e assicurati che sia corretta; se necessario, riavvia il router o ripristina i suoi impostazioni di fabbrica.
+
+**FONTI:**
+
+KB-WIFI-002 - Fix Wi-Fi connection issues in Windows [Source 1].",True,3,1/3,,True,False,10.01,,,
+wifi_8021x_en,english,specific,802.1X authentication fails on the corporate wireless network. Which logs should IT check?,DHCP,0.285,KB-WIFI-001-007;KB-WIFI-001-002;KB-WIFI-001-008,True,False,"**PROBLEM:**
+
+802.1X authentication fails on the corporate wireless network.
+
+**POSSIBLE CAUSE:**
+
+Issues with certificates used for client or server authentication [Source 3].
+
+**RECOMMENDED STEPS:**
+
+1. Check the WLAN-AutoConfig operational log to identify any certificate-related errors on the client side.
+2. Verify if a valid certificate is being used by checking NPS settings and enabling CAPI2 event logs for further analysis.
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support as this may involve third-party devices or software that need specific vendor assistance [Source 2].
+
+**SOURCES:**
+
+- Source 1
+- Source 3",True,2,0/2,,True,False,4.59,,,
+wifi_8021x_it,italian,specific,L'autenticazione 802.1X fallisce sulla rete wireless aziendale. Quali log deve controllare l'IT?,DHCP,0.3181,KB-WIFI-001-002;KB-WIFI-001-008;KB-WIFI-001-001,False,False,"**PROBLEMA:**
+
+L'autenticazione 802.1X fallisce sulla rete wireless aziendale.
+
+**POSSIBILE CAUSA:**
+
+Il problema potrebbe essere legato a un certificato non valido utilizzato per la sua metodologia di autenticazione [Source 2].
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Verifica se il certificato utilizzato è ancora valido e corretto.
+2. Controlla quale certificato viene usato dal server NPS, andando nelle proprietà EAP nel menu snap-in NPS: Politiche > Politiche di rete [Source 2].
+3. Abilita lo strumento CAPI2 per analizzare i log utili alla risoluzione dei problemi legati ai certificati.
+4. Verifica la configurazione della politica di autenticazione 802.1X sul server NPS.
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contatta l'IT support e chiedi ulteriori istruzioni specifiche per il tuo ambiente [Source 1].
+
+**FONTI:**
+
+[Source 2]",True,4,1/4,,True,False,9.95,,,
+vpn_error_800_en,english,specific,My VPN connection fails with error 800.,VPN,0.7971,KB-VPN-001-012;KB-VPN-001-010;KB-VPN-001-011,True,False,"**PROBLEM:**
+
+My VPN connection fails with error 800.
+
+**POSSIBLE CAUSE:**
+
+The issue may be due to incorrect or missing security parameters for IPsec negotiation [Source 2], or the wrong tunnel type is set on my client side [Source 3].
+
+**RECOMMENDED STEPS:**
+
+1. Check if your network uses L2TP or IPsec and ensure that all required security settings are properly configured [Source 2]. 
+2. Verify that both the client and server have correct certificates for IKE, ensuring no UDP ports 500 or 4500 are blocked on the Internet Key Exchange (IKE) side [Source 1].
+3. If using Automatic tunnel type, manually set it to L2TP or IPsec based on your deployment requirements [Source 3]. 
+4. Restart both the client and server services related to Always On VPN if necessary.
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support as further troubleshooting may be required.
+
+**SOURCES:**
+
+[Source 1], [Source 2], [Source 3]",True,4,3/4,,True,False,8.57,,,
+vpn_error_800_it,italian,specific,La connessione VPN non funziona e mostra l'errore 800.,VPN,0.7941,KB-VPN-001-012;KB-VPN-001-010;KB-VPN-001-011,True,False,"**PROBLEMA:**
+
+La connessione VPN non funziona e mostra l'errore 800.
+
+**POSSIBILE CAUSA:**
+
+Il servizio non riesce a stabilire una connessione remota perché i tunnel di VPN falliscono, spesso perché il server di VPN non è raggiungibile [Source 2].
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Controlla se hai specificato un tipo di tunnel per la tua distribuzione e impostalo sul client di VPN in corrispondenza.
+2. Assicurati che i porti IKE su UDP 500 e 4500 non siano bloccati [Source 1].
+3. Verifica che sia configurata la certificazione corretta per IKE sia sul cliente che sulla server di VPN.
+4. Se il tunnel è impostato automaticamente, provare a specificarlo esplicitamente.
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contatta l'assistenza IT se i passaggi sopra non risolvono il problema [Source 1].
+
+**FONTI:**
+
+[Source 1] Documentazione KB-VPN-001 - Troubleshoot Always On VPN
+[Source 2] Documentazione KB-VPN-001 - Troubleshoot Always On VPN",True,4,1/4,,True,False,10.54,,,
+vpn_error_809_en,english,specific,I get VPN error 809: the connection to the VPN server cannot be established.,VPN,0.7896,KB-VPN-001-013;KB-VPN-001-014;KB-VPN-001-015,True,False,"**PROBLEM:**
+
+I get VPN error 809: the connection to the VPN server cannot be established.
+
+**POSSIBLE CAUSE:**
+
+One or more network devices, such as routers or firewalls, may not be configured correctly [Source 1]. The UDP 500 and 4500 ports on these devices might also be blocked [Source 2].
+
+**RECOMMENDED STEPS:**
+
+1. Check if your firewall allows the UDP 500 and 4500 ports through.
+2. Contact IT support to check other network devices between you and the remote server for proper configuration [Sources 1,3].
+
+**IF THE PROBLEM CONTINUES:**
+
+Ensure all necessary firewalls are configured correctly on every device in your path to the VPN server.
+
+**SOURCES:**
+
+[Source 1], [Source 2], [Source 3]",True,2,1/2,,True,False,7.32,,,
+vpn_error_809_it,italian,specific,Ricevo l'errore VPN 809: non è possibile stabilire la connessione con il server VPN.,VPN,0.7835,KB-VPN-001-014;KB-VPN-001-013;KB-VPN-001-015,True,False,"**PROBLEMA:**
+
+Ricevi l'errore VPN 809: non è possibile stabilire la connessione con il server VPN.
+
+**POSSIBILE CAUSA:**
+
+Il problema potrebbe essere dovuto a blocchi nei porti UDP 500 o 4500 su uno dei dispositivi di rete tra il tuo computer e il server remoto, come firewall, NAT o router. [Source 1]
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Contatta l'amministratore della tua azienda per verificare la configurazione corretta del firewall che dovrebbe consentire i porti UDP 500 e 4500.
+2. Assicurati che il NAT o router tra il tuo computer e il server remoto siano configurati in modo da permettere le connessioni VPN. [Source 3]
+3. Verifica la configurazione del firewall su ogni dispositivo di rete tra il tuo computer e il server remoto.
+4. Se i passaggi precedenti non risolvono l'errore, contatta il servizio supporto aziendale per ulteriori istruzioni.
+
+**SE IL PROBLEMA PERSISTE:**
+
+Il problema potrebbe essere dovuto a configurazioni di rete avanzate o specifiche del server remoto che richiedono interventi da parte dell'amministratore. [Source 2]
+
+**FONTI:**
+
+- [Source 1]
+- [Source 3]",True,4,1/4,,True,False,11.82,,,
+vpn_how_to_connect_en,english,specific,How do I connect to the company VPN from my Windows laptop?,VPN,0.7473,KB-VPN-002-001;KB-VPN-002-009;KB-VPN-002-003,False,False,"**PROBLEM:**
+
+How do I connect to the company VPN from my Windows laptop?
+
+**POSSIBLE CAUSE:**
+
+The issue might be due to incorrect server address or credentials [Source 3].
+
+**RECOMMENDED STEPS:**
+
+1. Open Settings and go to Network & Internet > Status >VPN, then click Add a VPN connection [Source 2].
+2. Choose ""Windows (built-in)"" as the provider and enter your company's VPN server name or address in the Server name or address field.
+3. Select the appropriate type of sign-in info required by your company’s network; typically this will be username and password, but it could also require a certificate or smart card [Source 3].
+4. Enter your credentials as prompted.
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support if you are unable to connect using these steps.
+
+**SOURCES:**
+
+[Source 2], [Source 3]",True,4,2/4,,True,False,8.21,,,
+vpn_how_to_connect_it,italian,specific,Come mi collego alla VPN aziendale dal mio portatile Windows?,VPN,0.7746,KB-VPN-002-001;KB-VPN-002-009;KB-VPN-002-007,True,False,"**PROBLEMA:**
+
+Come mi collego alla VPN aziendale dal mio portatile Windows?
+
+**POSSIBILE CAUSA:**
+
+Il dipendente potrebbe non sapere come aprire i settings di rete e connettersi alla VPN.
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Apri il Settings (impostazioni) selezionando l'icona in basso a sinistra del taskbar oppure premendo le tastiere simultaneamente le frecce verso l'alto e verso destra. [Source 3]
+2. Seleziona ""Network & internet"" (rete e internet). [Source 3] 
+3. Nella sezione di destra, seleziona ""VPN"". [Source 3]
+4. Clicca sul nome della tua connessione VPN per collegarti a essa; potresti essere richiesto di inserire le credenziali necessarie. [Source 3]
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contatta l'assistenza IT se non riesci a trovare la vostra connessione aziendale nella lista o hai problemi con i dettagli dell'autenticazione.
+
+**FONTI:**
+
+- https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c [Source 2, Source 3]",True,4,4/4,,True,False,11.83,,,
+vpn_vague_en,english,vague,The VPN doesn't work when I work from home.,VPN,0.8088,KB-VPN-001-028;KB-VPN-002-001;KB-VPN-001-013,False,False,"**PROBLEM:**
+
+The employee's computer cannot connect to the company’s VPN while working from home.
+
+**POSSIBLE CAUSE:**
+
+There might be an issue with the server certificate not having Server Authentication as one of its usage entries [Source 1]. Alternatively, a network device between the local machine and the remote server could block the connection due to misconfiguration [Source 3].
+
+**RECOMMENDED STEPS:**
+
+1. Check if the company's VPN server certificate includes ""Server Authentication"" in its certificate usage entries [Source 1].
+2. Ensure that no firewalls or routers are blocking the necessary ports for the VPN connection between your home network and the office network [Source 3].
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support to check further configurations on both ends.
+
+**SOURCES:**
+
+[Source 1], [Source 3]",True,2,2/2,,True,False,7.05,,,
+vpn_vague_it,italian,vague,La VPN non funziona quando lavoro da casa.,VPN,0.7958,KB-VPN-001-011;KB-VPN-001-012;KB-VPN-001-013,False,False,"**PROBLEMA:**
+
+La VPN non funziona quando lavoro da casa.
+
+**POSSIBILE CAUSA:**
+
+Il tipo di tunnel per la connessione alla VPN potrebbe essere impostato automaticamente [Source 1].
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Verifica se il tipo di tunnel per la tua connessione è correttamente configurato, non automatico [Source 2]. [Source 2]
+2. Assicurati che i porti IKE su UDP 500 e 4500 non siano bloccati sul tuo dispositivo client [Source 2].
+3. Verifica se entrambi il cliente e il server hanno le certificazioni corrette per IKE [Source 2]. 
+4. Se il problema persiste, contatta l'assistenza IT.
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contatta l'assistenza IT support.
+
+**FONTI:**
+
+KB-VPN-001 - Troubleshoot Always On VPN [Sources 1, 2]",True,4,3/4,,True,False,8.55,,,
+dns_names_en,english,specific,"I can open websites using their IP address, but not by typing their name.",IP Address,0.7726,KB-DHCP-001-001;KB-DNS-001-002;KB-DNS-001-008,True,False,"**PROBLEM:**
+
+I can open websites using their IP address, but not by typing their name.
+
+**POSSIBLE CAUSE:**
+
+The DNS client might have an incorrect or incomplete configuration [Source 2].
+
+**RECOMMENDED STEPS:**
+
+1. Open Command Prompt as administrator and run `ipconfig /all` to check the current TCP/IP settings [Source 2].
+2. If no valid IP address is shown, use `ipconfig /renew` to request a new IP address from DHCP server [Source 2].
+3. Check DNS servers listed in the output; ensure they are correct and reachable.
+4. Run `nslookup bing.com` or similar public domain name query test for validation.
+
+**IF THE PROBLEM CONTINUES:**
+
+Clear the DNS cache by running `ipconfig /flushdns`, then retry accessing websites [Source 3].
+
+**SOURCES:**
+
+[Source 2], [Source 3]",True,4,2/4,,True,False,6.76,,,
+dns_names_it,italian,specific,"Riesco ad aprire i siti usando l'indirizzo IP, ma non digitando il loro nome.",IP Address,0.6666,KB-DNS-001-002;KB-DHCP-001-001;KB-DNS-001-003,True,False,"**PROBLEMA:**
+
+Non riesci a navigare ai siti web utilizzando il nome del sito, solo con l'IP.
+
+**POSSIBILE CAUSA:**
+
+Il client potrebbe avere un'impostazione errata delle configurazioni DNS o non essere correttamente collegato alla rete. [Source 1]
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Verifica la configurazione IP del tuo computer utilizzando il comando ipconfig /all e assicurati che sia corretta. Se necessario, rinnova l'indirizzi IP con ipconfig /renew. [Source 1]
+2. Controlla se il client ha un suffisso DNS specifico configurato nel file di proprietà TCP/IP. Assicurati che esso sia appropriatamente impostato per la tua rete. Se necessario, modifica le proprietà del tuo adapter network con i valori corretti. [Source 1]
+3. Prova a pingare il server DNS preferito utilizzando l'IP address: ad esempio, se usi un server DNS di preferenza all’indirizzo 10.0.0.1, esegui questo comando in una finestra Command Prompt:
+   ping 10.0.0.1
+Se il ping non risponde, potrebbe esserci un problema di connessione alla rete o al firewall che blocca l'accesso ai server DNS. [Source 3]
+4. Se i passaggi precedenti falliscono, assicurati che il DHCP sia correttamente configurato per assegnare gli indirizzi IP e le impostazioni DNS alle tue macchine client.
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contatta l'assistenza IT.
+
+**FONTI:**
+
+[Source 1], [Source 3]",True,4,2/4,,True,False,15.16,,,
+dns_nslookup_en,english,specific,How can I test whether the DNS server is answering queries?,DNS,0.5836,KB-DNS-001-006;KB-DNS-001-003;KB-DNS-001-007,True,False,"**PROBLEM:**
+
+How can I test whether the DNS server is answering queries?
+
+**POSSIBLE CAUSE:**
+
+The network connection between the client and the DNS server might be problematic, or there could be issues with specific DNS records [Source 1][Source 3].
+
+**RECOMMENDED STEPS:**
+
+1. Ping the preferred DNS server by its IP address to verify basic connectivity.
+2. Use nslookup commands to test name resolution for a generic domain name.
+3. If step 2 is successful, try testing a failing internal record using nslookup [Source 1][Source 3].
+4. Check if ICMP traffic is allowed through the firewall.
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support as there may be deeper network configuration issues or server-side problems that require administrative access to resolve.
+
+**SOURCES:**
+
+[Source 1], [Source 2], [Source 3]",True,4,1/4,,True,False,6.07,,,
+dns_nslookup_it,italian,specific,Come posso verificare se il server DNS risponde alle richieste?,DNS,0.5773,KB-DNS-001-006;KB-DNS-001-003;KB-DNS-001-007,True,False,"**PROBLEMA:**
+
+Come posso verificare se il server DNS risponde alle richieste?
+
+**POSSIBILE CAUSA:**
+
+Il problema potrebbe essere legato alla connettività tra il client e il server DNS.
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Verifica la connessione al server DNS utilizzando lo strumento ping per inviare pacchetti di test all'indirizzo IP del server DNS preferito [Source 2].
+2. Esegui un comando nslookup con il nome dell'applicazione o servizio che non risolve, ad esempio: `nslookup app1.corp.contoso.com` [Source 3].
+
+**SE IL PROBLEMA PERSISTE:**
+
+Verifica la configurazione della rete e assicurati che l'ICMP sia consentito nel firewall. Se il problema persiste, contatta IT support.
+
+**FONTI:**
+
+KB-DNS-001 - Troubleshooting DNS clients > Check network connection [Source 2], KB-DNS-001 - Troubleshooting DNS clients > DNS query tests > Test the failing record [Source 3].",True,2,2/2,,True,False,9.69,,,
+dhcp_no_ip_en,english,specific,My laptop does not get a valid IP address on the office network.,IP Address,0.7632,KB-DHCP-001-001;KB-DNS-001-002;KB-NETWORK-001-009,True,False,"**PROBLEM:**
+
+My laptop does not get a valid IP address on the office network.
+
+**POSSIBLE CAUSE:**
+
+The issue may be related to DHCP configuration or problems with the client's TCP/IP settings [Source 2].
+
+**RECOMMENDED STEPS:**
+
+1. Open Command Prompt as an administrator and run `ipconfig /all` to check if your laptop has a valid IP address, subnet mask, and default gateway.
+2. If no valid IP is assigned, try running `ipconfig /renew` to request a new IP address from the DHCP server [Source 3].
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support for further assistance with network configuration issues or DHCP service checks.
+
+**SOURCES:**
+
+[Source 1], [Source 2], [Source 3]",True,2,1/2,,True,False,6.09,,,
+dhcp_no_ip_it,italian,specific,Il mio portatile non riceve un indirizzo IP valido sulla rete dell'ufficio.,IP Address,0.6726,KB-DHCP-001-001;KB-DNS-001-002;KB-NETWORK-001-009,True,False,"**PROBLEMA:**
+
+Il suo portatile non riceve un indirizzo IP valido sulla rete dell'ufficio.
+
+**POSSIBILE CAUSA:**
+
+Potrebbe essere una questione di configurazione DHCP o di impostazioni TCP/IP del dispositivo. [Source 2]
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Aprire il prompt dei comandi come amministratore e eseguire lo comando ipconfig /all per verificare le impostazioni IP.
+2. Se non riceve un indirizzo IP, provare a eseguire l'ipconfig /renew per richiedere nuovamente l'indirizzo IP dal server DHCP. [Source 3]
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contattare il supporto IT se le impostazioni TCP/IP non sono corrette o se c’è un problema con la configurazione del DHCP sul server.
+
+**FONTI:**
+
+KB-DHCP-001, KB-NETWORK-001 [Source 2], [Source 3]",True,2,1/2,,True,False,9.44,,,
+ethernet_cable_en,english,specific,"The network cable is plugged in, but my PC shows no network connection.",DHCP,0.3019,KB-NETWORK-001-014;KB-WIFI-002-028;KB-NETWORK-001-004,True,False,"**PROBLEM:**
+
+The network cable is plugged in, but my PC shows no network connection.
+
+**POSSIBLE CAUSE:**
+
+There might be an issue with the Ethernet cable or a problem with your router [Source 3].
+
+**RECOMMENDED STEPS:**
+
+1. Try using another Ethernet cable if available to see if it works [Source 3].  
+2. Check that the Ethernet cable is securely plugged into both the PC and the router, ensuring you are not connecting to the Internet port on the router [Source 3].
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support as there might be a deeper issue with your network setup or router configuration.
+
+**SOURCES:**
+
+[Source 3]",True,2,2/2,,True,False,4.77,,,
+ethernet_cable_it,italian,specific,"Il cavo di rete è collegato, ma il PC non mostra nessuna connessione di rete.",Wireless,0.2358,KB-NETWORK-001-018;KB-NETWORK-001-019;KB-NETWORK-001-014,False,False,"**PROBLEMA:**
+
+Il cavo di rete è collegato, ma il PC non mostra alcuna connessione di rete.
+
+**POSSIBILE CAUSA:**
+
+Potrebbe essere un problema con la configurazione della rete sul tuo computer o potrebbe esserci un problema con l'adapter USB a Ethernet. [Source 2]
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Prova ad avviare una ""reimpostazione del network"" su di lui, poiché questa operazione può ripristinare la configurazione della rete ai valori predefiniti e potrebbe risolvere il problema. [Source 1]
+2. Connetti un altro PC alla stessa rete utilizzando l'adapter USB a Ethernet per verificare se funziona correttamente su questo dispositivo. Se non riesci ad accedere al network, il problema potrebbe essere con la tua connessione o con l'adaptatore stesso. [Source 2]
+3. Controlla le impostazioni di rete del tuo PC e assicurati che sia configurato come ""rete privata"". Questo può rendere più facile identificare se ci sono problemi specifici nella configurazione della tua rete locale. [Source 1]
+4. Se il problema persiste, contatta l'assistenza IT per ulteriori supporto. [Source N]
+
+**SE IL PROBLEMA PERSISTE:**
+
+Verifica le impostazioni di sicurezza del tuo router o assicurati che la connessione WiFi sia abilitata se stai utilizzando un adapter USB a Ethernet.
+
+**FONTI:**
+
+Documentazione Microsoft - KB-NETWORK-001 [Source 1, Source 2]",True,4,4/4,,True,False,14.61,,,
+email_outbox_en,english,specific,My emails stay in the Outbox and Outlook doesn't send them.,Email,0.8399,KB-EMAIL-002-007;KB-EMAIL-002-014;KB-EMAIL-002-001,True,False,"**PROBLEM:**
+
+My emails stay in the Outbox and Outlook doesn't send them.
+
+**POSSIBLE CAUSE:**
+
+Your email storage might be full [Source 3].
+
+**RECOMMENDED STEPS:**
+
+1. Check your mailbox for items taking up space, as Microsoft cloud storage may be full [Source 3].  
+2. If you are using classic Outlook, try toggling between offline and online mode by selecting the Send/Receive tab on the ribbon, then in the Preferences group, select Work Offline to toggle it back [Source 1].
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support as more detailed troubleshooting may be needed.
+
+**SOURCES:**
+
+[Source 3], [Source 1]",True,2,2/2,,True,False,4.64,,,
+email_outbox_it,italian,specific,Le mie email restano nella Posta in uscita e Outlook non le invia.,Email,0.8483,KB-EMAIL-002-014;KB-EMAIL-001-003;KB-EMAIL-002-007,True,False,"**PROBLEMA:**
+
+Le mie email restano nella Posta in uscita e Outlook non le invia.
+
+**POSSIBILE CAUSA:**
+
+Potrebbe esserci un problema con l'invio delle email tramite add-ins di Outlook. [Source 1]
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Avviare Outlook in modalità sicura premendo la tastiera Windows, digitando outlook.exe /safe e poi premendo Invio.
+2. Verificare se le email possono essere inviate mentre Outlook è in modalità sicura.
+3. Se l'email può essere inviata in modalità sicura, creare un nuovo profilo di posta per risolvere il problema. [Source 1]
+4. Controllare lo stato di Outlook nella barra del riquadro: se si trova ""Disconnesso"", ""In modalità offline"" o ""Provo a connettermi..."", selezionare la scheda Invio/Ricezione, quindi nel gruppo Preferenze scegliere Modo Offline per passare al modo online. [Source 3]
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contattare l'assistenza IT.
+
+**FONTI:**
+
+[Source 1] https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd
+[Source 3] https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",True,4,2/4,,True,False,13.5,,,
+email_password_en,english,specific,I changed my password and now Outlook doesn't receive new emails.,Email,0.7403,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-EMAIL-002-006,True,False,"**PROBLEM:**
+
+I can't receive new emails in Outlook after changing my password.
+
+**POSSIBLE CAUSE:**
+
+You may need to update your password in both classic and new versions of Outlook. [Source 1, Source 2].
+
+**RECOMMENDED STEPS:**
+
+1. Open the email account in Outlook and select it if prompted to sign in again. Continue following any pop-ups that appear asking for credentials.
+2. If you know your current password is correct but still receive a message about needing an app password, go to your email provider's site to generate one specifically for use with Outlook. [Source 2].
+3. After obtaining the app password from your email provider, paste it into the account settings in Outlook when prompted.
+4. Test sending and receiving emails again.
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support if you still face issues after following these steps as there might be deeper configuration problems or network-related issues that require further investigation. [Source 3].
+
+**SOURCES:**
+
+[Source 1, Source 2].",True,4,1/4,,True,False,8.36,,,
+email_password_it,italian,specific,Ho cambiato la password e ora Outlook non riceve più nuove email.,Email,0.7471,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-EMAIL-002-006,True,False,"**PROBLEMA:**
+
+Ho cambiato la password e ora Outlook non riceve più nuove email.
+
+**POSSIBILE CAUSA:**
+
+Hai bisogno di aggiornare la tua password in Outlook, sia nel versione classica che nella nuova interfaccia. [Source 1] E [Source 2].
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Accedi a Outlook e seleziona il tuo account email.
+2. Se appare un prompt per l'accesso, segui le istruzioni per continuare con la tua password aggiornata. [Source 2]
+3. Se necessario, vai sul sito del tuo provider di posta elettronica per ottenere una password app per Outlook. Incolla questa password nell'applicazione quando richiesto. [Source 2]
+4. Verifica che le impostazioni dell'account email in Outlook siano corrette. [Source 3]
+
+**SE IL PROBLEMA PERSISTE:**
+
+Contatta l'ST e verifica se ci sono altre configurazioni da aggiornare.
+
+**FONTI:**
+
+KB-EMAIL-002 - I can't send or receive messages in Outlook [Sources 1, 2].",True,4,3/4,,True,False,9.6,,,
+email_not_received_en,english,specific,My colleagues say they never receive the messages I send from my work account.,Email,0.732,KB-EMAIL-002-016;KB-EMAIL-002-010;KB-EMAIL-002-007,False,False,"**PROBLEM:**
+
+My colleagues say they never receive the messages I send from my work account.
+
+**POSSIBLE CAUSE:**
+
+The issue might be related to Outlook not being able to connect to the email server [Source 1].
+
+**RECOMMENDED STEPS:**
+
+1. Check if your connection to the POP and SMTP servers is working properly by verifying error codes in Outlook's task reports [Source 1].  
+2. Ensure that you have entered correct account details, including username and password for both incoming (POP) and outgoing (SMTP) settings [Source 3].
+3. Try sending a test message from within Outlook to see if the issue persists; this can help determine whether it’s an email server or local connection problem.
+4. If your password has been changed recently on the website, update it in classic Outlook as well [Source 2].
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support for further assistance.
+
+**SOURCES:**
+
+[Source 1], [Source 3], [Source 2]",True,4,3/4,,True,False,7.37,,,
+email_not_received_it,italian,specific,I miei colleghi dicono che non ricevono mai i messaggi che invio dal mio account di lavoro.,Email,0.7395,KB-EMAIL-002-016;KB-EMAIL-002-005;KB-EMAIL-002-010,False,False,"**PROBLEMA:**
+
+Non riesco a far arrivare i messaggi ai miei colleghi dall'account di lavoro. [Source 1]
+
+**POSSIBILE CAUSA:**
+
+Potresti aver cambiato la password sul sito dell'email senza modificarla in Outlook, oppure il tuo account potrebbe avere problemi con le connessioni al server del posta in arrivo o in uscita.
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Controlla se hai modificato recentemente la tua password e assicurati che sia aggiornata anche nel client Outlook. [Source 2]
+2. Verifica le impostazioni della connessione al server del posta in arrivo (POP) o al server SMTP, assicurandoti di utilizzare i dettagli corretti per il tuo account lavoro. [Source 1]
+3. Se hai cambiato la password recentemente e non riesci a sincronizzarla con Outlook, segui le istruzioni per aggiungere un nuovo account email in Outlook. [Source 2]
+4. Controlla se il server del posta dell'azienda ha problemi temporanei o se ci sono interruzioni di servizio.
+
+**SE IL PROBLEMA PERSISTE:**
+
+Potrebbe essere necessario contattare l'amministratore IT per ulteriori assistenze, specialmente se si tratta di un problema con il server aziendale. [Source 1]
+
+**FONTI:**
+
+- https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",True,4,3/4,,True,False,14.11,,,
+email_vague_en,english,vague,My email is not working.,Email,0.8409,KB-EMAIL-001-003;KB-EMAIL-002-003;KB-EMAIL-002-011,False,False,"**PROBLEM:**
+
+My email is not working.
+
+**POSSIBLE CAUSE:**
+
+The issue might be related to the user's computer or email app [Source 1].
+
+**RECOMMENDED STEPS:**
+
+1. Sign in to Outlook on the web using your Microsoft 365 account and check if emails are received there [Source 1].  
+2. If you use a third-party email client, try forcing a manual sync by selecting the Sync button via the View tab on the Ribbon [Source 2].
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support as this might be an issue with your antivirus software or network configuration.
+
+**SOURCES:**
+
+[Source 1], [Source 2]",True,2,2/2,,True,False,5.86,,,
+email_vague_it,italian,vague,La mia email non funziona.,Email,0.8418,KB-EMAIL-001-003;KB-EMAIL-003-001;KB-EMAIL-002-005,False,False,"**PROBLEMA:**
+
+La tua email non funziona.
+
+**POSSIBILE CAUSA:**
+
+Potrebbe essere un problema con l'app di posta elettronica installata sul tuo computer o collegate al sito web del servizio Microsoft 365 [Source 1].
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Accedi all'Outlook su internet per verificare se il tuo account email funziona correttamente [Source 1].
+2. Se l'email funziona in Outlook online, potrebbe essere un problema con la tua app di posta elettronica locale; prova a rimuovere e reinstallarla.
+3. Verifica che tu stia usando la password corretta per il tuo account email: se hai cambiato recentemente la password sul sito web del servizio Microsoft 365, assicurati anche di averla modificata in Outlook [Source 3].
+4. Se il problema persiste, contatta l'assistenza IT.
+
+**SE IL PROBLEMA PERSISTE:**
+
+Controlla se hai ricevuto messaggi tramite la versione web dell'email o se esiste un errore specifico durante l'utilizzo di Outlook.
+
+**FONTI:**
+
+[Source 1], [Source 3].",True,4,2/4,,True,False,10.3,,,
+oos_keyboard_en,english,out_of_scope,Some keys on my keyboard don't type anything.,Keyboard,0.6464,,False,True,"This issue looks like a ""Keyboard"" problem, which is not covered by the available documentation. To avoid unreliable instructions, please contact IT support.",False,0,0/0,,True,False,0.0,,,
+oos_keyboard_it,italian,out_of_scope,Alcuni tasti della mia tastiera non scrivono niente.,Keyboard,0.7723,,False,True,"Questo problema sembra riguardare la categoria ""Keyboard"", che non è coperta dalla documentazione disponibile. Per evitare istruzioni non affidabili, contatta il supporto IT.",False,0,0/0,,True,False,0.0,,,
+oos_printer_en,english,out_of_scope,The printer on the second floor doesn't print my documents.,Keyboard,0.3513,KB-EMAIL-001-005;KB-EMAIL-001-012;KB-VPN-001-020,False,False,"**PROBLEM:**
+
+The printer on the second floor doesn't print my documents.
+
+**POSSIBLE CAUSE:**
+
+The intended destination isn't responsive [Source 2].
+
+**RECOMMENDED STEPS:**
+
+1. Check if the printer is turned on and connected to power.
+2. Ensure that you are using the correct network connection for the printer.
+3. Verify your document settings, such as paper size and orientation.
+4. Try printing a test page from another device to rule out connectivity issues [Source 2].
+
+**IF THE PROBLEM CONTINUES:**
+
+Contact IT support if none of these steps resolve the issue.
+
+**SOURCES:**
+
+[Source 2]",True,4,1/4,,True,False,5.48,,,
+oos_printer_it,italian,out_of_scope,La stampante al secondo piano non stampa i miei documenti.,Keyboard,0.3584,KB-EMAIL-002-011;KB-EMAIL-002-012;KB-EMAIL-002-015,False,False,"**PROBLEMA:**
+
+La stampante al secondo piano non stampa i miei documenti.
+
+**POSSIBILE CAUSA:**
+
+Il problema potrebbe essere dovuto a un'interruzione della connessione alla stampante [Source 1].
+
+**PASSAGGI CONSIGLIATI:**
+
+1. Verifica la connessione cavo o Wi-Fi con la stampante al secondo piano [Source 1].  
+2. Riavvia il computer e prova ad inviare nuovamente i documenti [Source 1].  
+3. Controlla se ci sono aggiornamenti software disponibili per l'applicazione di stampa utilizzata [Source 1].
+4. Se il problema persiste, contatta IT support.
+
+**SE IL PROBLEMA PERSISTE:**
+
+Verifica anche la configurazione della stampante sul tuo computer e assicurati che sia corretta.
+
+**FONTI:**
+
+[Source 1]",True,4,3/4,,True,False,7.41,,,
+oos_monitor_en,english,out_of_scope,My monitor stays black after I turn on the computer.,Monitor,0.8224,,False,True,"This issue looks like a ""Monitor"" problem, which is not covered by the available documentation. To avoid unreliable instructions, please contact IT support.",False,0,0/0,,True,False,0.0,,,
+oos_monitor_it,italian,out_of_scope,Il monitor resta nero dopo che accendo il computer.,Monitor,0.8173,,False,True,"Questo problema sembra riguardare la categoria ""Monitor"", che non è coperta dalla documentazione disponibile. Per evitare istruzioni non affidabili, contatta il supporto IT.",False,0,0/0,,True,False,0.0,,,

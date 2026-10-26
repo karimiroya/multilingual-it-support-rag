@@ -1,0 +1,343 @@
+question_id,language,question,generated_answer,retrieved_evidence,answer_relevance,faithfulness,answer_usefulness,evaluation_notes
+DNS_english,english,"I can access websites using their IP addresses, but not by typing their names.","Based on the information provided in the documentation, it seems that the issue might be related to DNS resolution. The employee can try the following steps to troubleshoot this issue:
+
+1. Open a Command Prompt window as an administrator on the client computer.
+2. Run the following command: `ipconfig /all`
+3. Verify that the client has a valid IP address, subnet mask, and default gateway for the network to which it is attached and being used.
+4. Check the DNS servers that are listed in the output, and verify that the IP addresses listed are correct.
+5. Check the connection-specific DNS suffix in the output and verify that it is correct.
+
+If the client does not have a valid TCP/IP configuration, the employee can use one of the following methods:
+- For dynamically configured clients, use the `ipconfig /renew` command to manually force the client to renew its IP address configuration with the DHCP server.
+- For statically configured clients, modify the client TCP/IP properties to use valid configuration settings or complete its DNS configuration for the network.
+
+Additionally, the employee can perform a ping test to ensure that the client can contact a preferred (or alternate) DNS server by its IP address. For example, if the client uses a preferred DNS server of 10.0.0.1, they can run the following command at a command prompt:
+```bash
+ping 10.0.0.1
+```
+If no configured DNS server responds to a direct pinging of its IP address, this indicates that the source of the problem is more likely network connectivity between the client and the DNS servers. In this case, the employee should follow basic TCP/IP network troubleshooting steps to fix the problem. Keep in mind that ICMP traffic must be allowed through the firewall in order for the ping command to work.
+
+If the DNS resolution issue persists, further investigation into network connectivity or DNS server configuration might be necessary.","[Source 1] DHCP troubleshooting guidance
+Devices must be assigned an IP address to be able to operate in a network. You can assign an IP address manually or automatically. The automatic assignment is handled by the Dynamic Host Configuration Protocol (DHCP) service (Microsoft or third-party server). DHCP is a standard protocol that's defined by RFC 1541 (which is superseded by RFC 2131). DHCP enables a server to dynamically distribute IP addressing and configuration information to clients. Usually, the DHCP server provides at least the following basic information to the client:
+IP address
+Subnet mask
+Default gateway
+Other information, such as Domain Name Service (DNS) server addresses and Windows Internet Name Service (WINS) server addresses. The system administrator configures the DHCP server by using the options that are parsed out to the client. For more information, see DHCP Basics .
+
+[Source 2] Check IP configuration
+Open a Command Prompt window as an administrator on the client computer.
+Run the following command: ipconfig /all
+Verify that the client has a valid IP address, subnet mask, and default gateway for the network to which it is attached and being used.
+Check the DNS servers that are listed in the output, and verify that the IP addresses listed are correct.
+Check the connection-specific DNS suffix in the output and verify that it is correct.
+If the client does not have a valid TCP/IP configuration, use one of the following methods:
+For dynamically configured clients, use the ipconfig /renew command to manually force the client to renew its IP address configuration with the DHCP server.
+For statically configured clients, modify the client TCP/IP properties to use valid configuration settings or complete its DNS configuration for the network.
+
+
+[Source 3] Ping test
+Verify that the client can contact a preferred (or alternate) DNS server by pinging the preferred DNS server by its IP address.
+For example, if the client uses a preferred DNS server of 10.0.0.1, run this command at a command prompt:
+ping 10.0.0.1
+If no configured DNS server responds to a direct pinging of its IP address, this indicates that the source of the problem is more likely network connectivity between the client and the DNS servers. If this is the case, follow basic TCP/IP network troubleshooting steps to fix the problem. Keep in mind that ICMP traffic must be allowed through the firewall in order for the ping command to work.
+",2,2,2,Correctly identifies DNS resolution issue. Troubleshooting commands and recommendations are supported by retrieved Microsoft documentation. Could be more concise for nontechnical employees.
+DNS_italian,italian,"Riesco ad accedere ai siti usando l'indirizzo IP, ma non digitando il loro nome.","It seems that you are having trouble accessing websites using their IP addresses instead of their names. This issue could be related to your DNS configuration, as DNS is responsible for translating domain names into IP addresses. Let's check your DNS settings to ensure they are correctly configured.
+
+### Steps to Troubleshoot DNS Configuration:
+
+1. **Open Command Prompt as Administrator**:
+   - Press `Win + X` and select ""Command Prompt (Admin)"" or ""Windows PowerShell (Admin)"".
+   - If you are using Windows 10 or later, you can also use PowerShell with the following command:
+     ```powershell
+     net start dnscache
+     ```
+     Then, run:
+     ```powershell
+     ipconfig /flushdns
+     ```
+
+2. **Check DNS Servers**:
+   - Run the following command in Command Prompt to see the current DNS servers:
+     ```cmd
+     ipconfig /all
+     ```
+   - Verify that the DNS servers listed are correct and functioning properly. If they are not, you may need to update them. You can do this by modifying the DNS settings in the network adapter properties.
+
+3. **Force DNS Recursor to Refresh DNS Cache**:
+   - Run the following command to force the DNS resolver to refresh the DNS cache:
+     ```cmd
+     ipconfig /flushdns
+     ```
+
+4. **Ping Preferred DNS Server**:
+   - Run the following command to ping the preferred DNS server (if you know it):
+     ```cmd
+     ping <preferred DNS server IP>
+     ```
+   - If the ping fails, it indicates that the DNS server is not reachable. You may need to check your network connectivity to the DNS server.
+
+5. **Check for Network Connectivity**:
+   - If the DNS server is reachable, but you still cannot access the websites, it might be a network connectivity issue. In this case, you should follow basic TCP/IP network troubleshooting steps to fix the problem. This includes checking your network connection, firewall settings, and any network policies that might be blocking the DNS traffic.
+
+### Additional Resources:
+- [Source 1]: [Check IP configuration](https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client)
+- [Source 2]: [DHCP troubleshooting guidance](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance)
+- [Source 3]: [Ping test","[Source 1] Check IP configuration
+Open a Command Prompt window as an administrator on the client computer.
+Run the following command: ipconfig /all
+Verify that the client has a valid IP address, subnet mask, and default gateway for the network to which it is attached and being used.
+Check the DNS servers that are listed in the output, and verify that the IP addresses listed are correct.
+Check the connection-specific DNS suffix in the output and verify that it is correct.
+If the client does not have a valid TCP/IP configuration, use one of the following methods:
+For dynamically configured clients, use the ipconfig /renew command to manually force the client to renew its IP address configuration with the DHCP server.
+For statically configured clients, modify the client TCP/IP properties to use valid configuration settings or complete its DNS configuration for the network.
+
+
+[Source 2] DHCP troubleshooting guidance
+Devices must be assigned an IP address to be able to operate in a network. You can assign an IP address manually or automatically. The automatic assignment is handled by the Dynamic Host Configuration Protocol (DHCP) service (Microsoft or third-party server). DHCP is a standard protocol that's defined by RFC 1541 (which is superseded by RFC 2131). DHCP enables a server to dynamically distribute IP addressing and configuration information to clients. Usually, the DHCP server provides at least the following basic information to the client:
+IP address
+Subnet mask
+Default gateway
+Other information, such as Domain Name Service (DNS) server addresses and Windows Internet Name Service (WINS) server addresses. The system administrator configures the DHCP server by using the options that are parsed out to the client. For more information, see DHCP Basics .
+
+[Source 3] Ping test
+Verify that the client can contact a preferred (or alternate) DNS server by pinging the preferred DNS server by its IP address.
+For example, if the client uses a preferred DNS server of 10.0.0.1, run this command at a command prompt:
+ping 10.0.0.1
+If no configured DNS server responds to a direct pinging of its IP address, this indicates that the source of the problem is more likely network connectivity between the client and the DNS servers. If this is the case, follow basic TCP/IP network troubleshooting steps to fix the problem. Keep in mind that ICMP traffic must be allowed through the firewall in order for the ping command to work.
+",,,,
+DHCP_english,english,"My laptop connects to the office network, but it doesn't receive a valid network address.","Based on the information provided in the documentation, it seems that the issue you're experiencing is related to the network configuration and possibly the firewall settings. The documentation does not provide a direct solution for the issue you're facing, but it does suggest looking into network devices and firewall configurations. Here are some practical troubleshooting steps you can take:
+
+1. **Check Network Devices**: Ensure that all network devices, including routers, firewalls, and NAT devices, are configured to allow VPN connections. Contact your administrator or service provider to verify this.
+
+2. **Firewall Configuration**: Verify that the firewalls on the devices between your local machine and the remote server allow the necessary ports (UDP 500 and 4500). If this doesn't resolve the issue, check the firewalls on every device between your local machine and the remote server.
+
+3. **Conditional Access Configuration**: Review the configuration of the RADIUS server (NPS) to ensure it only accepts client certificates that contain the AAD Conditional Access object identifier (OID). This could be relevant if your network uses Microsoft Entra Conditional Access.
+
+4. **User Certificate Store**: Check if the user's Personal Certificate store contains a client authentication certificate that is valid but not from Microsoft Entra ID. Ensure that the <TLSExtensions> section of the VPN profile contains the necessary <EKUName> and <EKUOID> entries for AAD Conditional Access.
+
+If you have specific devices or configurations to check, you can start with these steps. If the issue persists, you might need to consult with your administrator or service provider for further assistance.
+
+[Source 1], [Source 2], [Source 3]","[Source 1] Error 809: can't establish a connection between local machine and VPN server
+In this issue, the remote server doesn't respond, which prevents your local machine and the VPN server from connecting. This could be because one or more network devices, such as routers, firewalls, or the Network Address Translation (NAT) between your computer and the remote server isn't configured to allow VPN connections. Contact your administrator or your service provider to determine which device may be causing the problem.
+
+[Source 2] Solution: check the ports on devices between your local machine and remote server
+To address this issue, you should first contact your administrator or service provider to find out which device is blocked. After that, make sure the firewalls for that device allow the UDP 500 and 4500 ports through. If that doesn't address the issue, check the firewalls on every device between your local machine and the remote server.
+
+[Source 3] Microsoft Entra Conditional Access error cause
+There are a few reasons why this issue can happen:
+The user has a client authentication certificate in their Personal Certificate store that's valid but didn't come from Microsoft Entra ID.
+The VPN profile <TLSExtensions> section is either missing or doesn't contain the <EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID> entries. The <EKUName> and <EKUOID> entries tell the VPN client which certificate to retrieve from the user's certificate store when passing the certificate to the VPN server. Without the <EKUName> and <EKUOID> entries, the VPN client uses whatever valid Client Authentication certificate is in the user's certificate store and authentication succeeds.
+The RADIUS server (NPS) hasn't been configured to only accept client certificates that contain the AAD Conditional Access object identifier (OID).",0,1,0,Retrieval failure: the system retrieved VPN documentation instead of DHCP troubleshooting guidance. The generated answer follows much of the retrieved evidence but recommends irrelevant VPN troubleshooting steps. This demonstrates that source-grounded answers can still be irrelevant when retrieval fails.
+DHCP_italian,italian,"Il mio portatile si collega alla rete aziendale, ma non riceve un indirizzo di rete valido.","Based on the information provided in the documentation, it seems that your portable device is not receiving a valid network address, which could be due to issues with the DHCP service. Here are some troubleshooting steps you can follow:
+
+1. **Check the DHCP Configuration:**
+   - Ensure that the DHCP server is running and configured correctly. You can check the status of the DHCP service by opening the Services applet in the Control Panel and verifying that the DHCP service is running.
+   - Verify that the DHCP server is configured to provide IP addresses to your network devices. You can check this by looking at the DHCP server's configuration settings.
+
+2. **Check the Network Adapter Settings:**
+   - Ensure that your portable device's network adapter is set to obtain an IP address automatically (via DHCP). You can check this by opening the Network and Sharing Center, selecting your network connection, and checking the properties for the network adapter.
+   - If your device is set to obtain an IP address manually, ensure that the IP address, subnet mask, and default gateway are correctly configured.
+
+3. **Check for Network Devices:**
+   - Ensure that no network devices such as routers, firewalls, or NAT devices are configured to block DHCP traffic. If you suspect that these devices are blocking DHCP, you may need to contact your network administrator or service provider to determine which device may be causing the problem.
+
+4. **Restart the DHCP Service:**
+   - Sometimes, restarting the DHCP service can resolve issues with IP address assignment. You can do this by opening the Services applet, finding the DHCP service, and restarting it.
+
+5. **Check for Malware or Security Software:**
+   - Malware or security software can interfere with the DHCP process. Ensure that your device is not running any security software that might be blocking the DHCP process. You can temporarily disable your security software to see if it resolves the issue.
+
+If you have followed these steps and the issue persists, you may need to consult further with your network administrator or IT support team for additional troubleshooting steps.","[Source 1] DHCP troubleshooting guidance
+Devices must be assigned an IP address to be able to operate in a network. You can assign an IP address manually or automatically. The automatic assignment is handled by the Dynamic Host Configuration Protocol (DHCP) service (Microsoft or third-party server). DHCP is a standard protocol that's defined by RFC 1541 (which is superseded by RFC 2131). DHCP enables a server to dynamically distribute IP addressing and configuration information to clients. Usually, the DHCP server provides at least the following basic information to the client:
+IP address
+Subnet mask
+Default gateway
+Other information, such as Domain Name Service (DNS) server addresses and Windows Internet Name Service (WINS) server addresses. The system administrator configures the DHCP server by using the options that are parsed out to the client. For more information, see DHCP Basics .
+
+[Source 2] Error 809: can't establish a connection between local machine and VPN server
+In this issue, the remote server doesn't respond, which prevents your local machine and the VPN server from connecting. This could be because one or more network devices, such as routers, firewalls, or the Network Address Translation (NAT) between your computer and the remote server isn't configured to allow VPN connections. Contact your administrator or your service provider to determine which device may be causing the problem.
+
+[Source 3] Solution: use PowerShell to determine certificate status
+Issuer: CN=corp-DEDC0-CA, DC=corp, DC=deverett, DC=info
+NotBefore: 12/8/2017 8:07 PM
+NotAfter: 12/8/2018 8:07 PM
+Subject: E=winfed@deverett.info, CN=WinFed, OU=Users, OU=Corp, DC=corp, DC=deverett, DC=info
+Certificate Template Name (Certificate Type): User
+Non-root Certificate
+Template: User
+Cert Hash(sha1): a50337ab015d5612b7dc4c1e759d201e74cc2a93
+Key Container = a890fd7fbbfc072f8fe045e680c501cf_5834bfa9-1c4a-44a8-a128-c2267f712336
+Simple container name: te-User-c7bcc4bd-0498-4411-af44-da2257f54387
+Provider = Microsoft Enhanced Cryptographic Provider v1.0
+Encryption test passed
+================ Certificate 1 ================
+Serial Number: 367fbdd7e6e4103dec9b91f93959ac56
+Issuer: CN=Microsoft VPN root CA gen 1
+NotBefore: 12/8/2017 6:24 PM
+NotAfter: 12/8/2017 7:29 PM
+Subject: CN=WinFed@deverett.info
+Non-root Certificate
+Cert Hash(sha1): 37378a1b06dcef1b4d4753f7d21e4f20b18fbfec
+Key Container = 31685cae-af6f-48fb-ac37-845c69b4c097
+Unique container name: bf4097e20d4480b8d6ebc139c9360f02_5834bfa9-1c4a-44a8-a128-c2267f712336
+Provider = Microsoft Software Key Storage Provider
+Private key is NOT exportable
+Encryption test passed Note If a certificate from Issuer CN=Microsoft VPN root CA gen 1 is present in the user's Personal store, but the user gained access by selecting X to close the Oops message, collect CAPI2 event logs to verify the certificate used to authenticate was a valid Client Authentication certificate that wasn't issued from the Microsoft VPN root CA.",,,,
+VPN_english,english,I work from home and cannot establish a secure connection to the company network.,"Based on the information provided in the documentation, it seems that you are encountering an issue where your local machine cannot establish a connection to the company network, which could be related to the error code 809. Here are some troubleshooting steps you can follow:
+
+1. **Check Network Devices Configuration**: Ensure that all network devices such as routers, firewalls, or NATs between your computer and the company network are correctly configured to allow the necessary connections. This includes checking the UDP 500 and 4500 ports, which are commonly used for secure connections.
+
+2. **Contact Your Administrator or Service Provider**: If the network devices are correctly configured, contact your administrator or service provider to determine if there are any issues with the configuration of the network devices or if there are any restrictions on the ports that might be blocking your connection.
+
+3. **Verify Firewall Settings**: Make sure that the firewalls on the devices between your local machine and the company network are configured to allow traffic on the necessary ports (UDP 500 and 4500). If the issue persists, check the firewalls on every device between your local machine and the company network.
+
+By following these steps, you should be able to identify and resolve the issue preventing your local machine from establishing a secure connection to the company network.","[Source 1] Error 809: can't establish a connection between local machine and VPN server
+In this issue, the remote server doesn't respond, which prevents your local machine and the VPN server from connecting. This could be because one or more network devices, such as routers, firewalls, or the Network Address Translation (NAT) between your computer and the remote server isn't configured to allow VPN connections. Contact your administrator or your service provider to determine which device may be causing the problem.
+
+[Source 2] Error 809 cause
+You can encounter this issue when the UDP 500 or 4500 ports on the VPN server or firewall are blocked. Blocking can happen when one of the network devices between your computer and the remote server, such as the firewall, NAT, or routers, aren't configured correctly.
+
+[Source 3] Solution: check the ports on devices between your local machine and remote server
+To address this issue, you should first contact your administrator or service provider to find out which device is blocked. After that, make sure the firewalls for that device allow the UDP 500 and 4500 ports through. If that doesn't address the issue, check the firewalls on every device between your local machine and the remote server.",,,,
+VPN_italian,italian,Lavoro da casa e non riesco a stabilire una connessione sicura alla rete aziendale.,"It seems like you're having trouble establishing a secure connection to your company's network while working from home. Here are some troubleshooting steps based on the information available:
+
+1. **Run a WhatIsMyIP Scan**: Ensure that your workstation isn't externally connected. If your workstation has a public IP address that doesn't belong to you, change the IP to a private one. This can be done through your router's settings.
+
+2. **Check Your Network Connection**: Open the Network and Internet settings in Control Panel, and check the properties for your Always On VPN Profile. Make sure the value in the General tab can publicly resolve through DNS. If not, the Remote Access server or the VPN server might be unable to resolve to an IP address.
+
+3. **Verify Domain Joining**: Since you're working from home, ensure that your workstation is joined to the Active Directory (AD) domain. If you're using domain credentials to sign in to the VPN server, the service should automatically install the certificate in the Trusted Root Certification Authorities store. If you're not in an AD domain or using an alternative certificate chain, you might encounter this issue.
+
+4. **Network Device Configuration**: If you're still facing issues, check your network devices such as routers, firewalls, or NAT between your computer and the remote server. Ensure that these devices are configured to allow VPN connections. Contact your administrator or your service provider to determine which device might be causing the problem.
+
+If you've tried these steps and are still experiencing issues, you might need to consult with your IT support team for further assistance.","[Source 1] General troubleshooting for Always On VPN connection issues
+Always On VPN clients go through several steps before establishing a connection. As a result, there are several places where connections can be blocked, and sometimes it's difficult to figure out where the issue is.
+If you're encountering issues, here are some general steps you can take to figure out what's going on:
+Run a whatismyip scan to make sure your template machine isn't externally connected. If the machine has a public IP address that doesn't belong to you, then you should change the IP to a private one.
+Go to Control Panel > Network and Internet > Network Connections , open the properties for your VPN Profile, and check to make sure the value in the General tab can publicly resolve through DNS. If not, the Remote Access server or VPN server being unable to resolve to an IP address is likely the cause of the issue.
+
+[Source 2] Error 0x800B0109: a certificate chain processed but terminated in a root certificate
+The full error description is, ""A certificate chain processed but terminated in a root certificate that the trust provider doesn't trust.""
+Generally, the VPN client machine is joined to an Active Directory (AD)-based domain. If you use domain credentials to sign in to the VPN server, the service automatically installs the certificate in the Trusted Root Certification Authorities store. You may encounter this issue if the computer isn't joined to an AD domain or you use an alternative certificate chain.
+
+[Source 3] Error 809: can't establish a connection between local machine and VPN server
+In this issue, the remote server doesn't respond, which prevents your local machine and the VPN server from connecting. This could be because one or more network devices, such as routers, firewalls, or the Network Address Translation (NAT) between your computer and the remote server isn't configured to allow VPN connections. Contact your administrator or your service provider to determine which device may be causing the problem.",,,,
+Wi-Fi_english,english,My company laptop keeps rejecting my credentials when I try to join the office wireless network.,"Based on the information provided in the documentation, it seems that the issue you're experiencing could be related to problems with the certificate used for client or server authentication. Here are some practical troubleshooting steps you can try:
+
+1. **Validate the type of EAP method that's used**: According to the documentation, most 802.1X authentication issues are because of problems with the certificate that's used for client or server authentication. Examples include invalid certificate, expiration, chain verification failure, and revocation check failure. 
+
+   - To validate the type of EAP method, you can check the WLAN AutoConfig operational log. You can find this log in Event Viewer (Local)\Applications and Services Logs\Microsoft\Windows\WLAN-AutoConfig/Operational.
+
+2. **Check the WLAN AutoConfig operational log**: The WLAN AutoConfig operational log lists information and error events based on conditions detected by or reported to the WLAN AutoConfig service. This log contains information about the wireless network adapter, the properties of the wireless connection profile, the specified network authentication, and, if connectivity problems occur, the reason for the failure.
+
+   - To access the log, go to Event Viewer (Local)\Applications and Services Logs\Microsoft\Windows\WLAN-AutoConfig/Operational.
+
+3. **Review the log for error messages**: Look for any error messages related to certificate validation or authentication failures. This can help you pinpoint the issue.
+
+4. **Ensure the certificate is valid and not expired**: Verify that the certificate used for authentication is valid and not expired. You can check this in the certificate store on your laptop.
+
+5. **Check the certificate chain**: Ensure that the certificate chain is valid and that all intermediate certificates are trusted. You can check this in the certificate store as well.
+
+6. **Contact your IT support team**: If the issue persists, it might be related to a problem with a third-party device or software. In such cases, contacting your IT support team for further assistance would be the best course of action.
+
+Please follow these steps and let me know if you need any further assistance.","[Source 1] Advanced troubleshooting 802.1X authentication
+Applies to: Supported versions of Windows Client
+Try our Virtual Agent - It can help you quickly identify and fix common Wireless technology issues.
+Applies to: Windows 10
+
+[Source 2] Troubleshooting
+The WLAN AutoConfig operational log lists information and error events based on conditions detected by or reported to the WLAN AutoConfig service. The operational log contains information about the wireless network adapter, the properties of the wireless connection profile, the specified network authentication, and, if connectivity problems occur, the reason for the failure. For wired network access, the Wired AutoConfig operational log is an equivalent one.
+On the client side, go to Event Viewer (Local)\Applications and Services Logs\Microsoft\Windows\WLAN-AutoConfig/Operational for wireless issues. For wired network access issues, go to ..\Wired-AutoConfig/Operational . See the following example:
+Most 802.1X authentication issues are because of problems with the certificate that's used for client or server authentication. Examples include invalid certificate, expiration, chain verification failure, and revocation check failure.
+First, validate the type of EAP method that's used:
+
+[Source 3] Overview
+This article includes general troubleshooting for 802.1X wireless and wired clients. While troubleshooting 802.1X and wireless, it's important to know how the flow of authentication works, and then figure out where it's breaking. It involves many third-party devices and software. Most of the time, we have to identify where the problem is, and another vendor has to fix it. We don't make access points or switches, so it's not an end-to-end Microsoft solution.",,,,
+Wi-Fi_italian,italian,Il portatile aziendale continua a rifiutare le mie credenziali quando provo a collegarmi alla rete wireless dell'ufficio.,"Il tuo portatile aziendale sta rifiutando le tue credenziali durante l'accesso alla rete wireless dell'ufficio. Questo problema potrebbe essere legato all'802.1X autenticazione, che è un metodo di autenticazione avanzato utilizzato per connessioni wireless. 
+
+Per risolvere il problema, puoi provare a esaminare i log di Event Viewer per vedere se c'è qualche errore specifico. Questi log possono essere trovati nel seguente percorso:
+
+- Per connessioni wireless: Event Viewer (Local)\Applications and Services Logs\Microsoft\Windows\WLAN-AutoConfig\Operational
+- Per connessioni a rete a filo: Event Viewer (Local)\Applications and Services Logs\Microsoft\Windows\Wired-AutoConfig\Operational
+
+Nel log di Event Viewer, cerca eventi di tipo ""Error"" o ""Warning"" che possano indicare problemi specifici con l'802.1X autenticazione. 
+
+Se trovi un errore specifico, come un problema con il certificato di autenticazione, potrebbe essere necessario verificare il tipo di metodo EAP (Extensible Authentication Protocol) utilizzato. 
+
+[Source 1], [Source 2]","[Source 1] Advanced troubleshooting 802.1X authentication
+Applies to: Supported versions of Windows Client
+Try our Virtual Agent - It can help you quickly identify and fix common Wireless technology issues.
+Applies to: Windows 10
+
+[Source 2] Troubleshooting
+The WLAN AutoConfig operational log lists information and error events based on conditions detected by or reported to the WLAN AutoConfig service. The operational log contains information about the wireless network adapter, the properties of the wireless connection profile, the specified network authentication, and, if connectivity problems occur, the reason for the failure. For wired network access, the Wired AutoConfig operational log is an equivalent one.
+On the client side, go to Event Viewer (Local)\Applications and Services Logs\Microsoft\Windows\WLAN-AutoConfig/Operational for wireless issues. For wired network access issues, go to ..\Wired-AutoConfig/Operational . See the following example:
+Most 802.1X authentication issues are because of problems with the certificate that's used for client or server authentication. Examples include invalid certificate, expiration, chain verification failure, and revocation check failure.
+First, validate the type of EAP method that's used:
+
+[Source 3] Overview
+This article includes general troubleshooting for 802.1X wireless and wired clients. While troubleshooting 802.1X and wireless, it's important to know how the flow of authentication works, and then figure out where it's breaking. It involves many third-party devices and software. Most of the time, we have to identify where the problem is, and another vendor has to fix it. We don't make access points or switches, so it's not an end-to-end Microsoft solution.",,,,
+Email_english,english,My colleagues say they never receive the messages I send from my work account.,"Based on the information provided in the documentation, it seems that the delay in receiving messages could be due to several reasons. Here are some troubleshooting steps you can take:
+
+1. **Check the Message Trace**: Use the message trace feature to see if the message was delivered to the intended recipient. This can help you understand if the message was delayed or if it was blocked by the filtering service. [Source 1]
+
+2. **Simplify Search Criteria**: If you are running a message trace, ensure that your search criteria are as simple as possible. Complex searches can take longer to execute. [Source 1]
+
+3. **Check for Latency**: There might be latency in the service that is causing delays in message delivery. Check if the intended recipient's network is experiencing any issues. [Source 1]
+
+4. **Check for Destination Responsiveness**: The intended recipient's email account might not be responsive. Ensure that the recipient's email account is active and not blocked by any security measures. [Source 1]
+
+5. **Check for Large Message Delays**: If the message is large, it might take longer to process. Ensure that the message size is within the acceptable limits for your environment. [Source 1]
+
+6. **Use Outlook on the Web**: If the issue persists, check if the recipient is receiving the message through Outlook on the web. This can help you determine if the issue is related to the email app installed on the user's computer. [Source 3]
+
+By following these steps, you should be able to identify the cause of the delay and take appropriate action to resolve the issue.","[Source 1] Common questions about message tracing
+After a message is sent, how long before a message trace can pick it up?
+Message trace data can appear as soon as 10 minutes after a message is sent, or it can take up to one hour.
+Why am I getting a time-out error when I run a message trace?
+The search is probably taking too long. Try simplifying your search criteria.
+Why is my message taking so long to arrive at its destination?
+Possible causes include the following:
+The intended destination isn't responsive. This is the most likely scenario.
+A large message takes a long time to process.
+Latency in the service is causing delays.
+The message was blocked by the filtering service.
+
+[Source 2] Use message trace for in-depth email delivery troubleshooting - 15 minutes
+Sometimes, an email message gets lost in transit, or it can take a lot longer than expected for delivery. In such cases, users might wonder what occurred. The message trace feature lets you follow messages as they pass through your Exchange Online service. Getting detailed information about a specific message lets you efficiently answer your user's questions, troubleshoot mail flow issues, validate policy changes, and prevent you from haviineeding to contact technical support for assistance.
+
+[Source 3] Use Outlook on the web to look for missing messages - 5 minutes
+If a user is receiving email in their Outlook on the web mailbox but not on the email app that's installed on their computer, this could indicate that the issue is the user's computer or email app. Ask the user to sign in to Outlook on the web to verify that their Microsoft 365 email account is working correctly.
+Instructions: Sign in to Outlook on the web for business",,,,
+Email_italian,italian,I miei colleghi dicono che non ricevono mai i messaggi che invio dal mio account di lavoro.,"Based on the information provided in [Source 1], it seems that the delay in receiving messages could be due to several reasons. Here are some troubleshooting steps you can take:
+
+1. **Check the Message Trace**: Since the issue is related to receiving messages, you can try running a message trace to see if the message is being delivered correctly. According to [Source 1], message trace data can appear as soon as 10 minutes after a message is sent, or it can take up to one hour. If the message trace does not show any issues, it might indicate that the message is being delivered correctly but the recipient's email client is not receiving it.
+
+2. **Simplify Search Criteria**: If you run a message trace and still encounter issues, the search criteria might be too complex. Try simplifying your search criteria to see if that resolves the issue.
+
+3. **Check for Latency Issues**: Sometimes, latency in the service can cause delays. Ensure that there are no network issues or latency issues that might be affecting the delivery of your messages.
+
+4. **Check for Blocking by Filtering Services**: There could be a filtering service that is blocking your messages. Check if there are any filters or security settings that might be preventing the messages from reaching the intended recipient.
+
+5. **Verify Outlook on the Web**: Since your colleagues are receiving emails in Outlook on the web but not in the email app installed on their computers, you can have them sign in to Outlook on the web to verify that their Microsoft 365 email account is working correctly. This can be done by following the instructions provided in [Source 2].
+
+6. **Check for User-Specific Issues**: If only one user is experiencing the issue, it might be related to their email account or their email app. Have the affected user try the methods provided in [Source 3] to ensure that their email account and app are functioning correctly.
+
+By following these steps, you should be able to identify and resolve the issue.","[Source 1] Common questions about message tracing
+After a message is sent, how long before a message trace can pick it up?
+Message trace data can appear as soon as 10 minutes after a message is sent, or it can take up to one hour.
+Why am I getting a time-out error when I run a message trace?
+The search is probably taking too long. Try simplifying your search criteria.
+Why is my message taking so long to arrive at its destination?
+Possible causes include the following:
+The intended destination isn't responsive. This is the most likely scenario.
+A large message takes a long time to process.
+Latency in the service is causing delays.
+The message was blocked by the filtering service.
+
+[Source 2] Use Outlook on the web to look for missing messages - 5 minutes
+If a user is receiving email in their Outlook on the web mailbox but not on the email app that's installed on their computer, this could indicate that the issue is the user's computer or email app. Ask the user to sign in to Outlook on the web to verify that their Microsoft 365 email account is working correctly.
+Instructions: Sign in to Outlook on the web for business
+
+[Source 3] Check whether there's a problem in Outlook or another email app
+If only one user reports having trouble receiving email, there might be a problem in their email account or their email app. Have the affected user try the following methods before you move on to admin-specific tasks.",,,,

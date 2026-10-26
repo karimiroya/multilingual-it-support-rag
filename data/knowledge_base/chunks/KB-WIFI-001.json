@@ -1,0 +1,166 @@
+[
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-001",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Advanced troubleshooting 802.1X authentication",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication"
+    ],
+    "content": "Applies to: Supported versions of Windows Client\nTry our Virtual Agent - It can help you quickly identify and fix common Wireless technology issues.\nApplies to: Windows 10",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-002",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Overview",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Overview"
+    ],
+    "content": "This article includes general troubleshooting for 802.1X wireless and wired clients. While troubleshooting 802.1X and wireless, it's important to know how the flow of authentication works, and then figure out where it's breaking. It involves many third-party devices and software. Most of the time, we have to identify where the problem is, and another vendor has to fix it. We don't make access points or switches, so it's not an end-to-end Microsoft solution.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-003",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Scenarios",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Scenarios"
+    ],
+    "content": "This troubleshooting technique applies to any scenario in which wireless or wired connections with 802.1X authentication are attempted and then fail to establish. The workflow covers Windows 7 through Windows 10 (and Windows 11) for clients, and Windows Server 2008 R2 through Windows Server 2012 R2 for NPS.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-004",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Known issues",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Known issues"
+    ],
+    "content": "None",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-005",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Data collection",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Data collection"
+    ],
+    "content": "See Advanced troubleshooting 802.1X authentication data collection .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-006",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Troubleshooting",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Troubleshooting"
+    ],
+    "content": "Viewing NPS authentication status events in the Windows Security event log is one of the most useful troubleshooting methods to obtain information about failed authentications.\nNPS event log entries contain information about the connection attempt, including the name of the connection request policy that matched the connection attempt and the network policy that accepted or rejected the connection attempt. If you don't see both success and failure events, see the NPS audit policy section later in this article.\nCheck the Windows Security event log on the NPS Server for NPS events that correspond to the rejected ( event ID 6273 ) or the accepted ( event ID 6272 ) connection attempts.\nIn the event message, scroll to the bottom, and then check the Reason Code field and the text that's associated with it.\nExample: event ID 6273 (Audit Failure)\nExample: event ID 6272 (Audit Success)",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-007",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Troubleshooting",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Troubleshooting"
+    ],
+    "content": "The WLAN AutoConfig operational log lists information and error events based on conditions detected by or reported to the WLAN AutoConfig service. The operational log contains information about the wireless network adapter, the properties of the wireless connection profile, the specified network authentication, and, if connectivity problems occur, the reason for the failure. For wired network access, the Wired AutoConfig operational log is an equivalent one.\nOn the client side, go to Event Viewer (Local)\\Applications and Services Logs\\Microsoft\\Windows\\WLAN-AutoConfig/Operational for wireless issues. For wired network access issues, go to ..\\Wired-AutoConfig/Operational . See the following example:\nMost 802.1X authentication issues are because of problems with the certificate that's used for client or server authentication. Examples include invalid certificate, expiration, chain verification failure, and revocation check failure.\nFirst, validate the type of EAP method that's used:",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-008",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Troubleshooting",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Troubleshooting"
+    ],
+    "content": "If a certificate is used for its authentication method, check whether the certificate is valid. For the server (NPS) side, you can confirm what certificate is being used from the EAP property menu. In NPS snap-in , go to Policies > Network Policies . Select and hold (or right-click) the policy, and then select Properties . In the pop-up window, go to the Constraints tab, and then select the Authentication Methods section.\nThe CAPI2 event log is useful for troubleshooting certificate-related issues.\nBy default, this log isn't enabled. To enable this log, expand Event Viewer (Local)\\Applications and Services Logs\\Microsoft\\Windows\\CAPI2 , select and hold (or right-click) Operational , and then select Enable Log .\nFor information about how to analyze CAPI2 event logs, see Troubleshooting PKI Problems on Windows Vista .\nWhen troubleshooting complex 802.1X authentication issues, it's important to understand the 802.1X authentication process. Here's an example of wireless connection process with 802.1X authentication:",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-009",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Troubleshooting",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Troubleshooting"
+    ],
+    "content": "If you collect a network packet capture on both the client and the server (NPS) side, you can see a flow like the one below. Type EAPOL in the Display Filter for a client-side capture, and EAP for an NPS-side capture. See the following examples:\nClient-side packet capture data\nNPS-side packet capture data\nNote\nIf you have a wireless trace, you can also view ETL files with network monitor and apply the ONEX_MicrosoftWindowsOneX and WLAN_MicrosoftWindowsWLANAutoConfig Network Monitor filters. If you need to load the required parser , see the instructions under the Help menu in Network Monitor. Here's an example:",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-010",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Audit policy",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Audit policy"
+    ],
+    "content": "By default, NPS audit policy (event logging) for connection success and failure is enabled. If you find that one or both types of logging are disabled, use the following steps to troubleshoot.\nView the current audit policy settings by running the following command on the NPS server:\nauditpol /get /subcategory:\"Network Policy Server\"\nIf both success and failure events are enabled, the output should be:\nSystem audit policy\nCategory/Subcategory Setting\nLogon/Logoff\nNetwork Policy Server Success and Failure\nIf it says, \"No auditing,\" you can run this command to enable it:\nauditpol /set /subcategory:\"Network Policy Server\" /success:enable /failure:enable\nEven if audit policy appears to be fully enabled, it sometimes helps to disable and then re-enable this setting. You can also enable Network Policy Server logon/logoff auditing by using Group Policy. To get to the success/failure setting, select Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Logon/Logoff > Audit Network Policy Server .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-011",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "More information",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "More information"
+    ],
+    "content": "Troubleshooting Windows Vista 802.11 Wireless Connections\nTroubleshooting Windows Vista Secure 802.3 Wired Connections",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  }
+]

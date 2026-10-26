@@ -1,0 +1,189 @@
+[
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-001",
+    "heading": "DHCP troubleshooting guidance",
+    "heading_path": [
+      "DHCP troubleshooting guidance"
+    ],
+    "content": "Devices must be assigned an IP address to be able to operate in a network. You can assign an IP address manually or automatically. The automatic assignment is handled by the Dynamic Host Configuration Protocol (DHCP) service (Microsoft or third-party server). DHCP is a standard protocol that's defined by RFC 1541 (which is superseded by RFC 2131). DHCP enables a server to dynamically distribute IP addressing and configuration information to clients. Usually, the DHCP server provides at least the following basic information to the client:\nIP address\nSubnet mask\nDefault gateway\nOther information, such as Domain Name Service (DNS) server addresses and Windows Internet Name Service (WINS) server addresses. The system administrator configures the DHCP server by using the options that are parsed out to the client. For more information, see DHCP Basics .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-002",
+    "heading": "Troubleshooting checklist",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Troubleshooting checklist"
+    ],
+    "content": "Before you begin to troubleshoot, check the following items. These items can help you find the root cause of the problem. When did the problem start? Are there any error messages? Was the DHCP server working previously, or has it never worked? If it worked previously, did anything change before the problem started. For example, was an update installed? Was a change made to the infrastructure? Is the problem persistent or intermittent? If it is intermittent, when did it last occur? Are address lease failures occurring for all clients or for only specific clients, such as a single-scope subnet? Are there any clients on the same network subnet as the DHCP server? If clients reside on the same network subnet, can they obtain IP addresses? If clients are not on the same network subnet, are the routers or VLAN switches correctly configured to have DHCP relay agents (also known as IP Helpers)? Is the DHCP server standalone or is it configured for high availability, such as split-scope or DHCP Failover?\n\nCheck the intermediate devices for features such as VRRP/HSRP, Dynamic ARP Inspection, or DHCP snooping that are known to cause problems.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-003",
+    "heading": "Troubleshoot DHCP servers",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Troubleshoot DHCP servers"
+    ],
+    "content": "For DHCP servers, check the following devices and settings:\nThe DHCP server service is started and running. To check this setting, run the net start command, and look for DHCP Server . The DHCP server is authorized. See Windows DHCP Server Authorization in Domain Joined Scenario . Verify that IP address leases are available in the DHCP server scope for the subnet that the DHCP client is on. To do this, see the statistic for the appropriate scope in the DHCP server management console. Check whether any BAD_ADDRESS listings can be found in the Address Leases section. Check whether any devices on the network have static IP addresses that have not been excluded from the DHCP scope. Verify that the IP address to which DHCP server is bound is within the subnet of the scopes from which IP addresses must be leased out. This is in case no relay agent is available. To do this, run the Get-DhcpServerv4Binding or Get-DhcpServerv6Binding cmdlet. Verify that only the DHCP server is listening on UDP port 67 and 68.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-004",
+    "heading": "Troubleshoot DHCP servers",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Troubleshoot DHCP servers"
+    ],
+    "content": "No other process or other services (such as WDS or PXE) should occupy these ports. To do this, run the netstat -anb command. If you are dealing with an IPsec-deployed environment, verify that the DHCP server IPsec exemption is added. Verify that the relay agent IP address can be pinged from the DHCP server. Enumerate and check configured DHCP policies and filters.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-005",
+    "heading": "Troubleshoot DHCP clients",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Troubleshoot DHCP clients"
+    ],
+    "content": "For DHCP clients, check the following devices and settings:\nCables are connected and working. MAC filtering is enabled on the switches to which the client is connected. The network adapter is enabled. The correct network adapter driver is installed and updated. The DHCP Client service is started and running. To check this, run the net start command, and look for DHCP Client. There is no firewall blocking ports 67 and 68 UDP on the client computer.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-006",
+    "heading": "Using network trace to troubleshoot DHCP",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Using network trace to troubleshoot DHCP"
+    ],
+    "content": "Once you've confirmed the settings on both the DHCP client and server, you can use Wireshark to check whether the DHCP DORA process has completed successfully or if any packet drops are preventing DHCP clients from obtaining an IP address from the server.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-007",
+    "heading": "Steps to collect a network trace",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Using network trace to troubleshoot DHCP",
+      "Steps to collect a network trace"
+    ],
+    "content": "To troubleshoot DHCP issues using network traces, follow these steps:\nInstall Wireshark on both the affected DHCP client and the DHCP server. Run Wireshark as administrator on both the client and server. Choose the network interface used for DHCP on both devices by double-clicking them in Wireshark. Start packet capture with Wireshark on both the client and server. Reproduce the issue. Trigger the DHCP issue (for example, run ipconfig /renew on the client). Wait for the failure scenario to occur. Stop the packet capture on both devices using the red button in Wireshark. Save the captured packets to a specified location by selecting File > Save As . Apply a DHCP filter to view DHCP transactions: On the client capture, apply a display filter for \"dhcp\". On the server capture, use the filter \"dhcp.id == <Transaction ID>\" to track the specific client transaction. You can get the transaction ID from the client-side capture and apply it in the filter on the server-side capture. Analyze DHCP transactions: Check the client-side capture for all four DHCP packets (DISCOVER, OFFER, REQUEST, ACK).",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-008",
+    "heading": "Steps to collect a network trace",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Using network trace to troubleshoot DHCP",
+      "Steps to collect a network trace"
+    ],
+    "content": "If all are present, the DORA process is likely successful. If any packets are missing (for example, only DISCOVER packets are visible), it indicates a potential drop. Identify network drops. Look for these indicators of network drops: Client capture shows DISCOVER packets, but server capture does not. Client capture shows DISCOVER packets and server shows OFFER sent, but no OFFER seen on client. Client capture shows DISCOVER, OFFER, and REQUEST, but server only shows DISCOVER and OFFER. Client capture shows DISCOVER, OFFER, and REQUEST, but server shows all four packets completed (DISCOVER, OFFER, REQUEST, ACK) with no ACK seen on client. After drops are confirmed, involve the network team to investigate and resolve the drop issue. These steps ensure thorough troubleshooting using Wireshark to pinpoint where DHCP communication breaks down, facilitating quicker resolution of DHCP configuration or network issues.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-009",
+    "heading": "Data collection",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Data collection"
+    ],
+    "content": "Before contacting Microsoft support, you can gather information about your issue.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-010",
+    "heading": "Prerequisites",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Data collection",
+      "Prerequisites"
+    ],
+    "content": "TSS must be run by accounts with administrator privileges on the local system, and EULA must be accepted (once EULA is accepted, TSS won't prompt again). We recommend the local machine RemoteSigned PowerShell execution policy. Note\nIf the current PowerShell execution policy doesn't allow running TSS, take the following actions:\nSet the RemoteSigned execution policy for the process level by running the cmdlet PS C:\\> Set-ExecutionPolicy -scope Process -ExecutionPolicy RemoteSigned . To verify if the change takes effect, run the cmdlet PS C:\\> Get-ExecutionPolicy -List . Because the process level permissions only apply to the current PowerShell session, once the given PowerShell window in which TSS runs is closed, the assigned permission for the process level will also go back to the previously configured state.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-011",
+    "heading": "Gather key information before contacting Microsoft support",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Data collection",
+      "Gather key information before contacting Microsoft support"
+    ],
+    "content": "Download TSS on all nodes and unzip it in the C:\\tss folder. Open the C:\\tss folder from an elevated PowerShell command prompt. Start the traces on the client and the server by using the following cmdlets: Client: TSS.ps1 -Scenario NET_DHCPcli Server: TSS.ps1 -Scenario NET_DHCPsrv\nAccept the EULA if the traces are run for the first time on the server or the client. Allow recording (PSR or video). Reproduce the issue before entering Y . Note If you collect logs on both the client and the server, wait for this message on both nodes before reproducing the issue. Enter Y to finish the log collection after the issue is reproduced. The traces will be stored in a zip file in the C:\\MS_DATA folder, which can be uploaded to the workspace for analysis.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-012",
+    "heading": "Reference",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Reference"
+    ],
+    "content": "Troubleshooting guide for DHCP\nUse automatic TCP/IP addressing without a DHCP server",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-013",
+    "heading": "Event logs",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Reference",
+      "Event logs"
+    ],
+    "content": "Check the System and DHCP Server service event logs ( Applications and Services Logs > Microsoft > Windows > DHCP-Server ) for reported issues that are related to the observed problem. Depending on the kind of issue, an event is logged to one of the following event channels:\nDHCP Server Operational Events\nDHCP Server Administrative Events\nDHCP Server System Events\nDHCP Server Filter Notification Events\nDHCP Server Audit Events",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-014",
+    "heading": "DHCP Server log",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Reference",
+      "DHCP Server log"
+    ],
+    "content": "Troubleshooting guide for DHCP\nUse automatic TCP/IP addressing without a DHCP server\n\nThe DHCP Server service debug logs provide more information about the IP address lease assignment and the DNS dynamic updates that are done by the DHCP server. By default, these logs are located in %windir%\\System32\\Dhcp . For more information, see Analyze DHCP Server Log Files .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  }
+]

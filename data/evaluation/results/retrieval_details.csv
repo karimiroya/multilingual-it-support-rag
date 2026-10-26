@@ -1,0 +1,145 @@
+question_id,language,type,method,rank,top3
+wifi_password_en,english,specific,BM25 only,1,KB-WIFI-002-031;KB-WIFI-002-032;KB-WIFI-002-013
+wifi_password_en,english,specific,Dense only,1,KB-WIFI-002-031;KB-WIFI-002-026;KB-WIFI-002-033
+wifi_password_en,english,specific,Hybrid (RRF),1,KB-WIFI-002-031;KB-WIFI-002-032;KB-WIFI-002-009
+wifi_password_en,english,specific,Hybrid + category,1,KB-WIFI-002-031;KB-WIFI-002-032;KB-WIFI-002-026
+wifi_password_it,italian,specific,BM25 only,1,KB-WIFI-002-031;KB-WIFI-002-009;KB-WIFI-002-026
+wifi_password_it,italian,specific,Dense only,1,KB-WIFI-002-031;KB-WIFI-002-026;KB-WIFI-002-032
+wifi_password_it,italian,specific,Hybrid (RRF),1,KB-WIFI-002-031;KB-WIFI-002-026;KB-WIFI-002-032
+wifi_password_it,italian,specific,Hybrid + category,1,KB-WIFI-002-031;KB-WIFI-002-026;KB-WIFI-002-032
+wifi_missing_en,english,specific,BM25 only,1,KB-WIFI-002-026;KB-WIFI-002-032;KB-WIFI-002-013
+wifi_missing_en,english,specific,Dense only,1,KB-WIFI-002-026;KB-WIFI-002-032;KB-WIFI-002-033
+wifi_missing_en,english,specific,Hybrid (RRF),1,KB-WIFI-002-026;KB-WIFI-002-032;KB-WIFI-002-033
+wifi_missing_en,english,specific,Hybrid + category,1,KB-WIFI-002-026;KB-WIFI-002-032;KB-WIFI-002-033
+wifi_missing_it,italian,specific,BM25 only,1,KB-WIFI-002-026;KB-WIFI-002-024;KB-WIFI-002-032
+wifi_missing_it,italian,specific,Dense only,1,KB-WIFI-002-026;KB-WIFI-002-032;KB-WIFI-002-033
+wifi_missing_it,italian,specific,Hybrid (RRF),1,KB-WIFI-002-026;KB-WIFI-002-032;KB-WIFI-002-009
+wifi_missing_it,italian,specific,Hybrid + category,1,KB-WIFI-002-026;KB-WIFI-002-032;KB-WIFI-002-009
+wifi_no_internet_en,english,specific,BM25 only,1,KB-WIFI-002-028;KB-WIFI-002-005;KB-WIFI-002-003
+wifi_no_internet_en,english,specific,Dense only,1,KB-WIFI-002-028;KB-WIFI-002-001;KB-WIFI-002-032
+wifi_no_internet_en,english,specific,Hybrid (RRF),1,KB-WIFI-002-028;KB-WIFI-002-029;KB-WIFI-002-032
+wifi_no_internet_en,english,specific,Hybrid + category,1,KB-WIFI-002-028;KB-WIFI-002-029;KB-WIFI-002-032
+wifi_no_internet_it,italian,specific,BM25 only,3,KB-WIFI-002-005;KB-WIFI-002-003;KB-WIFI-002-028
+wifi_no_internet_it,italian,specific,Dense only,1,KB-WIFI-002-028;KB-WIFI-002-001;KB-WIFI-002-032
+wifi_no_internet_it,italian,specific,Hybrid (RRF),1,KB-WIFI-002-028;KB-WIFI-002-029;KB-WIFI-002-032
+wifi_no_internet_it,italian,specific,Hybrid + category,1,KB-WIFI-002-028;KB-WIFI-002-029;KB-WIFI-002-032
+wifi_dropping_en,english,specific,BM25 only,1,KB-WIFI-002-027;KB-WIFI-002-011;KB-WIFI-002-029
+wifi_dropping_en,english,specific,Dense only,1,KB-WIFI-002-027;KB-WIFI-002-025;KB-WIFI-002-032
+wifi_dropping_en,english,specific,Hybrid (RRF),1,KB-WIFI-002-027;KB-WIFI-002-011;KB-WIFI-002-032
+wifi_dropping_en,english,specific,Hybrid + category,1,KB-WIFI-002-027;KB-WIFI-002-011;KB-WIFI-002-032
+wifi_dropping_it,italian,specific,BM25 only,,KB-WIFI-002-012;KB-WIFI-002-026;KB-NETWORK-001-008
+wifi_dropping_it,italian,specific,Dense only,1,KB-WIFI-002-027;KB-WIFI-002-025;KB-WIFI-002-032
+wifi_dropping_it,italian,specific,Hybrid (RRF),3,KB-WIFI-002-012;KB-WIFI-002-032;KB-WIFI-002-027
+wifi_dropping_it,italian,specific,Hybrid + category,3,KB-WIFI-002-012;KB-WIFI-002-032;KB-WIFI-002-027
+wifi_vague_en,english,vague,BM25 only,,KB-WIFI-002-032;KB-WIFI-002-026;KB-WIFI-002-033
+wifi_vague_en,english,vague,Dense only,,KB-WIFI-002-032;KB-WIFI-002-026;KB-WIFI-002-031
+wifi_vague_en,english,vague,Hybrid (RRF),9,KB-WIFI-002-032;KB-WIFI-002-026;KB-WIFI-002-033
+wifi_vague_en,english,vague,Hybrid + category,8,KB-WIFI-002-032;KB-WIFI-002-026;KB-WIFI-002-033
+wifi_vague_it,italian,vague,BM25 only,5,KB-WIFI-002-026;KB-WIFI-002-024;KB-WIFI-002-032
+wifi_vague_it,italian,vague,Dense only,9,KB-WIFI-002-032;KB-WIFI-002-001;KB-WIFI-002-031
+wifi_vague_it,italian,vague,Hybrid (RRF),7,KB-WIFI-002-032;KB-WIFI-002-026;KB-WIFI-002-031
+wifi_vague_it,italian,vague,Hybrid + category,7,KB-WIFI-002-032;KB-WIFI-002-026;KB-WIFI-002-031
+wifi_8021x_en,english,specific,BM25 only,2,KB-WIFI-001-008;KB-WIFI-001-007;KB-WIFI-001-003
+wifi_8021x_en,english,specific,Dense only,3,KB-WIFI-001-002;KB-WIFI-001-001;KB-WIFI-001-007
+wifi_8021x_en,english,specific,Hybrid (RRF),1,KB-WIFI-001-007;KB-WIFI-001-002;KB-WIFI-001-008
+wifi_8021x_en,english,specific,Hybrid + category,1,KB-WIFI-001-007;KB-WIFI-001-002;KB-WIFI-001-008
+wifi_8021x_it,italian,specific,BM25 only,3,KB-WIFI-001-008;KB-WIFI-001-002;KB-WIFI-001-007
+wifi_8021x_it,italian,specific,Dense only,4,KB-WIFI-001-002;KB-WIFI-001-001;KB-WIFI-001-003
+wifi_8021x_it,italian,specific,Hybrid (RRF),4,KB-WIFI-001-002;KB-WIFI-001-008;KB-WIFI-001-001
+wifi_8021x_it,italian,specific,Hybrid + category,4,KB-WIFI-001-002;KB-WIFI-001-008;KB-WIFI-001-001
+vpn_error_800_en,english,specific,BM25 only,1,KB-VPN-001-010;KB-VPN-001-011;KB-VPN-001-012
+vpn_error_800_en,english,specific,Dense only,1,KB-VPN-001-012;KB-VPN-001-014;KB-VPN-001-013
+vpn_error_800_en,english,specific,Hybrid (RRF),1,KB-VPN-001-012;KB-VPN-001-010;KB-VPN-001-011
+vpn_error_800_en,english,specific,Hybrid + category,1,KB-VPN-001-012;KB-VPN-001-010;KB-VPN-001-011
+vpn_error_800_it,italian,specific,BM25 only,2,KB-VPN-001-037;KB-VPN-001-010;KB-VPN-001-011
+vpn_error_800_it,italian,specific,Dense only,1,KB-VPN-001-012;KB-VPN-001-014;KB-VPN-001-013
+vpn_error_800_it,italian,specific,Hybrid (RRF),1,KB-VPN-001-012;KB-VPN-001-010;KB-VPN-001-011
+vpn_error_800_it,italian,specific,Hybrid + category,1,KB-VPN-001-012;KB-VPN-001-010;KB-VPN-001-011
+vpn_error_809_en,english,specific,BM25 only,1,KB-VPN-001-013;KB-VPN-001-014;KB-VPN-001-015
+vpn_error_809_en,english,specific,Dense only,1,KB-VPN-001-013;KB-VPN-001-014;KB-VPN-001-012
+vpn_error_809_en,english,specific,Hybrid (RRF),1,KB-VPN-001-013;KB-VPN-001-014;KB-VPN-001-015
+vpn_error_809_en,english,specific,Hybrid + category,1,KB-VPN-001-013;KB-VPN-001-014;KB-VPN-001-015
+vpn_error_809_it,italian,specific,BM25 only,1,KB-VPN-001-014;KB-VPN-001-013;KB-VPN-001-015
+vpn_error_809_it,italian,specific,Dense only,2,KB-VPN-001-012;KB-VPN-001-014;KB-VPN-001-013
+vpn_error_809_it,italian,specific,Hybrid (RRF),1,KB-VPN-001-014;KB-VPN-001-013;KB-VPN-001-015
+vpn_error_809_it,italian,specific,Hybrid + category,1,KB-VPN-001-014;KB-VPN-001-013;KB-VPN-001-015
+vpn_how_to_connect_en,english,specific,BM25 only,5,KB-VPN-002-009;KB-VPN-002-001;KB-VPN-002-003
+vpn_how_to_connect_en,english,specific,Dense only,3,KB-VPN-002-001;KB-VPN-002-009;KB-VPN-002-010
+vpn_how_to_connect_en,english,specific,Hybrid (RRF),4,KB-VPN-002-001;KB-VPN-002-009;KB-VPN-002-003
+vpn_how_to_connect_en,english,specific,Hybrid + category,4,KB-VPN-002-001;KB-VPN-002-009;KB-VPN-002-003
+vpn_how_to_connect_it,italian,specific,BM25 only,2,KB-VPN-001-035;KB-VPN-002-007;KB-VPN-002-008
+vpn_how_to_connect_it,italian,specific,Dense only,3,KB-VPN-002-001;KB-VPN-002-009;KB-VPN-002-010
+vpn_how_to_connect_it,italian,specific,Hybrid (RRF),3,KB-VPN-002-001;KB-VPN-002-009;KB-VPN-002-007
+vpn_how_to_connect_it,italian,specific,Hybrid + category,3,KB-VPN-002-001;KB-VPN-002-009;KB-VPN-002-007
+vpn_vague_en,english,vague,BM25 only,5,KB-VPN-002-009;KB-VPN-002-001;KB-VPN-001-028
+vpn_vague_en,english,vague,Dense only,10,KB-VPN-001-013;KB-VPN-001-014;KB-VPN-001-012
+vpn_vague_en,english,vague,Hybrid (RRF),7,KB-VPN-001-028;KB-VPN-002-001;KB-VPN-001-013
+vpn_vague_en,english,vague,Hybrid + category,7,KB-VPN-001-028;KB-VPN-002-001;KB-VPN-001-013
+vpn_vague_it,italian,vague,BM25 only,,KB-VPN-001-037;KB-VPN-002-002;KB-VPN-002-010
+vpn_vague_it,italian,vague,Dense only,10,KB-VPN-001-013;KB-VPN-001-014;KB-VPN-001-012
+vpn_vague_it,italian,vague,Hybrid (RRF),,KB-VPN-001-011;KB-VPN-001-012;KB-VPN-001-013
+vpn_vague_it,italian,vague,Hybrid + category,,KB-VPN-001-011;KB-VPN-001-012;KB-VPN-001-013
+dns_names_en,english,specific,BM25 only,7,KB-EMAIL-002-002;KB-EMAIL-002-008;KB-DHCP-001-001
+dns_names_en,english,specific,Dense only,2,KB-EMAIL-002-002;KB-DNS-001-002;KB-DHCP-001-001
+dns_names_en,english,specific,Hybrid (RRF),5,KB-EMAIL-002-002;KB-DHCP-001-001;KB-WIFI-002-030
+dns_names_en,english,specific,Hybrid + category,2,KB-DHCP-001-001;KB-DNS-001-002;KB-DNS-001-008
+dns_names_it,italian,specific,BM25 only,3,KB-VPN-001-031;KB-VPN-001-037;KB-DNS-001-002
+dns_names_it,italian,specific,Dense only,2,KB-EMAIL-002-002;KB-DNS-001-002;KB-VPN-002-011
+dns_names_it,italian,specific,Hybrid (RRF),1,KB-DNS-001-002;KB-DHCP-001-001;KB-WIFI-002-029
+dns_names_it,italian,specific,Hybrid + category,1,KB-DNS-001-002;KB-DHCP-001-001;KB-DNS-001-003
+dns_nslookup_en,english,specific,BM25 only,1,KB-DNS-001-006;KB-DNS-001-007;KB-DNS-001-004
+dns_nslookup_en,english,specific,Dense only,2,KB-DNS-001-003;KB-DNS-001-006;KB-DNS-001-007
+dns_nslookup_en,english,specific,Hybrid (RRF),1,KB-DNS-001-006;KB-DNS-001-003;KB-DNS-001-007
+dns_nslookup_en,english,specific,Hybrid + category,1,KB-DNS-001-006;KB-DNS-001-003;KB-DNS-001-007
+dns_nslookup_it,italian,specific,BM25 only,1,KB-DNS-001-006;KB-DNS-001-004;KB-WIFI-002-030
+dns_nslookup_it,italian,specific,Dense only,3,KB-DNS-001-003;KB-DNS-001-007;KB-DNS-001-006
+dns_nslookup_it,italian,specific,Hybrid (RRF),1,KB-DNS-001-006;KB-DNS-001-003;KB-DNS-001-007
+dns_nslookup_it,italian,specific,Hybrid + category,1,KB-DNS-001-006;KB-DNS-001-003;KB-DNS-001-007
+dhcp_no_ip_en,english,specific,BM25 only,,KB-DNS-001-002;KB-WIFI-002-029;KB-DHCP-001-003
+dhcp_no_ip_en,english,specific,Dense only,,KB-WIFI-002-029;KB-WIFI-002-030;KB-DHCP-001-001
+dhcp_no_ip_en,english,specific,Hybrid (RRF),5,KB-WIFI-002-029;KB-WIFI-002-030;KB-DHCP-001-001
+dhcp_no_ip_en,english,specific,Hybrid + category,3,KB-DHCP-001-001;KB-DNS-001-002;KB-NETWORK-001-009
+dhcp_no_ip_it,italian,specific,BM25 only,5,KB-VPN-001-037;KB-DNS-001-002;KB-WIFI-002-029
+dhcp_no_ip_it,italian,specific,Dense only,,KB-WIFI-002-029;KB-DHCP-001-001;KB-WIFI-002-030
+dhcp_no_ip_it,italian,specific,Hybrid (RRF),6,KB-WIFI-002-029;KB-DHCP-001-001;KB-WIFI-002-030
+dhcp_no_ip_it,italian,specific,Hybrid + category,3,KB-DHCP-001-001;KB-DNS-001-002;KB-NETWORK-001-009
+ethernet_cable_en,english,specific,BM25 only,1,KB-NETWORK-001-004;KB-DHCP-001-008;KB-WIFI-002-028
+ethernet_cable_en,english,specific,Dense only,9,KB-NETWORK-001-014;KB-NETWORK-001-017;KB-NETWORK-001-012
+ethernet_cable_en,english,specific,Hybrid (RRF),3,KB-NETWORK-001-014;KB-WIFI-002-028;KB-NETWORK-001-004
+ethernet_cable_en,english,specific,Hybrid + category,3,KB-NETWORK-001-014;KB-WIFI-002-028;KB-NETWORK-001-004
+ethernet_cable_it,italian,specific,BM25 only,,KB-VPN-001-037;KB-NETWORK-001-019;KB-NETWORK-001-014
+ethernet_cable_it,italian,specific,Dense only,,KB-WIFI-002-028;KB-WIFI-002-001;KB-NETWORK-001-018
+ethernet_cable_it,italian,specific,Hybrid (RRF),,KB-NETWORK-001-018;KB-NETWORK-001-019;KB-NETWORK-001-014
+ethernet_cable_it,italian,specific,Hybrid + category,,KB-NETWORK-001-018;KB-NETWORK-001-019;KB-NETWORK-001-014
+email_outbox_en,english,specific,BM25 only,2,KB-EMAIL-002-001;KB-EMAIL-002-009;KB-EMAIL-002-004
+email_outbox_en,english,specific,Dense only,1,KB-EMAIL-002-007;KB-EMAIL-002-014;KB-EMAIL-002-015
+email_outbox_en,english,specific,Hybrid (RRF),1,KB-EMAIL-002-007;KB-EMAIL-002-014;KB-EMAIL-002-001
+email_outbox_en,english,specific,Hybrid + category,1,KB-EMAIL-002-007;KB-EMAIL-002-014;KB-EMAIL-002-001
+email_outbox_it,italian,specific,BM25 only,10,KB-EMAIL-002-014;KB-VPN-001-037;KB-EMAIL-001-003
+email_outbox_it,italian,specific,Dense only,1,KB-EMAIL-002-007;KB-EMAIL-002-015;KB-EMAIL-002-011
+email_outbox_it,italian,specific,Hybrid (RRF),3,KB-EMAIL-002-014;KB-EMAIL-001-003;KB-EMAIL-002-007
+email_outbox_it,italian,specific,Hybrid + category,3,KB-EMAIL-002-014;KB-EMAIL-001-003;KB-EMAIL-002-007
+email_password_en,english,specific,BM25 only,1,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-EMAIL-002-006
+email_password_en,english,specific,Dense only,1,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-EMAIL-002-012
+email_password_en,english,specific,Hybrid (RRF),1,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-EMAIL-002-006
+email_password_en,english,specific,Hybrid + category,1,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-EMAIL-002-006
+email_password_it,italian,specific,BM25 only,1,KB-EMAIL-002-005;KB-EMAIL-002-010;KB-EMAIL-002-006
+email_password_it,italian,specific,Dense only,1,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-EMAIL-002-012
+email_password_it,italian,specific,Hybrid (RRF),1,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-EMAIL-002-006
+email_password_it,italian,specific,Hybrid + category,1,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-EMAIL-002-006
+email_not_received_en,english,specific,BM25 only,,KB-EMAIL-002-010;KB-EMAIL-002-001;KB-EMAIL-002-007
+email_not_received_en,english,specific,Dense only,8,KB-EMAIL-002-016;KB-EMAIL-002-011;KB-EMAIL-002-007
+email_not_received_en,english,specific,Hybrid (RRF),,KB-EMAIL-002-016;KB-EMAIL-002-010;KB-EMAIL-002-007
+email_not_received_en,english,specific,Hybrid + category,10,KB-EMAIL-002-016;KB-EMAIL-002-010;KB-EMAIL-002-007
+email_not_received_it,italian,specific,BM25 only,,KB-EMAIL-002-010;KB-EMAIL-002-005;KB-VPN-001-037
+email_not_received_it,italian,specific,Dense only,10,KB-EMAIL-002-016;KB-EMAIL-002-005;KB-EMAIL-002-011
+email_not_received_it,italian,specific,Hybrid (RRF),,KB-EMAIL-002-005;KB-EMAIL-002-016;KB-EMAIL-002-010
+email_not_received_it,italian,specific,Hybrid + category,,KB-EMAIL-002-016;KB-EMAIL-002-005;KB-EMAIL-002-010
+email_vague_en,english,vague,BM25 only,3,KB-EMAIL-001-003;KB-EMAIL-001-012;KB-EMAIL-002-007
+email_vague_en,english,vague,Dense only,,KB-EMAIL-001-003;KB-EMAIL-002-016;KB-EMAIL-003-001
+email_vague_en,english,vague,Hybrid (RRF),2,KB-EMAIL-001-003;KB-EMAIL-002-007;KB-EMAIL-002-003
+email_vague_en,english,vague,Hybrid + category,4,KB-EMAIL-001-003;KB-EMAIL-002-003;KB-EMAIL-002-011
+email_vague_it,italian,vague,BM25 only,,KB-VPN-001-037;KB-EMAIL-001-002;KB-EMAIL-001-007
+email_vague_it,italian,vague,Dense only,10,KB-EMAIL-003-001;KB-EMAIL-002-016;KB-EMAIL-001-003
+email_vague_it,italian,vague,Hybrid (RRF),,KB-EMAIL-001-003;KB-EMAIL-003-001;KB-EMAIL-002-005
+email_vague_it,italian,vague,Hybrid + category,,KB-EMAIL-001-003;KB-EMAIL-003-001;KB-EMAIL-002-005

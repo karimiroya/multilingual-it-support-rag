@@ -1,0 +1,2538 @@
+[
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-001",
+    "heading": "DHCP troubleshooting guidance",
+    "heading_path": [
+      "DHCP troubleshooting guidance"
+    ],
+    "content": "Devices must be assigned an IP address to be able to operate in a network. You can assign an IP address manually or automatically. The automatic assignment is handled by the Dynamic Host Configuration Protocol (DHCP) service (Microsoft or third-party server). DHCP is a standard protocol that's defined by RFC 1541 (which is superseded by RFC 2131). DHCP enables a server to dynamically distribute IP addressing and configuration information to clients. Usually, the DHCP server provides at least the following basic information to the client:\nIP address\nSubnet mask\nDefault gateway\nOther information, such as Domain Name Service (DNS) server addresses and Windows Internet Name Service (WINS) server addresses. The system administrator configures the DHCP server by using the options that are parsed out to the client. For more information, see DHCP Basics .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-002",
+    "heading": "Troubleshooting checklist",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Troubleshooting checklist"
+    ],
+    "content": "Before you begin to troubleshoot, check the following items. These items can help you find the root cause of the problem. When did the problem start? Are there any error messages? Was the DHCP server working previously, or has it never worked? If it worked previously, did anything change before the problem started. For example, was an update installed? Was a change made to the infrastructure? Is the problem persistent or intermittent? If it is intermittent, when did it last occur? Are address lease failures occurring for all clients or for only specific clients, such as a single-scope subnet? Are there any clients on the same network subnet as the DHCP server? If clients reside on the same network subnet, can they obtain IP addresses? If clients are not on the same network subnet, are the routers or VLAN switches correctly configured to have DHCP relay agents (also known as IP Helpers)? Is the DHCP server standalone or is it configured for high availability, such as split-scope or DHCP Failover?\n\nCheck the intermediate devices for features such as VRRP/HSRP, Dynamic ARP Inspection, or DHCP snooping that are known to cause problems.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-003",
+    "heading": "Troubleshoot DHCP servers",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Troubleshoot DHCP servers"
+    ],
+    "content": "For DHCP servers, check the following devices and settings:\nThe DHCP server service is started and running. To check this setting, run the net start command, and look for DHCP Server . The DHCP server is authorized. See Windows DHCP Server Authorization in Domain Joined Scenario . Verify that IP address leases are available in the DHCP server scope for the subnet that the DHCP client is on. To do this, see the statistic for the appropriate scope in the DHCP server management console. Check whether any BAD_ADDRESS listings can be found in the Address Leases section. Check whether any devices on the network have static IP addresses that have not been excluded from the DHCP scope. Verify that the IP address to which DHCP server is bound is within the subnet of the scopes from which IP addresses must be leased out. This is in case no relay agent is available. To do this, run the Get-DhcpServerv4Binding or Get-DhcpServerv6Binding cmdlet. Verify that only the DHCP server is listening on UDP port 67 and 68.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-004",
+    "heading": "Troubleshoot DHCP servers",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Troubleshoot DHCP servers"
+    ],
+    "content": "No other process or other services (such as WDS or PXE) should occupy these ports. To do this, run the netstat -anb command. If you are dealing with an IPsec-deployed environment, verify that the DHCP server IPsec exemption is added. Verify that the relay agent IP address can be pinged from the DHCP server. Enumerate and check configured DHCP policies and filters.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-005",
+    "heading": "Troubleshoot DHCP clients",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Troubleshoot DHCP clients"
+    ],
+    "content": "For DHCP clients, check the following devices and settings:\nCables are connected and working. MAC filtering is enabled on the switches to which the client is connected. The network adapter is enabled. The correct network adapter driver is installed and updated. The DHCP Client service is started and running. To check this, run the net start command, and look for DHCP Client. There is no firewall blocking ports 67 and 68 UDP on the client computer.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-006",
+    "heading": "Using network trace to troubleshoot DHCP",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Using network trace to troubleshoot DHCP"
+    ],
+    "content": "Once you've confirmed the settings on both the DHCP client and server, you can use Wireshark to check whether the DHCP DORA process has completed successfully or if any packet drops are preventing DHCP clients from obtaining an IP address from the server.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-007",
+    "heading": "Steps to collect a network trace",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Using network trace to troubleshoot DHCP",
+      "Steps to collect a network trace"
+    ],
+    "content": "To troubleshoot DHCP issues using network traces, follow these steps:\nInstall Wireshark on both the affected DHCP client and the DHCP server. Run Wireshark as administrator on both the client and server. Choose the network interface used for DHCP on both devices by double-clicking them in Wireshark. Start packet capture with Wireshark on both the client and server. Reproduce the issue. Trigger the DHCP issue (for example, run ipconfig /renew on the client). Wait for the failure scenario to occur. Stop the packet capture on both devices using the red button in Wireshark. Save the captured packets to a specified location by selecting File > Save As . Apply a DHCP filter to view DHCP transactions: On the client capture, apply a display filter for \"dhcp\". On the server capture, use the filter \"dhcp.id == <Transaction ID>\" to track the specific client transaction. You can get the transaction ID from the client-side capture and apply it in the filter on the server-side capture. Analyze DHCP transactions: Check the client-side capture for all four DHCP packets (DISCOVER, OFFER, REQUEST, ACK).",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-008",
+    "heading": "Steps to collect a network trace",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Using network trace to troubleshoot DHCP",
+      "Steps to collect a network trace"
+    ],
+    "content": "If all are present, the DORA process is likely successful. If any packets are missing (for example, only DISCOVER packets are visible), it indicates a potential drop. Identify network drops. Look for these indicators of network drops: Client capture shows DISCOVER packets, but server capture does not. Client capture shows DISCOVER packets and server shows OFFER sent, but no OFFER seen on client. Client capture shows DISCOVER, OFFER, and REQUEST, but server only shows DISCOVER and OFFER. Client capture shows DISCOVER, OFFER, and REQUEST, but server shows all four packets completed (DISCOVER, OFFER, REQUEST, ACK) with no ACK seen on client. After drops are confirmed, involve the network team to investigate and resolve the drop issue. These steps ensure thorough troubleshooting using Wireshark to pinpoint where DHCP communication breaks down, facilitating quicker resolution of DHCP configuration or network issues.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-010",
+    "heading": "Prerequisites",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Data collection",
+      "Prerequisites"
+    ],
+    "content": "TSS must be run by accounts with administrator privileges on the local system, and EULA must be accepted (once EULA is accepted, TSS won't prompt again). We recommend the local machine RemoteSigned PowerShell execution policy. Note\nIf the current PowerShell execution policy doesn't allow running TSS, take the following actions:\nSet the RemoteSigned execution policy for the process level by running the cmdlet PS C:\\> Set-ExecutionPolicy -scope Process -ExecutionPolicy RemoteSigned . To verify if the change takes effect, run the cmdlet PS C:\\> Get-ExecutionPolicy -List . Because the process level permissions only apply to the current PowerShell session, once the given PowerShell window in which TSS runs is closed, the assigned permission for the process level will also go back to the previously configured state.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-011",
+    "heading": "Gather key information before contacting Microsoft support",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Data collection",
+      "Gather key information before contacting Microsoft support"
+    ],
+    "content": "Download TSS on all nodes and unzip it in the C:\\tss folder. Open the C:\\tss folder from an elevated PowerShell command prompt. Start the traces on the client and the server by using the following cmdlets: Client: TSS.ps1 -Scenario NET_DHCPcli Server: TSS.ps1 -Scenario NET_DHCPsrv\nAccept the EULA if the traces are run for the first time on the server or the client. Allow recording (PSR or video). Reproduce the issue before entering Y . Note If you collect logs on both the client and the server, wait for this message on both nodes before reproducing the issue. Enter Y to finish the log collection after the issue is reproduced. The traces will be stored in a zip file in the C:\\MS_DATA folder, which can be uploaded to the workspace for analysis.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-013",
+    "heading": "Event logs",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Reference",
+      "Event logs"
+    ],
+    "content": "Check the System and DHCP Server service event logs ( Applications and Services Logs > Microsoft > Windows > DHCP-Server ) for reported issues that are related to the observed problem. Depending on the kind of issue, an event is logged to one of the following event channels:\nDHCP Server Operational Events\nDHCP Server Administrative Events\nDHCP Server System Events\nDHCP Server Filter Notification Events\nDHCP Server Audit Events",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DHCP-001",
+    "chunk_id": "KB-DHCP-001-014",
+    "heading": "DHCP Server log",
+    "heading_path": [
+      "DHCP troubleshooting guidance",
+      "Reference",
+      "DHCP Server log"
+    ],
+    "content": "Troubleshooting guide for DHCP\nUse automatic TCP/IP addressing without a DHCP server\n\nThe DHCP Server service debug logs provide more information about the IP address lease assignment and the DNS dynamic updates that are done by the DHCP server. By default, these logs are located in %windir%\\System32\\Dhcp . For more information, see Analyze DHCP Server Log Files .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+    "source_type": "official_documentation",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-DNS-001",
+    "chunk_id": "KB-DNS-001-001",
+    "heading": "Troubleshooting DNS clients",
+    "heading_path": [
+      "Troubleshooting DNS clients"
+    ],
+    "content": "Applies to: ✅ Windows Server 2025 , ✅ Windows Server 2022 , ✅ Windows Server 2019 , ✅ Windows Server 2016\nThis article discusses how to troubleshoot issues from DNS clients.\n",
+    "source_url": "https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client"
+  },
+  {
+    "document_id": "KB-DNS-001",
+    "chunk_id": "KB-DNS-001-002",
+    "heading": "Check IP configuration",
+    "heading_path": [
+      "Troubleshooting DNS clients",
+      "Check IP configuration"
+    ],
+    "content": "Open a Command Prompt window as an administrator on the client computer.\nRun the following command: ipconfig /all\nVerify that the client has a valid IP address, subnet mask, and default gateway for the network to which it is attached and being used.\nCheck the DNS servers that are listed in the output, and verify that the IP addresses listed are correct.\nCheck the connection-specific DNS suffix in the output and verify that it is correct.\nIf the client does not have a valid TCP/IP configuration, use one of the following methods:\nFor dynamically configured clients, use the ipconfig /renew command to manually force the client to renew its IP address configuration with the DHCP server.\nFor statically configured clients, modify the client TCP/IP properties to use valid configuration settings or complete its DNS configuration for the network.\n",
+    "source_url": "https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client"
+  },
+  {
+    "document_id": "KB-DNS-001",
+    "chunk_id": "KB-DNS-001-003",
+    "heading": "Ping test",
+    "heading_path": [
+      "Troubleshooting DNS clients",
+      "Check network connection",
+      "Ping test"
+    ],
+    "content": "Verify that the client can contact a preferred (or alternate) DNS server by pinging the preferred DNS server by its IP address.\nFor example, if the client uses a preferred DNS server of 10.0.0.1, run this command at a command prompt:\nping 10.0.0.1\nIf no configured DNS server responds to a direct pinging of its IP address, this indicates that the source of the problem is more likely network connectivity between the client and the DNS servers. If this is the case, follow basic TCP/IP network troubleshooting steps to fix the problem. Keep in mind that ICMP traffic must be allowed through the firewall in order for the ping command to work.\n",
+    "source_url": "https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client"
+  },
+  {
+    "document_id": "KB-DNS-001",
+    "chunk_id": "KB-DNS-001-004",
+    "heading": "DNS query tests",
+    "heading_path": [
+      "Troubleshooting DNS clients",
+      "Check network connection",
+      "DNS query tests"
+    ],
+    "content": "If the DNS client can ping the DNS server computer, try to use the following nslookup commands to test whether the server can respond to DNS clients. Because nslookup doesn't use the client's DNS cache, name resolution will use the client's configured DNS server.\n",
+    "source_url": "https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client"
+  },
+  {
+    "document_id": "KB-DNS-001",
+    "chunk_id": "KB-DNS-001-005",
+    "heading": "Test a client",
+    "heading_path": [
+      "Troubleshooting DNS clients",
+      "Check network connection",
+      "DNS query tests",
+      "Test a client"
+    ],
+    "content": "nslookup <client>\nFor example, if the client computer is named client1 , run this command:\nnslookup client1\nIf a successful response is not returned, try to run the following command:\nnslookup <fqdn of client>\nFor example, if the FQDN is client1.corp.contoso.com , run this command:\nnslookup client1.corp.contoso.com.\nNote\nYou must include the trailing period when you run this test.\nIf Windows successfully finds the FQDN but cannot find the short name, check the DNS Suffix configuration on the DNS tab of the Advanced TCP/IP Settings of the NIC. For more information, see Configuring DNS Resolution .\n",
+    "source_url": "https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client"
+  },
+  {
+    "document_id": "KB-DNS-001",
+    "chunk_id": "KB-DNS-001-006",
+    "heading": "Test the DNS server",
+    "heading_path": [
+      "Troubleshooting DNS clients",
+      "Check network connection",
+      "DNS query tests",
+      "Test the DNS server"
+    ],
+    "content": "If the DNS client can ping the DNS server computer, try to use the following nslookup commands to test whether the server can respond to DNS clients. Because nslookup doesn't use the client's DNS cache, name resolution will use the client's configured DNS server.\n\nnslookup <DNS Server>\nFor example, if the DNS server is named DC1, run this command:\nnslookup dc1\nIf the previous tests were successful, this test should also be successful. If this test is not successful, verify the connectivity to the DNS server.\n",
+    "source_url": "https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client"
+  },
+  {
+    "document_id": "KB-DNS-001",
+    "chunk_id": "KB-DNS-001-007",
+    "heading": "Test the failing record",
+    "heading_path": [
+      "Troubleshooting DNS clients",
+      "Check network connection",
+      "DNS query tests",
+      "Test the failing record"
+    ],
+    "content": "If the DNS client can ping the DNS server computer, try to use the following nslookup commands to test whether the server can respond to DNS clients. Because nslookup doesn't use the client's DNS cache, name resolution will use the client's configured DNS server.\n\nnslookup <failed internal record>\nFor example, if the failing record was app1.corp.contoso.com , run this command:\nnslookup app1.corp.contoso.com\n",
+    "source_url": "https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client"
+  },
+  {
+    "document_id": "KB-DNS-001",
+    "chunk_id": "KB-DNS-001-008",
+    "heading": "Test a public Internet address",
+    "heading_path": [
+      "Troubleshooting DNS clients",
+      "Check network connection",
+      "DNS query tests",
+      "Test a public Internet address"
+    ],
+    "content": "nslookup <external name>\nFor example:\nnslookup bing.com\nIf all four of these tests were successful, run ipconfig /displaydns and check the output for the name that failed. If you see \"Name does not exist\" under the failing name, a negative response was returned from a DNS server and was cached on the client.\nTo resolve the issue, clear the cache by running ipconfig /flushdns .\n",
+    "source_url": "https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-001",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin"
+    ],
+    "content": "Applies to: Exchange Online\nWhen users report that they aren't receiving email, it can be challenging to determine the cause. You might run through several troubleshooting scenarios in your mind. Is something wrong with Outlook? Is the Microsoft 365 service down? Is there a problem in the mail flow or spam filter settings? Or is the problem caused by something that's outside your control, such as that the sender is on a global block list? Fortunately, Microsoft 365 provides powerful automated tools that can help you identify and fix a variety of problems.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-002",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Check whether there's a problem in Outlook or another email app",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "Check whether there's a problem in Outlook or another email app"
+    ],
+    "content": "If only one user reports having trouble receiving email, there might be a problem in their email account or their email app. Have the affected user try the following methods before you move on to admin-specific tasks.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-003",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Use Outlook on the web to look for missing messages - 5 minutes",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "Check whether there's a problem in Outlook or another email app",
+      "Use Outlook on the web to look for missing messages - 5 minutes"
+    ],
+    "content": "If a user is receiving email in their Outlook on the web mailbox but not on the email app that's installed on their computer, this could indicate that the issue is the user's computer or email app. Ask the user to sign in to Outlook on the web to verify that their Microsoft 365 email account is working correctly.\nInstructions: Sign in to Outlook on the web for business",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-004",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Run Support and Recovery Assistant to fix Outlook problems or account issues - 10 minutes",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "Check whether there's a problem in Outlook or another email app",
+      "Run Support and Recovery Assistant to fix Outlook problems or account issues - 10 minutes"
+    ],
+    "content": "Note\nThe Get Help troubleshooters aren't available for new Outlook for Windows.\nIf a single user in your organization is having trouble receiving email, the cause could be a licensing issue, a profile problem, the wrong version of Outlook, or a mixture of other issues. Fortunately, Microsoft Support and Recovery Assistant finds and helps you fix most issues that affect Outlook or Microsoft 365. As a first step in troubleshooting email delivery problems for Microsoft 365 for business, we recommend that you download and run Support and Recovery Assistant on the affected computer.\nNotice that if you're experiencing issues that affect Outlook for Mac or are having mobile access issues, you can use the app to check your account settings. However, you have to install the app on a PC. After you sign in to the affected account, the app will check for issues. Users can typically download and run Support and Recovery Assistant without help from their Microsoft 365 admin.\nLet us fix your issue Download and run Microsoft Support and Recovery Assistant",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-005",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "If Support and Recovery Assistant doesn't fix the issue, try these admin tools",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "If Support and Recovery Assistant doesn't fix the issue, try these admin tools"
+    ],
+    "content": "As a Microsoft 365 for business admin, you have access to several tools that can help you investigate why users are not receiving email. The following video provides a brief overview of the tools that are available to you.\nThe following list of tools is sorted from the simplest and quickest option to the most in-depth.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-006",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Check Microsoft 365 service health for Exchange Online issues - 5 minutes",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "If Support and Recovery Assistant doesn't fix the issue, try these admin tools",
+      "Check Microsoft 365 service health for Exchange Online issues - 5 minutes"
+    ],
+    "content": "The service health page lists the status of Microsoft 365 services and indicates any recent service incidents. To check the service health, follow these steps:\nSign in through the appropriate link on Where to sign in to Microsoft 365 for business by using your work or school account.\nSelect the app launcher icon in the upper-left corner, and select Admin . Tip Admin appears only to Microsoft 365 administrators. Can't find the app that you're looking for? From the app launcher, select All apps to see an alphabetical list of the Microsoft 365 apps that are available to you. From there, you can search for a specific app.\nUnder Service health , go to View the service health .\nIf there's an indication that the ExchangeOnline service is degraded, email delivery might be delayed for your organization, and you can expect that engineers are already working to restore service. Check the service health page for progress updates. In this case, you won't have to open a service request because we'll already be working to resolve the issue.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-007",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Run email delivery troubleshooter",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "If Support and Recovery Assistant doesn't fix the issue, try these admin tools",
+      "Run email delivery troubleshooter"
+    ],
+    "content": "Note\nThis feature requires a Microsoft 365 administrator account. This feature isn't available for Microsoft 365 Government, Microsoft 365 operated by 21Vianet, or Microsoft 365 Germany.\nYou can run an automated diagnostic to identify issues that affect email delivery, and find suggested solutions to fix the issues.\nSelect Diag: Troubleshoot Email Delivery to launch the diagnostic in the Microsoft 365 admin center. Enter the email address of the sender and recipient in addition to other relevant information, and then select Run Tests .\nRun Tests: Troubleshoot Email Delivery",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-008",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Use message trace for in-depth email delivery troubleshooting - 15 minutes",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "If Support and Recovery Assistant doesn't fix the issue, try these admin tools",
+      "Use message trace for in-depth email delivery troubleshooting - 15 minutes"
+    ],
+    "content": "Sometimes, an email message gets lost in transit, or it can take a lot longer than expected for delivery. In such cases, users might wonder what occurred. The message trace feature lets you follow messages as they pass through your Exchange Online service. Getting detailed information about a specific message lets you efficiently answer your user's questions, troubleshoot mail flow issues, validate policy changes, and prevent you from haviineeding to contact technical support for assistance.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-009",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Open the message trace tool",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "If Support and Recovery Assistant doesn't fix the issue, try these admin tools",
+      "Use message trace for in-depth email delivery troubleshooting - 15 minutes",
+      "Open the message trace tool"
+    ],
+    "content": "If you're a Microsoft 365 admin, you access and run the message trace tool through the Exchange admin center. To get there:\nSign in through the appropriate link on Where to sign in to Microsoft 365 for business by using your work or school account.\nSelect the app launcher icon in the upper-left corner, and select Admin . Tip Admin appears only to Microsoft 365 administrators. Can't find the app that you're looking for? From the app launcher, select All apps to see an alphabetical list of the Microsoft 365 apps that are available to you. From there, you can search for a specific app.\nGo to Exchange .\nUnder mail flow , go to message trace .\nIf you're a Microsoft 365 Small Business admin, do the following to find message trace:\nGo to Admin > Service settings > Email, calendar, and contacts .\nUnder Email troubleshooting , select Troubleshoot message delivery .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-010",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Run a message trace and view delivery details of messages that were sent in the past week",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "If Support and Recovery Assistant doesn't fix the issue, try these admin tools",
+      "Use message trace for in-depth email delivery troubleshooting - 15 minutes",
+      "Run a message trace and view delivery details of messages that were sent in the past week"
+    ],
+    "content": "By default, message trace is set to search for all messages that were sent or received by your organization in the past 48 hours. You can select Search at the bottom of the page to generate this report. This report can give you a general idea about what's occurring to the mail flow in your organization. However, to troubleshoot a specific user's mail delivery issue, you'll want to first scope the message trace results for that user's mailbox within the time frame in which they expected to receive the message.\nOn the Date range menu, select a date range that's closest to the time at which the missing message was sent.\nUse Add sender and Add recipient to add one or more senders or recipients, respectively.\nSelect Search to run the message trace.\nThe message trace results page shows all the messages that match the criteria that you selected. Typical messages are marked Delivered in the STATUS column.\nTo see details about a message, select the message, and then select ( Details ).\n\nDetails appear together with an explanation of what occurred to the message. To fix the issue, follow the instructions in the How to fix it section.\nTo search for a different message, select the Clear button on the message trace page, and then specify new search criteria.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-011",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "View the results of a message trace that's more than seven days old",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "If Support and Recovery Assistant doesn't fix the issue, try these admin tools",
+      "Use message trace for in-depth email delivery troubleshooting - 15 minutes",
+      "View the results of a message trace that's more than seven days old"
+    ],
+    "content": "Message traces for items more than seven days old are available only as a downloadable .csv file. Because data about older messages is stored in a different database, message traces for older messages can take up to an hour. To download the .csv file, do one of the following.\nSelect the link inside the email notification that's sent when the trace is completed.\nTo view a list of traces that were run for items that are more than seven days old, select View pending or completed traces in the message trace tool. In the resulting UI, the list of traces is sorted based on the date and time that they were submitted, starting at the most recent submissions. When you select a specific message trace, additional information appears in the right pane. Depending on what search criteria you specified, this may include details such as the date range for which the trace was run, and the sender and intended recipients of the message.\nNote\n\nMessage traces that contain data that's more than seven days old are automatically deleted. They cannot be manually deleted.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-001",
+    "chunk_id": "KB-EMAIL-001-012",
+    "document_title": "Find and fix email delivery issues as a Microsoft 365 for business admin",
+    "heading": "Common questions about message tracing",
+    "heading_path": [
+      "Find and fix email delivery issues as a Microsoft 365 for business admin",
+      "If Support and Recovery Assistant doesn't fix the issue, try these admin tools",
+      "Use message trace for in-depth email delivery troubleshooting - 15 minutes",
+      "Common questions about message tracing"
+    ],
+    "content": "After a message is sent, how long before a message trace can pick it up?\nMessage trace data can appear as soon as 10 minutes after a message is sent, or it can take up to one hour.\nWhy am I getting a time-out error when I run a message trace?\nThe search is probably taking too long. Try simplifying your search criteria.\nWhy is my message taking so long to arrive at its destination?\nPossible causes include the following:\nThe intended destination isn't responsive. This is the most likely scenario.\nA large message takes a long time to process.\nLatency in the service is causing delays.\nThe message was blocked by the filtering service.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/email-delivery/email-delivery-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.994464+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-001",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "I can't send or receive messages in Outlook",
+    "heading_path": [
+      "I can't send or receive messages in Outlook"
+    ],
+    "content": "Are you using Outlook for Mac? Visit I can't send or receive messages in Outlook for Mac for help.\nIf you have messages piling up in your Outlook outbox or people you're sending messages to aren't receiving them, try the following methods to fix the issue.\n- New Outlook\n- Classic Outlook\nIf your Microsoft cloud storage is full, you cannot send or receive email. Go to your mailbox storage to check what's taking up space. Learn more about recent changes.\nWe've presented the methods in order of quickest to most in-depth. For details around general troubleshooting, visit Troubleshooting Outlook issues for more information.\nWe recommend trying the following solutions in the order listed.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-002",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Make sure you are connected to the Internet",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Make sure you are connected to the Internet"
+    ],
+    "content": "- Open a browser, such as Microsoft Edge or Google Chrome.\n- Try entering one of the following websites in the address bar: http:⁠//www.microsoft.com http:⁠//www.bing.com\n- If you can't reach either of those two websites, go to Fix network connection issues in Windows.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-003",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Check if you are experiencing sync issues",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Check if you are experiencing sync issues"
+    ],
+    "content": "If you are having sync issues, you can force a manual sync by selecting the Sync button via the View tab on the Ribbon. A status message appears at the bottom of the message list while Outlook is syncing. For more information, go to Sync to manually check for new mail and to send messages in Outlook.\nThird party email accounts such as Gmail, Yahoo, iCloud, or Generic POP and IMAP, do not have the same capability to manually Sync using the button.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-004",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Do your messages contain large attachments?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Do your messages contain large attachments?"
+    ],
+    "content": "Some email providers (such as your ISP or even Gmail) won't let you send messages larger than a certain size. Adding pictures and large attachments to your message can prevent you from sending that message (and any messages sent after the large message).\nGo to your Outbox and then open the stuck email messages. Start with the oldest message first. If that message has an attachment that's larger than 20MB, delete the attachment and either attach a smaller file or attach a link to the attachment. For more information, go to Reduce attachment size to send large files with Outlook or Exchange Online limits.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-005",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Have you changed your password recently?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Have you changed your password recently?"
+    ],
+    "content": "If you've changed your password on the website for your email account, you'll need to change it in new Outlook as well.\n- Select the email account name.\n- A pop up will appear prompting you to sign in. Select Continue.\n- Follow the prompts and enter the new password to sign in.\nGo to Reset a forgotten Microsoft account password for more information.\nIf you know you’re using the correct password for your email account, and you get a message such as: Please create an app password for Outlook on your email provider's site.\n- Go to your email provider to get the app password. Your email provider will provide instructions for how to generate an app password to use in email applications such as Outlook in place of your regular password.\n- After you get the app password from your provider, copy it, and then paste it when prompted for your account password in Outlook.\nFor more information, visit Add an email account to Outlook for Windows.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-006",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Have you changed your password recently?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Have you changed your password recently?"
+    ],
+    "content": "We've presented the methods in order of quickest to most in-depth. For details around general troubleshooting, visit Troubleshooting Outlook issues for more information.\nWe recommend trying the following solutions in the order listed.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-007",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Is classic Outlook disconnected? Check the bottom of your Outlook window",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Is classic Outlook disconnected? Check the bottom of your Outlook window"
+    ],
+    "content": "On the Outlook status bar, if you get Disconnected, Working Offline, or Trying to connect…, then Outlook can't reach the email server to send your mail.\nTo fix this problem, on the ribbon, select the Send/Receive tab, then, in the Preferences group, select Work Offline to toggle between offline mode and online mode. You might need to open the message and send it again or choose Send/Receive.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-008",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Make sure you're connected to the Internet",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Make sure you're connected to the Internet"
+    ],
+    "content": "If you lose your connection to the internet, classic Outlook won't be able to send your messages.\n- Open a browser, such as Microsoft Edge or Google Chrome.\n- Try entering one of the following websites in the address bar: http:⁠//www.microsoft.com http:⁠//www.bing.com\n- If you can't reach either of those two websites, go to Fix network connection issues in Windows.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-009",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Do your messages contain large attachments?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Do your messages contain large attachments?"
+    ],
+    "content": "Some email providers (such as your ISP or even Gmail) won't let you send messages larger than a certain size. Adding pictures and large attachments to your message can prevent you from sending that message (and any messages sent after the large message).\nGo to your Outbox and then open the stuck email messages. Start with the oldest message first. If that message has an attachment that's larger than 20MB, delete the attachment and either attach a smaller file or attach a link to the attachment. For more information, go to Reduce attachment size to send large files with Outlook.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-010",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Have you changed your password recently?",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Have you changed your password recently?"
+    ],
+    "content": "If you've changed your password on the website for your email account, you'll need to change it in classic Outlook, too. Go to Reset a forgotten Microsoft account password for more information.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-011",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Contact your antivirus software's help desk",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Contact your antivirus software's help desk"
+    ],
+    "content": "Some antivirus programs perform email scanning. If a virus is found, your antivirus software might prevent you from sending or receiving further email until you get rid of the virus.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-012",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Repair your classic Outlook program",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Repair your classic Outlook program"
+    ],
+    "content": "Occasionally, the Outlook program might need to be repaired. Repairing is a simple process but might take as long as half an hour to complete. For more information, go to Repair an Office application.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-013",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Repair your classic Outlook profile",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Repair your classic Outlook profile"
+    ],
+    "content": "A profile is a group of settings that controls how Outlook works. It includes a listing of your accounts, autocomplete information, and your name and initials. To repair your Outlook profile or create a new one, go to Fix your Outlook email connection by repairing your profile.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-014",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Start classic Outlook in safe mode",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Start classic Outlook in safe mode"
+    ],
+    "content": "Sometimes, an Outlook add-in will crash and prevent your email messages from sending. To disable all add-ins, you can start Outlook in safe mode. If you can send email while Outlook is in safe mode, creating a new Outlook email profile should allow you to send email again.\nTo start Outlook in safe mode, press the Windows key on your keyboard. In the search box, type outlook.exe /safe, then press Enter.\nFor more information on creating a new email profile, go to Create an Outlook profile.",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-015",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Run the Inbox Repair Tool",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Run the Inbox Repair Tool"
+    ],
+    "content": "For many types of email accounts, classic Outlook stores your messages in a Personal Folders File (.pst file). You can repair this file by running the Inbox Repair Tool. This repair should take approximately fifteen minutes. For more information, go to Repair your Outlook personal folders file (.pst).",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-002",
+    "chunk_id": "KB-EMAIL-002-016",
+    "document_title": "I can't send or receive messages in Outlook",
+    "heading": "Error list",
+    "heading_path": [
+      "I can't send or receive messages in Outlook",
+      "Error list"
+    ],
+    "content": "The methods provided in this article can be used to troubleshoot the error messages listed in the following table.\nError messages or error codes No connection could be made because the target machine actively refused it. The server could not be found. (Account:account name, POPserver:'mail', Error Number: 0x800ccc0d). Task 'server name - Sending and Receiving' reported error (0x800ccc0f): 'The connection to the server was interrupted. If this problem continues, contact the server administrator or Internet service provider (ISP). The server responded:? K'. Task 'SMTP server name - Sending and Receiving' reported error (0x80042109): 'Outlook is unable to connect to your outgoing (SMTP) e-mail server. If you continue to receive this message, contact the server administrator or Internet service provider (ISP).' The operation timed out waiting for a response from the receiving (POP) server 0x8004210a. Error codes: 0x80042108; 0x800ccc0e; 0x800ccc67; 0x80040900; 0x80040119; 0x80040600. Error code: 0x8004210b",
+    "source_url": "https://support.microsoft.com/en-us/office/i-can-t-send-or-receive-messages-in-outlook-97748418-bbd5-4743-a05b-581f22a466dd",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.340951+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-003",
+    "chunk_id": "KB-EMAIL-003-001",
+    "document_title": "Fix Outlook connection problems for Microsoft 365 account",
+    "heading": "Fix Outlook connection problems for Microsoft 365 account",
+    "heading_path": [
+      "Fix Outlook connection problems for Microsoft 365 account"
+    ],
+    "content": "If you're using Outlook to access your Microsoft 365 email account or another Exchange-based email account, and you're having problems, we want to get you back to sending and receiving email as quickly as possible.\nIf you're looking for help with Outlook.com, check Get help with Outlook.com. If you're looking for help with Outlook for Mac, check Outlook for Mac Help.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/outlook-issues/outlook-connection-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.450277+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-003",
+    "chunk_id": "KB-EMAIL-003-002",
+    "document_title": "Fix Outlook connection problems for Microsoft 365 account",
+    "heading": "Let us fix your Outlook connection problems for you",
+    "heading_path": [
+      "Fix Outlook connection problems for Microsoft 365 account",
+      "Let us fix your Outlook connection problems for you"
+    ],
+    "content": "We can diagnose and fix several common Outlook connectivity issues for you. If our automated tool can't fix your issue, or you'd like to fix it yourself, see the next section.\nLet us fix your issue Support and Recovery Assistant for Microsoft 365 Need more help? Contact support for business products - Admin Help",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/outlook-issues/outlook-connection-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.450277+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-003",
+    "chunk_id": "KB-EMAIL-003-003",
+    "document_title": "Fix Outlook connection problems for Microsoft 365 account",
+    "heading": "Fix software update and profile issues",
+    "heading_path": [
+      "Fix Outlook connection problems for Microsoft 365 account",
+      "Fix software update and profile issues"
+    ],
+    "content": "Out-of-date software and corrupted Outlook profiles are two of the most common issues that can prevent you from sending and receiving email. If you're an admin with multiple users reporting problems, you also should check for service issues with Microsoft 365.\nCommon Outlook fixes\nRun Windows Update If your Outlook client software or Windows operating system software is out of date, you might have problems sending and receiving email.\nRun Windows Update to make sure that you have the latest updates for Outlook and other desktop applications for Microsoft 365.\nFor Windows Update instructions, see Windows Update: FAQ.\nRun a Microsoft 365 Diagnostic There are Microsoft diagnostics that you can run to troubleshoot connectivity issues.\nThe diagnostics perform automated checks to detect issues and provide possible solutions to fix them.\nSelect Run Tests: Outlook User Connectivity to download and run the diagnostic.\nThis feature requires a Microsoft 365 administrator account.\nThis feature isn't available for Microsoft 365 Government, Microsoft 365 operated by 21Vianet, or Microsoft 365 Germany.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/outlook-issues/outlook-connection-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.450277+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-EMAIL-003",
+    "chunk_id": "KB-EMAIL-003-004",
+    "document_title": "Fix Outlook connection problems for Microsoft 365 account",
+    "heading": "Fix software update and profile issues",
+    "heading_path": [
+      "Fix Outlook connection problems for Microsoft 365 account",
+      "Fix software update and profile issues"
+    ],
+    "content": "Run Tests: Outlook User Connectivity Check for service issues Admin only: If more than one person in your organization is experiencing email problems in Microsoft 365, it could be due to a problem with the service.\nGo to the Microsoft 365 Service health status (admin sign in required), and check the status of the services under Exchange Online.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/outlook-issues/outlook-connection-issues",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:58.450277+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-001",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Summary",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "Summary"
+    ],
+    "content": "A wired Ethernet connection lets you get a fast internet connection—plug one end of the Ethernet cable into your router at home, then plug the other end into the Ethernet port on your Windows PC. If your PC doesn’t have an Ethernet port but you want to try this option, you might consider getting a USB to Ethernet adapter.\nIf you’re using an Ethernet connection and can’t connect to the internet, there are a few things you can try to try to fix the problem and get connected.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-002",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Run the Network troubleshooter",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "Run the Network troubleshooter"
+    ],
+    "content": "If you are using a Windows 11 device, start by running the automated Network and Internet troubleshooter in the Get Help app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to troubleshooting steps.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-004",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Check the Ethernet cable and connection",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your home router",
+      "Check the Ethernet cable and connection"
+    ],
+    "content": "Make sure the Ethernet cable is securely plugged into the Ethernet port on both your router and Windows PC. On your router, make sure the Ethernet cable is plugged into the correct Ethernet port— not the Internet port that’s used to connect your modem and router.\nIf one Ethernet cable doesn’t work and you have another one nearby, try the other Ethernet cable to see if that works. If it does, it might be a problem with the first cable.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-005",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Restart your modem and wireless router",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your home router",
+      "Restart your modem and wireless router"
+    ],
+    "content": "This helps create a new connection to your internet service provider (ISP). When you do this, everyone that is connected to your Wi-Fi network will be temporarily disconnected. The steps you take to restart your modem and router can vary, but here are the general steps.\nIf you have a cable modem/Wi-Fi router combo device, you only need to follow the steps for the single device.\n- Unplug the power cable for the router from the power source.\n- Unplug the power cable for the modem from the power source. Some modems have a backup battery. If you unplug the modem and lights stay on, remove the battery from the modem.\n- Wait at least 30 seconds or so. If you had to remove the battery from the modem, put it back in.\n- Plug the modem back into the power source. The lights on the modem will blink. Wait for them to stop blinking.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-006",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Restart your modem and wireless router",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your home router",
+      "Restart your modem and wireless router"
+    ],
+    "content": "- Plug your router back into the power source. Wait a few minutes for the modem and router to fully power on. You can usually tell when they’re ready by looking at the status lights on the two devices.\n- On your PC, try to connect again using the Ethernet connection.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-007",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Check the network status",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Check the network status"
+    ],
+    "content": "Open Settings > Network & internet. Check your Ethernet connection status at the top of the screen.\n- It should display Connected underneath the network connection name.\nIf there’s an error, such as one that says Action needed, select Ethernet to view your Ethernet connection settings.\nIf one Ethernet cable doesn’t work and you have another one nearby, try the other Ethernet cable to see if that works. If it does, it might be a problem with the first cable.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-008",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Connect to Wi-Fi instead",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Connect to Wi-Fi instead"
+    ],
+    "content": "If your router is a Wi-Fi router, try to connect to Wi-Fi and see if you can get connected. This can do two things—help you get an internet connection and help you narrow down the source of the problem. For more info, see Connect to a Wi-Fi network in Windows.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-009",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Run network commands",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Run network commands"
+    ],
+    "content": "Try running these network commands to manually reset the TCP/IP stack, release and renew the IP address, and flush and reset the DNS client resolver cache:\n- Select Search on the taskbar, type Command prompt. The Command Prompt button will appear. To the right of it, select Run as administrator > Yes.\n- At the command prompt, run the following commands in the listed order, and then check to see if that fixes your connection problem: Type netsh winsock reset and select Enter. Type netsh int ip reset and select Enter. Type ipconfig /release and select Enter. Type ipconfig /renew and select Enter. Type ipconfig /flushdns and select Enter.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-010",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Uninstall the Ethernet network adapter driver",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Uninstall the Ethernet network adapter driver"
+    ],
+    "content": "If the previous steps didn’t work, try to uninstall the network adapter driver, and then restart your computer. Windows will automatically install the latest driver. Consider this approach if your network connection stopped working properly after a recent update.\nBefore uninstalling, make sure you have drivers available as a backup. Visit the PC manufacturer’s website and download the latest network adapter driver from there. If your PC can't connect to the internet, you'll need to download a driver on a different PC and save it to a USB flash drive so you can install the driver on your PC. You’ll need to know the PC manufacturer and model name or number.\n- Select Search on the taskbar, type Device Manager, and then select Device Manager from the list of results.\n- Expand Network adapters and locate the Ethernet network adapter for your device.\n- Select the network adapter, press and hold (or right-click), and then select Uninstall device > the Attempt to remove the driver for this device check box > Uninstall.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-011",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Uninstall the Ethernet network adapter driver",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Uninstall the Ethernet network adapter driver"
+    ],
+    "content": "- After uninstalling the driver, select the Start button > Power > Restart.\nAfter your PC restarts, Windows will automatically look for and install the network adapter driver. Check to see if that fixes your connection problem. If Windows doesn't automatically install a driver, try to install the backup driver you saved before uninstalling.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-012",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Use network reset",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Use network reset"
+    ],
+    "content": "Using network reset should be the last step you try. Consider using it if the steps above don’t help to get you connected.\nThis can help solve connection problems you might have after upgrading from Windows 10 to Windows 11. It can also help to fix the problem where you can connect to the internet but can't connect to shared network drives. Network reset removes any network adapters you have installed and the settings for them. After your PC restarts, any network adapters are reinstalled, and the settings for them are set to the defaults.\n- Select the Start button, then enter settings. Select Settings > Network & internet. Select Advanced network settings > Network reset.\n- On the Network reset screen, select Reset now > Yes to confirm.\n- Wait for your PC to restart and see if that fixes the problem.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-013",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Use network reset",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Use network reset"
+    ],
+    "content": "- After using network reset, you might need to reinstall and set up other networking software you might be using, such as VPN client software or virtual switches from Hyper‑V (if you're using that or other network virtualization software).\n- Network reset might set each one of your known network connections to a public network profile. In a public network profile, your PC is not discoverable to other PCs and devices on the network, which can help make your PC more secure. To use a private network profile, see Essential network settings and tasks.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-014",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Try to connect to the same network on a different device",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On another PC",
+      "Try to connect to the same network on a different device"
+    ],
+    "content": "If you have another Windows PC in your home and a USB to Ethernet adapter, try to connect using that PC. If you can connect, the source of the problem is likely due to your first PC. If you can't connect to the Ethernet network on either PC, it might be a problem with your router, internet service provider, or USB to Ethernet adapter.\nSupport for Windows 10 has ended on October 14, 2025\n- After October 14, 2025, Microsoft will no longer provide free software updates from Windows Update, technical assistance, or security fixes for Windows 10. Your PC will still work, but we recommend moving to Windows 11.\n- Learn more",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-015",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Run the Network troubleshooter",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "Run the Network troubleshooter"
+    ],
+    "content": "Start by running the automated Network troubleshooter in the Settings app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to troubleshooting steps.\n- Select Start > Settings > Network and Internet.\n- Select Status from the left-hand menu.\n- Scroll down and select Network troubleshooter.\n- A new window titled Troubleshoot Problems will open. Follow the on-screen instructions to complete the process.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-016",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Check the network status",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Check the network status"
+    ],
+    "content": "Open Settings > Network & internet. Check your Ethernet connection status at the top of the screen.\n- It should display You're connected to the Internet underneath the network connection.\nIf there’s an error, such as one that says Action needed, select Ethernet to view your Ethernet connection settings.\nIf one Ethernet cable doesn’t work and you have another one nearby, try the other Ethernet cable to see if that works. If it does, it might be a problem with the first cable.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-017",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Use network reset",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Use network reset"
+    ],
+    "content": "Using network reset should be the last step you try. Consider using it if the steps above don’t help to get you connected.\nThis can help solve connection problems you might have after upgrading from Windows 10 to Windows 11. It can also help to fix the problem where you can connect to the internet but can't connect to shared network drives. Network reset removes any network adapters you have installed and the settings for them. After your PC restarts, any network adapters are reinstalled, and the settings for them are set to the defaults.\n- Select the Start button, then enter settings. Select Settings > Network & internet Select Status > Network reset.\n- On the Network reset screen, select Reset now > Yes to confirm.\n- Wait for your PC to restart and see if that fixes the problem.\n- After using network reset, you might need to reinstall and set up other networking software you might be using, such as VPN client software or virtual switches from Hyper‑V (if you're using that or other network virtualization software).",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-018",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Use network reset",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On your PC",
+      "Use network reset"
+    ],
+    "content": "- Network reset might set each one of your known network connections to a public network profile. In a public network profile, your PC is not discoverable to other PCs and devices on the network, which can help make your PC more secure. To use a private network profile, see Essential network settings and tasks.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-NETWORK-001",
+    "chunk_id": "KB-NETWORK-001-019",
+    "document_title": "Fix Ethernet connection problems in Windows",
+    "heading": "Try to connect to the same network on a different device",
+    "heading_path": [
+      "Fix Ethernet connection problems in Windows",
+      "On another PC",
+      "Try to connect to the same network on a different device"
+    ],
+    "content": "If you have another Windows PC in your home and a USB to Ethernet adapter, try to connect using that PC. If you can connect, the source of the problem is likely due to your first PC. If you can't connect to the Ethernet network on either PC, it might be a problem with your router, internet service provider, or USB to Ethernet adapter.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-ethernet-connection-problems-in-windows-2311254e-cab8-42d6-90f3-cb0b9f63645f",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:59.177577+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-001",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Troubleshoot Always On VPN",
+    "heading_path": [
+      "Troubleshoot Always On VPN"
+    ],
+    "content": "Applies to: Supported versions of Windows Server\nThis article provides instructions for verifying and troubleshooting Always On VPN deployment.\nIf your Always On Virtual Private Network (VPN) setup isn't connecting clients to your internal network, you may have encountered one of the following issues:\nThe VPN certificate is invalid.\nThe Network Policy Server (NPS) policies are incorrect.\nIssues with client deployment scripts or Routing and Remote Access.\nThe first step in troubleshooting and testing your VPN connection is understanding the core components of the Always On VPN infrastructure.\nYou can troubleshoot connection issues in several ways. For client-side issues and general troubleshooting, the application logs on client computers are invaluable. For authentication-specific issues, the NPS log located on the NPS server can help you determine the source of the problem.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-002",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "General troubleshooting for Always On VPN connection issues",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "General troubleshooting for Always On VPN connection issues"
+    ],
+    "content": "Always On VPN clients go through several steps before establishing a connection. As a result, there are several places where connections can be blocked, and sometimes it's difficult to figure out where the issue is.\nIf you're encountering issues, here are some general steps you can take to figure out what's going on:\nRun a whatismyip scan to make sure your template machine isn't externally connected. If the machine has a public IP address that doesn't belong to you, then you should change the IP to a private one.\nGo to Control Panel > Network and Internet > Network Connections , open the properties for your VPN Profile, and check to make sure the value in the General tab can publicly resolve through DNS. If not, the Remote Access server or VPN server being unable to resolve to an IP address is likely the cause of the issue.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-003",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "General troubleshooting for Always On VPN connection issues",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "General troubleshooting for Always On VPN connection issues"
+    ],
+    "content": "Open the Internet Control Message Protocol (ICMP) to the external interface and ping the VPN server from the remote client. If the ping succeeds, you can remove the ICMP allow rule. If not, then your VPN server being inaccessible is probably causing the issue.\nCheck the configuration for the internal and external NICs on your VPN server. In particular, make sure they're on the same subnet and that the external NIC connects to the correct interface on your firewall.\nCheck the client firewall, server firewall, and any hardware firewalls to make sure they allow UDP 500 and 4500 port activity through. Also, if you're using UDP port 500, make sure IPSEC isn't disabled or blocked anywhere. If not, the ports not being open from the client to the VPN server external interface is causing the issue.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-004",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "General troubleshooting for Always On VPN connection issues",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "General troubleshooting for Always On VPN connection issues"
+    ],
+    "content": "Make sure the NPS server has a Server Authentication certificate that can service IKE requests. Also, make sure your NPS client has the correct VPN server IP in its settings. You should only authenticate with PEAP and the PEAP properties should only allow certificate authentication. You can check for authentication issues in the NPS event log. For more information, see Install and Configure the NPS Server .\nIf you can connect but don't have internet or local network access, check your DHCP or VPN server IP pools for configuration issues. Also, make sure your clients can reach those resources. You can use the VPN server to route requests.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-005",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "General troubleshooting for VPN_Profile.ps1 script issues",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "General troubleshooting for VPN_Profile.ps1 script issues"
+    ],
+    "content": "The most common issues when manually running the VPN_Profile.ps1 script include:\nIf you use a remote connection tool, make sure you don't use Remote Desktop Protocol (RDP) or other remote connection methods. Remote connections can interfere with the service's ability to detect you when you sign in.\nIf the affected user is an administrator on their local machine, make sure they have administrator privileges while running the script.\nIf you've enabled other PowerShell security features, make sure your PowerShell execution policy isn't blocking the script. Disable Constrained Language mode before running the script, then reactivate it after the script is finished running.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-006",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Logs",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Logs"
+    ],
+    "content": "You can also check the application logs and NPS logs for events that can indicate when and where an issue is happening.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-007",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Application logs",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Logs",
+      "Application logs"
+    ],
+    "content": "The application logs on client machines record higher-level details of VPN connection events.\nWhen you're troubleshooting Always On VPN, look for events labeled RasClient . All error messages return the error code at the end of the message. Error codes lists some of the more common error codes related to Always On VPN. For a full list of error codes, see Routing and Remote Access Error Codes .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-008",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "NPS logs",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Logs",
+      "NPS logs"
+    ],
+    "content": "NPS creates and stores the NPS accounting logs. By default, logs are stored in %SYSTEMROOT%\\System32\\Logfiles\\ in a file named IN<date of log creation>.txt .\nBy default, these logs are in comma-separated values format, but they don't include a heading row. The following code block contains the heading row:\nComputerName,ServiceName,Record-Date,Record-Time,Packet-Type,User-Name,Fully-Qualified-Distinguished-Name,Called-Station-ID,Calling-Station-ID,Callback-Number,Framed-IP-Address,NAS-Identifier,NAS-IP-Address,NAS-Port,Client-Vendor,Client-IP-Address,Client-Friendly-Name,Event-Timestamp,Port-Limit,NAS-Port-Type,Connect-Info,Framed-Protocol,Service-Type,Authentication-Type,Policy-Name,Reason-Code,Class,Session-Timeout,Idle-Timeout,Termination-Action,EAP-Friendly-Name,Acct-Status-Type,Acct-Delay-Time,Acct-Input-Octets,Acct-Output-Octets,Acct-Session-Id,Acct-Authentic,Acct-Session-Time,Acct-Input-Packets,Acct-Output-Packets,Acct-Terminate-Cause,Acct-Multi-Ssn-ID,Acct-Link-Count,Acct-Interim-Interval,Tunnel-Type,Tunnel-Medium-Type,Tunnel-Client-Endpt,Tunnel-Server-Endpt,Acct-Tunnel-Conn,Tunnel-Pvt-Group-ID,Tunnel-Assignment-ID,Tunnel-Preference,MS-Acct-Auth-Type,MS-Acct-EAP-Type,MS-RAS-Version,MS-RAS-Vendor,MS-CHAP-Error,MS-CHAP-Domain,MS-MPPE-Encryption-Types,MS-MPPE-Encryption-Policy,Proxy-Policy-Name,Provider-Type,Provider-Name,Remote-Server-Address,MS-RAS-Client-Name,MS-RAS-Client-Version\nIf you paste this heading row as the first line of the log file, then import the file into Microsoft Excel, then Excel properly labels the columns.\nThe NPS logs can help you diagnose policy-related issues. For more information about NPS logs, see Interpret NPS Database Format Log Files .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-009",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error codes",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes"
+    ],
+    "content": "The following sections describe how to resolve the most commonly encountered errors.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-010",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 800: the remote connection couldn't connect",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 800: the remote connection couldn't connect"
+    ],
+    "content": "This issue happens when the service can't make a remote connection because the attempted VPN tunnels failed, often because the VPN server isn't reachable. If your connection is trying to use a Layer 2 Tunneling Protocol (L2TP) or IPsec tunnel, this error means the required security parameters for IPsec negotiation aren't configured properly.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-011",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Cause: VPN tunnel type",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 800: the remote connection couldn't connect",
+      "Cause: VPN tunnel type"
+    ],
+    "content": "You can encounter this issue when the VPN tunnel type is set to Automatic and your connection attempt is unsuccessful in all VPN tunnels.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-012",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: check your VPN configuration",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 800: the remote connection couldn't connect",
+      "Solution: check your VPN configuration"
+    ],
+    "content": "Because VPN settings cause this issue, you should troubleshoot your VPN settings and connection by trying the following:\nIf you know which tunnel to use for your deployment, set the type of VPN to that particular tunnel type on the VPN client side.\nMake sure the Internet Key Exchange (IKE) ports on User Datagram Protocol (UDP) ports 500 and 4500 aren't blocked.\nMake sure both the client and server have correct certificates for IKE.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-013",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 809: can't establish a connection between local machine and VPN server",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 809: can't establish a connection between local machine and VPN server"
+    ],
+    "content": "In this issue, the remote server doesn't respond, which prevents your local machine and the VPN server from connecting. This could be because one or more network devices, such as routers, firewalls, or the Network Address Translation (NAT) between your computer and the remote server isn't configured to allow VPN connections. Contact your administrator or your service provider to determine which device may be causing the problem.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-014",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 809 cause",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 809: can't establish a connection between local machine and VPN server",
+      "Error 809 cause"
+    ],
+    "content": "You can encounter this issue when the UDP 500 or 4500 ports on the VPN server or firewall are blocked. Blocking can happen when one of the network devices between your computer and the remote server, such as the firewall, NAT, or routers, aren't configured correctly.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-015",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: check the ports on devices between your local machine and remote server",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 809: can't establish a connection between local machine and VPN server",
+      "Solution: check the ports on devices between your local machine and remote server"
+    ],
+    "content": "To address this issue, you should first contact your administrator or service provider to find out which device is blocked. After that, make sure the firewalls for that device allow the UDP 500 and 4500 ports through. If that doesn't address the issue, check the firewalls on every device between your local machine and the remote server.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-016",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 812: can't connect to Always On VPN",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 812: can't connect to Always On VPN"
+    ],
+    "content": "This issue occurs when your remote access server (RAS) or VPN server can't connect to Always On VPN. The authentication method the server used to verify your user name and password didn't match the authentication method configured in your connection profile.\nWhenever you encounter error 812, we recommend that you contact your RAS server administrator immediately to let them know what happened.\nIf you're using the Event Viewer to troubleshoot, you can find this issue marked as event log 20276. This event usually appears when a routing and remote access (RRAS)-based VPN server authentication protocol setting doesn't match the settings on the VPN client computer.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-017",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 812 cause",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 812: can't connect to Always On VPN",
+      "Error 812 cause"
+    ],
+    "content": "You typically encounter this error when the NPS specified an authentication condition the client can't meet. For example, if the NPS specifies it needs a certificate to secure the Protected Extensible Authentication Protocol (PEAP) connection, then it can't authenticate if the client is trying to use EAP-MSCHAPv2 instead.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-018",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: check your client and NPS server authentication settings",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 812: can't connect to Always On VPN",
+      "Solution: check your client and NPS server authentication settings"
+    ],
+    "content": "To resolve this issue, make sure the authentication requirements for your client and the NPS server match. If not, change them accordingly.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-019",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 13806: IKE can't find a valid machine certificate",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 13806: IKE can't find a valid machine certificate"
+    ],
+    "content": "This issue occurs when IKE can't find a valid machine certificate.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-020",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 13806 cause",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 13806: IKE can't find a valid machine certificate",
+      "Error 13806 cause"
+    ],
+    "content": "You usually encounter this error when the VPN server doesn't have the required machine or root machine certificate.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-021",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: install a valid certificate in the relevant certificate store",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 13806: IKE can't find a valid machine certificate",
+      "Solution: install a valid certificate in the relevant certificate store"
+    ],
+    "content": "To resolve this issue, make sure the required certificates are installed on both the client machine and the VPN server. If not, contact your network security administrator and ask them to install valid certificates in the relevant certificate store.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-022",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 13801: the IKE authentication credentials are invalid",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 13801: the IKE authentication credentials are invalid"
+    ],
+    "content": "You encounter this issue when either the server or client can't accept the IKE authentication credentials.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-023",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 13801 cause",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 13801: the IKE authentication credentials are invalid",
+      "Error 13801 cause"
+    ],
+    "content": "This error can occur due to the following:\nThe machine certificate used for IKEv2 validation on the RAS server doesn't have Server Authentication enabled under Enhanced Key Usage .\nThe machine certificate on the RAS server expired.\nThe client machine doesn't have the root certificate for validating the RAS server certificate.\nThe client machine's VPN server name doesn't match the subjectName value on the server certificate.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-024",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution 1: verify the server certificate settings",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 13801: the IKE authentication credentials are invalid",
+      "Solution 1: verify the server certificate settings"
+    ],
+    "content": "If the issue is the RAS server machine certificate, make sure the certificate includes Server Authentication under Enhanced Key Usage .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-025",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution 2: make sure the machine certificate is still valid",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 13801: the IKE authentication credentials are invalid",
+      "Solution 2: make sure the machine certificate is still valid"
+    ],
+    "content": "If the issue is that the RAS machine certificate expired, make sure it's still valid. If it isn't, install a valid certificate.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-026",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution 3: make sure the client machine has a root certificate",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 13801: the IKE authentication credentials are invalid",
+      "Solution 3: make sure the client machine has a root certificate"
+    ],
+    "content": "If the issue is related to the client machine not having a root certificate, first check the Trusted Root Certification Authorities on the RRAS server to make sure the certification authority you're using is there. If it isn't there, install a valid root certificate.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-027",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution 4: make the client machine's VPN server name matches the server certificate",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 13801: the IKE authentication credentials are invalid",
+      "Solution 4: make the client machine's VPN server name matches the server certificate"
+    ],
+    "content": "First, make sure the VPN client connects by using the same fully qualified domain name (FQDN) that the VPN server certificate uses. If not, change the client name to match the server certificate name.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-028",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 0x80070040: server certificate doesn't have Server Authentication in its usage entries",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 0x80070040: server certificate doesn't have Server Authentication in its usage entries"
+    ],
+    "content": "This issue occurs when the server certificate doesn't have Server Authentication as one of its certificate usage entries.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-029",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 0x80070040 cause",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 0x80070040: server certificate doesn't have Server Authentication in its usage entries",
+      "Error 0x80070040 cause"
+    ],
+    "content": "This error occurs when the RAS server doesn't have a server authentication certificate installed.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-030",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: make sure the machine certificate has the required certificate usage entry",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 0x80070040: server certificate doesn't have Server Authentication in its usage entries",
+      "Solution: make sure the machine certificate has the required certificate usage entry"
+    ],
+    "content": "To address this issue, make sure the machine certificate the RAS server uses for IKEv2 validation includes Server Authentication in its list of certificate usage entries.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-031",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 0x800B0109: a certificate chain processed but terminated in a root certificate",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 0x800B0109: a certificate chain processed but terminated in a root certificate"
+    ],
+    "content": "The full error description is, \"A certificate chain processed but terminated in a root certificate that the trust provider doesn't trust.\"\nGenerally, the VPN client machine is joined to an Active Directory (AD)-based domain. If you use domain credentials to sign in to the VPN server, the service automatically installs the certificate in the Trusted Root Certification Authorities store. You may encounter this issue if the computer isn't joined to an AD domain or you use an alternative certificate chain.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-032",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error 0x800B0109 cause",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 0x800B0109: a certificate chain processed but terminated in a root certificate",
+      "Error 0x800B0109 cause"
+    ],
+    "content": "You may encounter this error if the client computer doesn't have an appropriate trusted root CA certificate installed in its Trusted Root Certification Authorities store.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-033",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: install the trusted root certificate",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error 0x800B0109: a certificate chain processed but terminated in a root certificate",
+      "Solution: install the trusted root certificate"
+    ],
+    "content": "To resolve this issue, make sure the client machine has a trusted root certificate installed in its Trusted Root Certification Authorities store. If not, install an appropriate root certificate.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-034",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Error: Oops, you can't get to this yet",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error: Oops, you can't get to this yet"
+    ],
+    "content": "This error message is associated with Microsoft Entra Conditional Access connection issues. When this issue appears, the Conditional Access policy isn't satisfied, blocking the VPN connection but then connecting after the user closes the dialog window. If the user selects OK , it starts another authentication attempt that also doesn't succeed and prompts an identical error message. The client's Microsoft Entra Operational Event log records these events.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-035",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Microsoft Entra Conditional Access error cause",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error: Oops, you can't get to this yet",
+      "Microsoft Entra Conditional Access error cause"
+    ],
+    "content": "There are a few reasons why this issue can happen:\nThe user has a client authentication certificate in their Personal Certificate store that's valid but didn't come from Microsoft Entra ID.\nThe VPN profile <TLSExtensions> section is either missing or doesn't contain the <EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID> entries. The <EKUName> and <EKUOID> entries tell the VPN client which certificate to retrieve from the user's certificate store when passing the certificate to the VPN server. Without the <EKUName> and <EKUOID> entries, the VPN client uses whatever valid Client Authentication certificate is in the user's certificate store and authentication succeeds.\nThe RADIUS server (NPS) hasn't been configured to only accept client certificates that contain the AAD Conditional Access object identifier (OID).",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-036",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: use PowerShell to determine certificate status",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error: Oops, you can't get to this yet",
+      "Solution: use PowerShell to determine certificate status"
+    ],
+    "content": "To escape this loop:\nIn Windows PowerShell, run the Get-WmiObject cmdlet to dump the VPN profile configuration.\nVerify that the <TLSExtensions> , <EKUName> , and <EKUOID> variables exist and their output shows the correct name and OID. The following code is an example output of the Get-WmiObject cmdlet. PS C:\\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\\cimv2\\mdm\\dmmap\n__GENUS : 2\n__CLASS : MDM_VPNv2_01\n__SUPERCLASS :\n__DYNASTY : MDM_VPNv2_01\n__RELPATH : MDM_VPNv2_01.InstanceID=\"AlwaysOnVPN\",ParentID=\"./Vendor/MSFT/VPNv2\"\n__PROPERTY_COUNT : 10\n__DERIVATION : {}\n__SERVER : DERS2\n__NAMESPACE : root\\cimv2\\mdm\\dmmap\n__PATH : \\\\DERS2\\root\\cimv2\\mdm\\dmmap:MDM_VPNv2_01.InstanceID=\"AlwaysOnVPN\",ParentID=\"./Vendor/MSFT/VP\nNv2\"\nAlwaysOn :\nByPassForLocal :\nDnsSuffix :\nEdpModeId :\nInstanceID : AlwaysOnVPN\nLockDown :\nParentID : ./Vendor/MSFT/VPNv2\nProfileXML : <VPNProfile><RememberCredentials>false</RememberCredentials><DeviceCompliance><Enabled>true</\nEnabled><Sso><Enabled>true</Enabled></Sso></DeviceCompliance><NativeProfile><Servers>derras2.corp.deverett.info;derras2.corp.deverett.info</Servers><RoutingPolicyType>ForceTunnel</RoutingPolicyType><NativeProtocolType>Ikev2</NativeProtocolType><Authentication><UserMethod>Eap</UserMethod><MachineMethod>Eap</MachineMethod><Eap><Configuration><EapHostConfigxmlns=\"https://www.microsoft.com/provisioning/EapHostConfig\"><EapMethod><Typexmlns=\"https://www.microsoft.com/provisioning/EapCommon\">25</Type><VendorIdxmlns=\"https://www.microsoft.com/provisioning/EapCommon\">0</VendorId><VendorTypexmlns=\"https://www.microsoft.com/provisioning/EapCommon\">0</VendorType><AuthorIdxmlns=\"https://www.microsoft.com/provisioning/EapCommon\">0</AuthorId></EapMethod><Configxmlns=\"https://www.microsoft.com/provisioning/EapHostConfig\"><Eap xmlns=\"https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1\"><Type>25</Type><EapType xmlns=\"https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV1\"><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames></ServerNames></ServerValidation><FastReconnect>true</FastReconnect><InnerEapOptional>false</InnerEapOptional><Eap xmlns=\"https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1\"><Type>13</Type>\n<EapType xmlns=\"https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV1\"><CredentialsSource><CertificateStore><SimpleCertSelection>true</SimpleCertSelection></CertificateStore></CredentialsSource><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames></ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><DifferentUsername>false</DifferentUsername><PerformServerValidation xmlns=\"https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2\">true</PerformServerValidation><AcceptServerName xmlns=\"https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2\">false</AcceptServerName><TLSExtensionsxmlns=\"https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2\"><FilteringInfo xml ns=\"https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3\"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUListEnabled=\"true\"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions></EapType></Eap><EnableQuarantineChecks>false</EnableQuarantineChecks><RequireCryptoBinding>false</RequireCryptoBinding><PeapExtensions><PerformServerValidation xmlns=\"https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2\">false</PerformServerValidation><AcceptServerName xmlns=\"https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2\">false</AcceptServerName></PeapExtensions></EapType></Eap></Config></EapHostConfig></Configuration></Eap></Authentication></NativeProfile></VPNProfile>\nRememberCredentials : False\nTrustedNetworkDetection :\nPSComputerName : DERS2\nNext, run the Certutil command to determine if there are valid certificates in the user's certificate store: C:\\>certutil -store -user My\nMy \"Personal\"\n================ Certificate 0 ================\nSerial Number: 32000000265259d0069fa6f205000000000026",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-037",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: use PowerShell to determine certificate status",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error: Oops, you can't get to this yet",
+      "Solution: use PowerShell to determine certificate status"
+    ],
+    "content": "Issuer: CN=corp-DEDC0-CA, DC=corp, DC=deverett, DC=info\nNotBefore: 12/8/2017 8:07 PM\nNotAfter: 12/8/2018 8:07 PM\nSubject: E=winfed@deverett.info, CN=WinFed, OU=Users, OU=Corp, DC=corp, DC=deverett, DC=info\nCertificate Template Name (Certificate Type): User\nNon-root Certificate\nTemplate: User\nCert Hash(sha1): a50337ab015d5612b7dc4c1e759d201e74cc2a93\nKey Container = a890fd7fbbfc072f8fe045e680c501cf_5834bfa9-1c4a-44a8-a128-c2267f712336\nSimple container name: te-User-c7bcc4bd-0498-4411-af44-da2257f54387\nProvider = Microsoft Enhanced Cryptographic Provider v1.0\nEncryption test passed\n================ Certificate 1 ================\nSerial Number: 367fbdd7e6e4103dec9b91f93959ac56\nIssuer: CN=Microsoft VPN root CA gen 1\nNotBefore: 12/8/2017 6:24 PM\nNotAfter: 12/8/2017 7:29 PM\nSubject: CN=WinFed@deverett.info\nNon-root Certificate\nCert Hash(sha1): 37378a1b06dcef1b4d4753f7d21e4f20b18fbfec\nKey Container = 31685cae-af6f-48fb-ac37-845c69b4c097\nUnique container name: bf4097e20d4480b8d6ebc139c9360f02_5834bfa9-1c4a-44a8-a128-c2267f712336\nProvider = Microsoft Software Key Storage Provider\nPrivate key is NOT exportable\nEncryption test passed Note If a certificate from Issuer CN=Microsoft VPN root CA gen 1 is present in the user's Personal store, but the user gained access by selecting X to close the Oops message, collect CAPI2 event logs to verify the certificate used to authenticate was a valid Client Authentication certificate that wasn't issued from the Microsoft VPN root CA.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-038",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: use PowerShell to determine certificate status",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Error: Oops, you can't get to this yet",
+      "Solution: use PowerShell to determine certificate status"
+    ],
+    "content": "If a valid Client Authentication certificate exists in the user's personal store and the TLSExtensions , EKUName , and EKUOID values are configured correctly, the connection shouldn't succeed after the user closes the dialog box.\nAn error message should appear that says, \"A certificate couldn't be found that can be used with the Extensible Authenticate Protocol.\"",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-039",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Unable to delete the certificate from the VPN connectivity tab",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Unable to delete the certificate from the VPN connectivity tab"
+    ],
+    "content": "This issue is when you can't delete certificates on the VPN connectivity tab.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-040",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Cause",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Unable to delete the certificate from the VPN connectivity tab",
+      "Cause"
+    ],
+    "content": "This issue occurs when the certificate is set to Primary .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-001",
+    "chunk_id": "KB-VPN-001-041",
+    "document_title": "Troubleshoot Always On VPN",
+    "heading": "Solution: change certificate settings",
+    "heading_path": [
+      "Troubleshoot Always On VPN",
+      "Error codes",
+      "Unable to delete the certificate from the VPN connectivity tab",
+      "Solution: change certificate settings"
+    ],
+    "content": "To delete certificates:\nIn the VPN connectivity tab, select the certificate.\nUnder Primary , select No , then select Save .\nIn the VPN connectivity tab, select the certificate again.\nSelect Delete .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-always-on-vpn",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:01.813407+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-001",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Summary",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary"
+    ],
+    "content": "This article explains how to create and connect to a VPN in Windows 11 to help secure your internet connection at work or on public networks.\nWhether it's for work or personal use, you can connect to a virtual private network (VPN) on your Windows device. A VPN connection can help provide a more secure connection and access to your company's network and the internet, for example, when you’re working from a coffee shop or similar public place.\nOpen VPN settings\nThis feature is not available in Windows 11 SE. Learn more.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-002",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "Before you can connect to a VPN, you must have a VPN profile on your device. You can either create a VPN profile on your own or set up a work account to get a VPN profile from your company.\nBefore you start:\n- If it’s for work, look for VPN settings or a VPN app on your company’s intranet site while you’re at work, or contact your company's support person.\n- If it’s for a VPN service you subscribe to for personal use, visit the Microsoft Store to see if there’s an app for that service, or go to the VPN service’s website to see if the VPN connection settings to use are listed there.\nOnce you have your work or personal VPN settings ready:\n- In the Settings app on your Windows device select Network & internet > VPN > Add VPN.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-003",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "- Under Add a VPN connection, do the following: For VPN provider, choose Windows (built-in). In the Connection name box, enter a name you'll recognize (for example, My Personal VPN). This is the VPN connection name you'll look for when connecting. In the Server name or address box, enter the address for the VPN server. For VPN type, choose the type of VPN connection you want to create. You’ll need to know which kind of VPN connection your company or VPN service uses. For Type of sign-in info, choose the type of sign-in info (or credentials) to use. This might be a username and password, one-time password, certificate, or a smart card if you’re connecting to a VPN for work. Enter your username and password in the respective boxes (if required).\n- Select Save.\nIf you need to edit the VPN connection info or specify additional settings, such as proxy settings:",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-004",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "- From the VPN settings page, select the VPN connection you want to edit, select Advanced options, then select Edit next to the details you want to update. Once you've made the updates needed select either Save or Apply.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-006",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Connect to a VPN quickly from your taskbar:",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Connect to a VPN",
+      "Connect to a VPN quickly from your taskbar:"
+    ],
+    "content": "- On your taskbar, select the Network, Volume, Battery icon > VPN.\n- If you have one VPN configured, you can turn it on and off by toggling the left side of the VPN quick setting, marked with a (1), below.\n- If there are multiple VPNs configured, you will need to select one to connect to. Select Manage VPN connections (marked with a (2) in the image), select the one you want from the list of connections, and then select Connect.\n- If prompted, enter your username and password or other sign in info.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-007",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Connect to a VPN from the Windows Settings page:",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Connect to a VPN",
+      "Connect to a VPN from the Windows Settings page:"
+    ],
+    "content": "- In the Settings app on your Windows device select Network & internet > VPN.\n- Next to the VPN connection you want to use, select Connect.\n- If prompted, enter your username and password or other sign in info.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-008",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Verify VPN connection",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Verify VPN connection"
+    ],
+    "content": "- On the VPN settings page, the VPN connection name will display Connected underneath it.\n- On the taskbar, a blue shield will display when you're connected to a recognized VPN.\nSupport for Windows 10 has ended on October 14, 2025\n- After October 14, 2025, Microsoft will no longer provide free software updates from Windows Update, technical assistance, or security fixes for Windows 10. Your PC will still work, but we recommend moving to Windows 11.\n- Learn more",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-009",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Summary",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary"
+    ],
+    "content": "This article explains how to create and connect to a VPN in Windows 10 for secure access to work or personal networks.\nWhether it's for work or personal use, you can connect to a virtual private network (VPN) on your Windows device. A VPN connection can help provide a more secure connection and access to your company's network and the internet, for example, when you’re working from a coffee shop or similar public place.\nOpen VPN settings",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-010",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "Before you can connect to a VPN, you must have a VPN profile on your device. You can either create a VPN profile on your own or set up a work account to get a VPN profile from your company.\nBefore you start:\n- If it’s for work, look for VPN settings or a VPN app on your company’s intranet site while you’re at work, or contact your company's support person.\n- If it’s for a VPN service you subscribe to for personal use, visit the Microsoft Store to see if there’s an app for that service, then go to the VPN service’s website to see if the VPN connection settings to use are listed there.\n- Select the Start button, then select Settings > Network & Internet > VPN > Add a VPN connection.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-011",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Create a VPN profile",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Create a VPN profile"
+    ],
+    "content": "- In Add a VPN connection, do the following: For VPN provider, choose Windows (built-in). In the Connection name box, enter a name you'll recognize (for example, My Personal VPN). This is the VPN connection name you'll look for when connecting. In the Server name or address box, enter the address for the VPN server. For VPN type, choose the type of VPN connection you want to create. You’ll need to know which kind of VPN connection your company or VPN service uses. For Type of sign-in info, choose the type of sign-in info (or credentials) to use. This might be a username and password, one-time password, certificate, or a smart card if you’re connecting to a VPN for work. Enter your username and password in the respective boxes (if required).\n- Select Save.\nIf you need to edit the VPN connection info or specify additional settings, such as proxy settings, choose the VPN connection and then select Advanced options.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-VPN-002",
+    "chunk_id": "KB-VPN-002-012",
+    "document_title": "Connect to a VPN in Windows",
+    "heading": "Connect to a VPN",
+    "heading_path": [
+      "Connect to a VPN in Windows",
+      "Summary",
+      "Connect to a VPN"
+    ],
+    "content": "When you have a VPN profile, you’re ready to connect.\n- On the far right of the taskbar, select the Network icon (either or).\n- Select the VPN connection you want to use, then do either of the following depending on what happens when you select the VPN connection: If the Connect button displays under the VPN connection, select Connect. If the VPN section in Settings opens, select the VPN connection there, then select Connect.\n- If you're prompted, enter your username and password or other sign-in info.\nWhen connected, the VPN connection name will display Connected underneath it. To see if you’re connected to the VPN while you’re doing things on your PC, select the Network icon (either or) on the far right of the taskbar, then see if the VPN connection says Connected.",
+    "source_url": "https://support.microsoft.com/en-us/windows/connect-to-a-vpn-in-windows-3d29aeb1-f497-f6b7-7633-115722c1009c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:57.623287+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-001",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Advanced troubleshooting 802.1X authentication",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication"
+    ],
+    "content": "Applies to: Supported versions of Windows Client\nTry our Virtual Agent - It can help you quickly identify and fix common Wireless technology issues.\nApplies to: Windows 10",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-002",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Overview",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Overview"
+    ],
+    "content": "This article includes general troubleshooting for 802.1X wireless and wired clients. While troubleshooting 802.1X and wireless, it's important to know how the flow of authentication works, and then figure out where it's breaking. It involves many third-party devices and software. Most of the time, we have to identify where the problem is, and another vendor has to fix it. We don't make access points or switches, so it's not an end-to-end Microsoft solution.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-003",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Scenarios",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Scenarios"
+    ],
+    "content": "This troubleshooting technique applies to any scenario in which wireless or wired connections with 802.1X authentication are attempted and then fail to establish. The workflow covers Windows 7 through Windows 10 (and Windows 11) for clients, and Windows Server 2008 R2 through Windows Server 2012 R2 for NPS.",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-006",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Troubleshooting",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Troubleshooting"
+    ],
+    "content": "Viewing NPS authentication status events in the Windows Security event log is one of the most useful troubleshooting methods to obtain information about failed authentications.\nNPS event log entries contain information about the connection attempt, including the name of the connection request policy that matched the connection attempt and the network policy that accepted or rejected the connection attempt. If you don't see both success and failure events, see the NPS audit policy section later in this article.\nCheck the Windows Security event log on the NPS Server for NPS events that correspond to the rejected ( event ID 6273 ) or the accepted ( event ID 6272 ) connection attempts.\nIn the event message, scroll to the bottom, and then check the Reason Code field and the text that's associated with it.\nExample: event ID 6273 (Audit Failure)\nExample: event ID 6272 (Audit Success)",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-007",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Troubleshooting",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Troubleshooting"
+    ],
+    "content": "The WLAN AutoConfig operational log lists information and error events based on conditions detected by or reported to the WLAN AutoConfig service. The operational log contains information about the wireless network adapter, the properties of the wireless connection profile, the specified network authentication, and, if connectivity problems occur, the reason for the failure. For wired network access, the Wired AutoConfig operational log is an equivalent one.\nOn the client side, go to Event Viewer (Local)\\Applications and Services Logs\\Microsoft\\Windows\\WLAN-AutoConfig/Operational for wireless issues. For wired network access issues, go to ..\\Wired-AutoConfig/Operational . See the following example:\nMost 802.1X authentication issues are because of problems with the certificate that's used for client or server authentication. Examples include invalid certificate, expiration, chain verification failure, and revocation check failure.\nFirst, validate the type of EAP method that's used:",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-008",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Troubleshooting",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Troubleshooting"
+    ],
+    "content": "If a certificate is used for its authentication method, check whether the certificate is valid. For the server (NPS) side, you can confirm what certificate is being used from the EAP property menu. In NPS snap-in , go to Policies > Network Policies . Select and hold (or right-click) the policy, and then select Properties . In the pop-up window, go to the Constraints tab, and then select the Authentication Methods section.\nThe CAPI2 event log is useful for troubleshooting certificate-related issues.\nBy default, this log isn't enabled. To enable this log, expand Event Viewer (Local)\\Applications and Services Logs\\Microsoft\\Windows\\CAPI2 , select and hold (or right-click) Operational , and then select Enable Log .\nFor information about how to analyze CAPI2 event logs, see Troubleshooting PKI Problems on Windows Vista .\nWhen troubleshooting complex 802.1X authentication issues, it's important to understand the 802.1X authentication process. Here's an example of wireless connection process with 802.1X authentication:",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-009",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Troubleshooting",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Troubleshooting"
+    ],
+    "content": "If you collect a network packet capture on both the client and the server (NPS) side, you can see a flow like the one below. Type EAPOL in the Display Filter for a client-side capture, and EAP for an NPS-side capture. See the following examples:\nClient-side packet capture data\nNPS-side packet capture data\nNote\nIf you have a wireless trace, you can also view ETL files with network monitor and apply the ONEX_MicrosoftWindowsOneX and WLAN_MicrosoftWindowsWLANAutoConfig Network Monitor filters. If you need to load the required parser , see the instructions under the Help menu in Network Monitor. Here's an example:",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-001",
+    "chunk_id": "KB-WIFI-001-010",
+    "document_title": "Advanced troubleshooting 802.1X authentication",
+    "heading": "Audit policy",
+    "heading_path": [
+      "Advanced troubleshooting 802.1X authentication",
+      "Audit policy"
+    ],
+    "content": "By default, NPS audit policy (event logging) for connection success and failure is enabled. If you find that one or both types of logging are disabled, use the following steps to troubleshoot.\nView the current audit policy settings by running the following command on the NPS server:\nauditpol /get /subcategory:\"Network Policy Server\"\nIf both success and failure events are enabled, the output should be:\nSystem audit policy\nCategory/Subcategory Setting\nLogon/Logoff\nNetwork Policy Server Success and Failure\nIf it says, \"No auditing,\" you can run this command to enable it:\nauditpol /set /subcategory:\"Network Policy Server\" /success:enable /failure:enable\nEven if audit policy appears to be fully enabled, it sometimes helps to disable and then re-enable this setting. You can also enable Network Policy Server logon/logoff auditing by using Group Policy. To get to the success/failure setting, select Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Logon/Logoff > Audit Network Policy Server .",
+    "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-19T13:14:58.375909+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-001",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Fix Wi-Fi connection issues in Windows",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows"
+    ],
+    "content": "If you're unable to access email, browse the web, or stream music, it's likely you're not connected to your network and can't access the Internet. Fortunately, most connectivity issues can be resolved with simple troubleshooting steps. In this guide, we'll explore a range of solutions to help you fix Wi-Fi problems in Windows, providing clear and detailed instructions for effective troubleshooting.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-002",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Run the Network troubleshooter",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Run the Network troubleshooter"
+    ],
+    "content": "If you are using a Windows 11 device, start by running the automated Network and Internet troubleshooter in the Get Help app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to General troubleshooting steps.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-003",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Understand Wi-Fi icons",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Understand Wi-Fi icons"
+    ],
+    "content": "Wi-Fi Connected You’re connected to Wi-Fi and the Internet. You should be in good shape. If you see this icon but you’re still having connectivity issues, the problem might be with a specific app or website or a firewall blocking your Internet connection. Note: If you see the signal bar moving up and down, it means your device is in the process of connecting to the Wi-Fi network. Once it stops moving and displays a connection level, you're connected. VPN Connected You're connected to a recognized virtual private network (VPN). To learn more, see Connect to a VPN in Windows. No Internet Your device doesn't have an Internet connection. For Wi-Fi, this can appear for one or more reasons.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-004",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Run the Network troubleshooter",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Run the Network troubleshooter"
+    ],
+    "content": "Start by running the automated Network troubleshooter in the Settings app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to General troubleshooting steps.\n- Select Start > Settings > Network and Internet.\n- Select Status from the left-hand menu.\n- Scroll down and select Network troubleshooter.\n- A new window titled Troubleshoot Problems will open. Follow the on-screen instructions to complete the process.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-005",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Understand Wi-Fi icons",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Understand Wi-Fi icons"
+    ],
+    "content": "Wi-Fi Connected You’re connected to Wi-Fi and the Internet. You should be in good shape. If you see this icon but you’re still having connectivity issues, the problem might be with a specific app or website or a firewall blocking your Internet connection. Note: If you see the signal bar moving up and down, it means your device is in the process of connecting to the Wi-Fi network. Once it stops moving and displays a connection level, you're connected. No Internet Your device doesn't have an Internet connection. For Wi-Fi, this can appear for one or more reasons.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-007",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 1. Check your network connection status",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 1. Check your network connection status"
+    ],
+    "content": "- Select the Network, Sound, or Battery icons () on the right side of the taskbar.\n- Make sure that Wi-Fi is turned on.\n- Check if your network name shows Connected below it. If it displays a status other than Connected, select a Wi-Fi network you recognize from the list of available networks. Then, click on the network and attempt to connect.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-008",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 2. Check Airplane Mode",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 2. Check Airplane Mode"
+    ],
+    "content": "- Go to Settings > Network & Internet > Airplane mode.\n- Ensure Airplane mode is turned off.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-009",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 3. Forget and reconnect to the Wi-Fi Network",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 3. Forget and reconnect to the Wi-Fi Network"
+    ],
+    "content": "- In the Settings app on your Windows device\nselect Network & internet > Wi-Fi, then select Manage known networks.\n- Select your Wi-Fi network and click Forget.\n- Reconnect to the network by selecting it and entering the password.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-010",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 4. Restart your modem and wireless router",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 4. Restart your modem and wireless router"
+    ],
+    "content": "This helps create a new connection to your Internet service provider (ISP). When you do this, everyone that is connected to your Wi-Fi network will be temporarily disconnected. The steps you take to restart your modem and router can vary, but here are the general steps.\nIf you have a cable modem/Wi-Fi router combo device, you only need to follow the steps for the single device.\n- Unplug the power cable for the router from the power source.\n- Unplug the power cable for the modem from the power source. Some modems have a backup battery. If you unplug the modem and lights stay on, remove the battery from the modem.\n- Wait at least 30 seconds or so.\n- If you had to remove the battery from the modem, put it back in. Plug the modem back into the power source. The lights on the modem will blink. Wait for them to stop blinking.\n- Plug your router back into the power source.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-011",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 4. Restart your modem and wireless router",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 4. Restart your modem and wireless router"
+    ],
+    "content": "- Wait a few minutes for the modem and router to fully power on. You can usually tell when they’re ready by looking at the status lights on the two devices.\n- On your PC, try to connect again.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-012",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 5. Adjust Wi-Fi channel and frequency",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 5. Adjust Wi-Fi channel and frequency"
+    ],
+    "content": "Try connecting to a network on a different frequency band. Many consumer Wi-Fi routers broadcast at two different network frequency bands: 2.4 GHz and 5 GHz. These will appear as separate networks in the list of available Wi-Fi networks. If your list of available Wi-Fi networks includes both a 2.4 GHz network and a 5 GHz network, try connecting to the other network. To learn more, check out Wi-Fi and your home layout.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-013",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 6. Try to connect to the same network on a different device",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 6. Try to connect to the same network on a different device"
+    ],
+    "content": "On another laptop or phone, try to connect to the same network. If you can connect, the source of the problem is likely due to your device.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-014",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 7. Run network commands",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 7. Run network commands"
+    ],
+    "content": "Try running these network commands to manually reset the TCP/IP stack, release and renew the IP address, and flush and reset the DNS client resolver cache:\n- Select Search on the taskbar, and type command prompt. The Command Prompt button will appear. To the right of it, select Run as administrator > Yes.\n- At the command prompt, run the following commands in the listed order, and then check to see if that fixes your connection problem: Type netsh winsock reset and select Enter⁠.⁠ Type netsh int ip reset and select Enter. Type ipconfig /release and select Enter. Type ipconfig /renew and select Enter. Type ipconfig /flushdns and select Enter.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-015",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 8. Uninstall the network adapter driver and restart",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 8. Uninstall the network adapter driver and restart"
+    ],
+    "content": "If the previous steps didn’t work, try to uninstall the network adapter driver, and then restart your computer. Windows will automatically install the latest driver. Consider this approach if your network connection stopped working properly after a recent update.\nBefore uninstalling, make sure you have drivers available as a backup. Visit the PC manufacturer’s website and download the latest network adapter driver from there. If your PC can't connect to the Internet, you'll need to download a driver on a different PC and save it to a USB flash drive so you can install the driver on your PC. You’ll need to know the PC manufacturer and model name or number.\n- Select Search on the taskbar, type device manager, and then select Device Manager from the list of results.\n- Expand Network adapters, and locate the network adapter for your device.\n- Select the network adapter, press and hold (or right-click), and then select Uninstall device > check the Attempt to remove the driver for this device check box > Uninstall.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-016",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 8. Uninstall the network adapter driver and restart",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 8. Uninstall the network adapter driver and restart"
+    ],
+    "content": "- After uninstalling the driver, select Start > Power > Restart.\nAfter your PC restarts, Windows will automatically look for and install the network adapter driver. Check to see if that fixes your connection problem. If Windows doesn't automatically install a driver, try to install the backup driver you saved before uninstalling.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-017",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 9. Use the ping test to check if there's a problem with Wi-Fi router connection",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 9. Use the ping test to check if there's a problem with Wi-Fi router connection"
+    ],
+    "content": "Check to see if there is a problem with the connection to your Wi-Fi router. Do this by using a ping test.\n- In the search box on the taskbar, type command prompt. The Command Prompt button will appear. To the right of it, select Run as administrator > Yes.\n- At the command prompt, type ipconfig, and then select Enter. Look for the name of your Wi-Fi network within the results, and then find the IP address listed next to Default gateway for that Wi-Fi network. Write down that address if you need to. For example: 192.168.1.1\n- At the prompt, type ping <DefaultGateway> and then select Enter. For example, type ping 192.168.1.1 and select Enter. The results should be something like this:\n- Reply from 192.168.1.1: bytes=32 time=5ms TTL=64\n- Reply from 192.168.1.1: bytes=32 time=5ms TTL=64\n- Reply from 192.168.1.1: bytes=32 time=5ms TTL=64\n- Reply from 192.168.1.1: bytes=32 time=5ms TTL=64",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-018",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 9. Use the ping test to check if there's a problem with Wi-Fi router connection",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 9. Use the ping test to check if there's a problem with Wi-Fi router connection"
+    ],
+    "content": "- Ping statistics for 192.168.1.1: Packets: Sent = 4, Received = 4, Lost = 0 (0% loss), Approximate round trip times in milli-seconds: Minimum = 4ms, Maximum = 5ms, Average = 4ms\nIf you see results like this and are getting a reply, then you have a connection to your Wi-Fi router, so there might be a problem with your modem or ISP. Contact your ISP or check online on another device (if you can) to see if there's a service outage.\nIf the results of the ping test indicate that you are not getting a reply from the router, try connecting your PC directly to your modem by using an Ethernet cable (if you can). If you can connect to the Internet using an Ethernet cable, it confirms the connection problem is due to the Wi-Fi router. Make sure you've installed the latest firmware and see the documentation for your router.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-019",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 10. Disable power saving for Wi-Fi adapter",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 10. Disable power saving for Wi-Fi adapter"
+    ],
+    "content": "- Open Device Manager and expand Network adapters.\n- Right-click your Wi-Fi adapter and choose Properties.\n- Navigate to the Power Management tab.\n- Uncheck Allow the computer to turn off this device to save power.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-020",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 11. Check for Windows updates",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 11. Check for Windows updates"
+    ],
+    "content": "Select Start > Settings > Windows Update > Check for updates. Download and install any new updates.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-021",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 12. Restart your PC",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 12. Restart your PC"
+    ],
+    "content": "Many updates require you to restart your device. Save your work and close all open applications. Then, select Start > Power, and select Restart.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-022",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 13. Use network reset",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 13. Use network reset"
+    ],
+    "content": "Using network reset should be the last step you try. Consider using it if the steps above don’t help to get you connected.\nThis can help solve connection problems you might have after upgrading from Windows 10 to Windows 11. It can also help to fix the problem where you can connect to the Internet but can't connect to shared network drives. Network reset removes any network adapters you have installed and the settings for them. After your PC restarts, any network adapters are reinstalled, and the settings for them are set to the defaults.\n- Select the Start button, then enter settings. Select Settings > Network & internet On Windows 11, select Advanced network settings > Network reset. On Windows 10, select Status > Network reset.\n- On the Network reset screen, select Reset now > Yes to confirm.\n- Wait for your PC to restart and see if that fixes the problem.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-023",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Step 13. Use network reset",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "General troubleshooting",
+      "Step 13. Use network reset"
+    ],
+    "content": "- After using network reset, you might need to reinstall and set up other networking software you might be using, such as VPN client software or virtual switches from Hyper‑V (if you're using that or other network virtualization software).\n- Network reset might set each one of your known network connections to a public network profile. In a public network profile, your PC is not discoverable to other PCs and devices on the network, which can help make your PC more secure. To use a private network profile, see Essential network settings and tasks.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-024",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Most common Wi-Fi problems",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems"
+    ],
+    "content": "Below, you will find the most common Wi-Fi problems users have experienced and the steps to troubleshoot them.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-025",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Connected to Internet but very slow speed",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "Connected to Internet but very slow speed"
+    ],
+    "content": "- Check Signal Strength: Ensure the device is close to the router and free of obstructions.\n- Disable Background Apps: Open Task Manager ( Ctrl + Shift + Esc). End processes consuming high network bandwidth.\n- Test Router Performance: Connect another device to the Wi-Fi. If the issue persists, the router may require maintenance or replacement.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-026",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Wi-Fi option is missing",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "Wi-Fi option is missing"
+    ],
+    "content": "If the Wi-Fi toggle option is missing or not visible in settings, follow the below troubleshooting steps.\n- Check Hardware Switch: Some laptops have a physical Wi-Fi switch; ensure it is turned on.\n- Enable Wi-Fi Adapter: Open Device Manager and expand Network adapters. Right-click your Wi-Fi adapter and select Enable device.\n- Restart WLAN Service: Press Win + R, type services.msc, and press Enter. Find WLAN AutoConfig, right-click, and select Restart.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-027",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Wi-Fi connection is dropping frequently",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "Wi-Fi connection is dropping frequently"
+    ],
+    "content": "If the Wi-Fi connection drops frequently, disrupting work or streaming, follow the below steps.\n- Check Power Settings Go to Control Panel > Hardware and Sound > Power Options. Select your plan and click Change plan settings. Click Change advanced power settings and expand Wireless Adapter Settings. Set Power Saving Mode to Maximum Performance.\n- Adjust Router Channel: Access your router’s admin page (refer to its manual) and change the wireless channel to reduce interference.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-028",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "You're connected to Wi-Fi, but no Internet connection is detected (also known as limited connectivity)",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "You're connected to Wi-Fi, but no Internet connection is detected (also known as limited connectivity)"
+    ],
+    "content": "Your Windows PC is connected to your local network but isn’t connected to the Internet. If you select the No Internet connection icon, the words No Internet will be displayed under the Wi-Fi network you're connected to. You can probably see other PCs and devices on your local network, but you can’t do things that require Internet access, like surf the web, use email, or stream music and video.\nTo determine if your PC has limited connectivity with no Internet connection, Windows sends a small HTTP request to a server on the Internet. If it doesn’t get any information back from the server, then this icon will appear.\nIf the device connects to Wi-Fi, but Internet access is unavailable, follow the below troubleshooting steps.\n- Turn off Wi-Fi and turn it on again and reconnect to your wireless network.\n- Renew IP Configuration Open Command Prompt as Administrator. Type ipconfig /release and press Enter. Type ipconfig /renew and press Enter.\n- Flush DNS Cache Open Command Prompt as Administrator. Type ipconfig /flushdns and press Enter.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-029",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "You're connected to Wi-Fi, but no Internet connection is detected (also known as limited connectivity)",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "You're connected to Wi-Fi, but no Internet connection is detected (also known as limited connectivity)"
+    ],
+    "content": "- Check for Proxy Settings Go to Settings > Network & Internet > Proxy. Turn off any manual proxy settings.\n- Check your IP address Find your IP address and make sure it's not something like this —169.254.x.x. If your IP address looks like this, it means that Windows couldn’t get an IP address from your router. If you’re not using static IP addresses on your network, then check to make sure DHCP is enabled on your router. Check the documentation for your router to find out how to do this. If this fixes your Wi-Fi problem, the No connection icon will change to Wi-Fi connected in a few seconds.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-030",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "You're connected to Wi-Fi, but no Internet connection is detected (also known as limited connectivity)",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "You're connected to Wi-Fi, but no Internet connection is detected (also known as limited connectivity)"
+    ],
+    "content": "- Check your DNS server. Verify that you have a DNS server listed and that you can ping it. To ping the DNS server: Open Command Prompt as Administrator. Type ipconfig /all | findstr /c:\"DNS Servers\" and press Enter. Note the DNS Server IP address. At the command prompt, type ping [DNS server address]. If you have a valid IP address but can’t ping your DNS server, you can change your DNS server to a different address and then try to ping the new address. There are many free public DNS servers. To find them, go to the web and search for public DNS servers. To learn how to change your DNS server in Windows, see Change TCP/IP settings.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-031",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Wi-Fi authentication problem",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "Wi-Fi authentication problem"
+    ],
+    "content": "If you're unable to connect to Wi-Fi due to incorrect password errors despite entering the correct credentials, follow the below troubleshooting steps.\n- Verify Password: Ensure the password is correct and matches the router's configuration.\n- Reset Router: Reboot the router or restore its factory settings.\n- Update Router Firmware: Refer to the router’s manual for steps to update its firmware.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-032",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Your wireless network adapter is recognized, but no Wi-Fi networks are found and you’re not connected to Wi-Fi",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "Your wireless network adapter is recognized, but no Wi-Fi networks are found and you’re not connected to Wi-Fi"
+    ],
+    "content": "If you see the No Internet connection icon when you’re in range of Wi-Fi networks, it could mean one of the following:\n- The physical Wi-Fi switch on your laptop or tablet is turned off. Make sure it’s turned on.\n- Wi-Fi is turned off in Wi-Fi settings. Open Settings, then select Network & internet. Make sure Wi-Fi is turned on.\n- Your adapter doesn’t support the frequency that your network is broadcasting on. For example, your adapter might only support the 2.4 GHz frequency band, but your network is using the 5 GHz band. Check the documentation for your router to find out what frequency it’s using. To learn more about the differences between 2.4 GHz networks and 5 GHz networks, check out the section Wi-Fi and your home layout.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-033",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "Your wireless network adapter is recognized, but no Wi-Fi networks are found and you’re not connected to Wi-Fi",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "Your wireless network adapter is recognized, but no Wi-Fi networks are found and you’re not connected to Wi-Fi"
+    ],
+    "content": "- Your adapter supports your network frequency, but the wireless network adapter driver is filtering it out. While it’s not common, this has been known to happen. Make sure your wireless network adapter allows the same network frequency as your wireless network by doing the following: Select Search on the taskbar, enter Device Manager, and then select Device Manager from the list of results. In Device Manager, select Network adapters > the wireless network adapter name. Press and hold (or right-click) your wireless network adapter, then select Properties. Select the Advanced tab, look for a Wireless Mode or Band setting, and make sure it allows your network frequency.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-034",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "No network adapters are detected or enabled",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "No network adapters are detected or enabled"
+    ],
+    "content": "If this is the case, here are some things you can try:\n- In the wireless network report, find your wireless adapter in the Network Adapters section, and then check to see if a Problem number is listed there. If listed, the number will correspond to the Device Manager error code that tells you why the driver didn’t load.\n- Verify that you have the latest driver by running Windows Update, and check the Driver Version and Driver Date to see if they match the latest driver versions listed on your device manufacturer’s website. To find the driver date and version, in Device Manager, expand Network adapters, press and hold (or right-click) your wireless network adapter, select Properties, and then select the Driver tab.\n- Make sure that the wireless network adapter isn’t disabled in Device Manager. To do this, in Device Manager, expand Network adapters, press and hold (or right-click) your wireless network adapter, and then select Enable device.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  },
+  {
+    "document_id": "KB-WIFI-002",
+    "chunk_id": "KB-WIFI-002-035",
+    "document_title": "Fix Wi-Fi connection issues in Windows",
+    "heading": "No network adapters are detected or enabled",
+    "heading_path": [
+      "Fix Wi-Fi connection issues in Windows",
+      "Most common Wi-Fi problems",
+      "No network adapters are detected or enabled"
+    ],
+    "content": "- If your wireless network adapter isn’t listed in Device Manager, then Windows doesn’t detect it. In this case, you might have to manually install the driver. Check your device manufacturer’s website for a driver that works in Windows.",
+    "source_url": "https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c",
+    "publisher": "Microsoft",
+    "downloaded_at": "2026-10-26T05:36:56.914604+00:00",
+    "language": "en"
+  }
+]

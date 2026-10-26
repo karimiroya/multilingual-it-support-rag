@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+
+# Models (too large for git - publish on the Hugging Face Hub)
+xlmr_ticket_classifier/
+final_xlmr_ticket_model/
